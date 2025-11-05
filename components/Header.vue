@@ -9,12 +9,12 @@
           </NuxtLink>
         </div>
         <nav class="nav" :class="{ active: mobileMenuOpen }">
-          <NuxtLink to="/" class="nav-link">Accueil</NuxtLink>
-          <NuxtLink to="#services" class="nav-link">Services</NuxtLink>
-          <NuxtLink to="#expertise" class="nav-link">Expertise</NuxtLink>
-          <NuxtLink to="#realizations" class="nav-link">Réalisations</NuxtLink>
-          <NuxtLink to="#news" class="nav-link">Actualités</NuxtLink>
-          <NuxtLink to="#contact" class="nav-link">Contact</NuxtLink>
+          <NuxtLink to="/" class="nav-link">{{ navHome }}</NuxtLink>
+          <NuxtLink to="#services" class="nav-link">{{ navServices }}</NuxtLink>
+          <NuxtLink to="#expertise" class="nav-link">{{ navExpertise }}</NuxtLink>
+          <NuxtLink to="#realizations" class="nav-link">{{ navRealizations }}</NuxtLink>
+          <NuxtLink to="#news" class="nav-link">{{ navNews }}</NuxtLink>
+          <NuxtLink to="#contact" class="nav-link">{{ navContact }}</NuxtLink>
         </nav>
         <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen">
           <span></span>
@@ -27,9 +27,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useContent } from '~/composables/useContent'
 
 const mobileMenuOpen = ref(false)
+const { getText } = useContent()
+
+const navHome = computed(() => getText('header.nav.home', 'Accueil'))
+const navServices = computed(() => getText('header.nav.services', 'Services'))
+const navExpertise = computed(() => getText('header.nav.expertise', 'Expertise'))
+const navRealizations = computed(() => getText('header.nav.realizations', 'Réalisations'))
+const navNews = computed(() => getText('header.nav.news', 'Actualités'))
+const navContact = computed(() => getText('header.nav.contact', 'Contact'))
 </script>
 
 <style scoped>

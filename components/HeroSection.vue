@@ -3,16 +3,23 @@
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <div class="hero-text">
-        <h1 class="hero-title">Construction et financement d'infrastructure</h1>
-        <p class="hero-subtitle">En savoir plus</p>
-        <button class="btn btn-primary">En savoir plus</button>
+        <h1 class="hero-title">{{ heroTitle }}</h1>
+        <p class="hero-subtitle">{{ heroSubtitle }}</p>
+        <button class="btn btn-primary">{{ heroCTA }}</button>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-// Hero section component
+import { computed } from 'vue'
+import { useContent } from '~/composables/useContent'
+
+const { getText } = useContent()
+
+const heroTitle = computed(() => getText('hero.title', 'Construction et financement d\'infrastructure'))
+const heroSubtitle = computed(() => getText('hero.subtitle', 'En savoir plus'))
+const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 </script>
 
 <style scoped>

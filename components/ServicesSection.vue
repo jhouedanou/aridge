@@ -1,26 +1,24 @@
 <template>
   <section id="services" class="services">
     <div class="container">
-      <div class="section-header">
-        <h2>Qui sommes-nous ?</h2>
-        <p>Aridge Roads & Infrastructure Development Group spécialiste de la conception, du financement et de la réalisation d'infrastructures, notamment dans les domaines de la logistique et des services industriels.</p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-logo">
-            <img src="/hh-group.svg" alt="HH Group" />
-          </div>
-          <h3>Hatt International Group</h3>
-          <p>Conception d'infrastructures routières et autoroutières avec expertise en BTP. Leader sur le marché international des grands projets.</p>
+      <div class="who-section">
+        <div class="who-content">
+          <h2>Qui sommes-nous ?</h2>
+          <p>Aridge Roads & Infrastructure Development Group spécialiste de la conception, du financement et de la réalisation d'infrastructures, notamment dans les domaines de la logistique et des services industriels.</p>
         </div>
 
-        <div class="service-card">
-          <div class="service-logo">
-            <img src="/imaar.svg" alt="IMAAR Financial Group" />
+        <div class="who-logos">
+          <div class="logo-item">
+            <img src="/hh-group.svg" alt="HH Group" />
+            <h4>Hatt International Group</h4>
+            <p>Conception d'infrastructures routières et autoroutières avec expertise en BTP.</p>
           </div>
-          <h3>Imaar Financial Group (IFG)</h3>
-          <p>Spécialisé dans le financement structuré des infrastructures, notamment infrastructures publiques, BTP, routes, autoroutes et ports.</p>
+
+          <div class="logo-item">
+            <img src="/imaar.svg" alt="IMAAR Financial Group" />
+            <h4>Imaar Financial Group (IFG)</h4>
+            <p>Spécialisé dans le financement structuré des infrastructures.</p>
+          </div>
         </div>
       </div>
 
@@ -75,34 +73,33 @@
   background-color: var(--color-bg-white);
 }
 
-.section-header {
-  text-align: center;
+.who-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: flex-start;
   margin-bottom: var(--spacing-3xl);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.section-header h2 {
+.who-content h2 {
   color: var(--color-primary);
   margin-bottom: var(--spacing-lg);
   font-size: 2rem;
 }
 
-.section-header p {
-  font-size: 1.1rem;
+.who-content p {
+  font-size: 1rem;
   color: var(--color-text-light);
   line-height: 1.8;
 }
 
-.services-grid {
+.who-logos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--spacing-2xl);
-  margin-bottom: var(--spacing-3xl);
 }
 
-.service-card {
+.logo-item {
   background: var(--color-bg-light);
   padding: var(--spacing-2xl);
   border-radius: 8px;
@@ -110,33 +107,29 @@
   transition: all var(--transition-speed);
 }
 
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(27, 122, 126, 0.15);
+.logo-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(27, 122, 126, 0.1);
 }
 
-.service-logo {
-  height: 80px;
+.logo-item img {
+  height: 60px;
   margin-bottom: var(--spacing-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.service-logo img {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-.service-card h3 {
+.logo-item h4 {
   color: var(--color-primary);
   margin-bottom: var(--spacing-md);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
-.service-card p {
+.logo-item p {
   color: var(--color-text-light);
-  line-height: 1.8;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .expertise-sections {
@@ -222,11 +215,15 @@
     padding: var(--spacing-2xl) 0;
   }
 
-  .section-header h2 {
+  .who-section {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .who-content h2 {
     font-size: 1.5rem;
   }
 
-  .services-grid,
   .expertise-sections {
     grid-template-columns: 1fr;
   }

@@ -1,0 +1,474 @@
+{
+  "fr": {
+    "header": {
+      "logo": "ARIDGE",
+      "nav": {
+        "home": "Accueil",
+        "services": "Services",
+        "expertise": "Expertise",
+        "realizations": "Réalisations",
+        "news": "Actualités",
+        "contact": "Contact"
+      }
+    },
+    "hero": {
+      "title": "Construction et financement d'infrastructure",
+      "subtitle": "En savoir plus",
+      "cta": "En savoir plus"
+    },
+    "services": {
+      "title": "Qui sommes-nous ?",
+      "description": "Aridge Roads & Infrastructure Development Group spécialiste de la conception, du financement et de la réalisation d'infrastructures, notamment dans les domaines de la logistique et des services industriels.",
+      "partners": [
+        {
+          "name": "Hatt International Group",
+          "description": "Conception d'infrastructures routières et autoroutières avec expertise en BTP. Leader sur le marché international des grands projets."
+        },
+        {
+          "name": "Imaar Financial Group (IFG)",
+          "description": "Spécialisé dans le financement structuré des infrastructures, notamment infrastructures publiques, BTP, routes, autoroutes et ports."
+        }
+      ],
+      "technicalServices": {
+        "title": "Nos services d'assistance",
+        "items": [
+          "Études techniques et conception BIM",
+          "Construction modulaire et préfabriquée",
+          "Gestion environnementale et ESG",
+          "Maintenance et gestion d'actifs d'infrastructures"
+        ]
+      },
+      "financialServices": {
+        "title": "Nos services Financiers",
+        "description1": "Structuration de financements souverains et institutionnels",
+        "description2": "Spécialisation dans les domaines de l'Afrique Subsaharienne",
+        "items": [
+          "Levée de fonds syndicalisés",
+          "Partenariats Public-Privés",
+          "Gestion d'actifs de infrastructures"
+        ]
+      },
+      "solutions": [
+        {
+          "title": "Solutions de construction intégrées",
+          "image": "construction.jpg"
+        },
+        {
+          "title": "Expertise technique éprouvée",
+          "image": "workers.jpg"
+        },
+        {
+          "title": "Équipements modernes et performants",
+          "image": "equipment.jpg"
+        }
+      ]
+    },
+    "expertise": {
+      "title": "Nos domaines d'expertise",
+      "items": [
+        {
+          "title": "Infrastructure routière & génie civil",
+          "description": "Routes, autoroutes, ports et infrastructure complète incluant des solutions innovantes et durables."
+        },
+        {
+          "title": "Expertise Technique",
+          "description": "Nos collaborateurs avec les meilleurs difficultés internationaux pour délivrer les meilleurs standards de l'industrie.",
+          "list": [
+            "Études techniques et conception BIM",
+            "Construction modulaire et préfabriquée",
+            "Gestion environnementale et ESG",
+            "Maintenance & gestion d'actifs d'infrastructures"
+          ]
+        },
+        {
+          "title": "Expertise Financière",
+          "description1": "Structuration de financements souverains et institutionnels",
+          "description2": "Spécialisation dans les domaines de l'Afrique Subsaharienne",
+          "list": [
+            "Levée de fonds syndicalisés",
+            "Partenariats Public-Privés",
+            "Gestion d'actifs de infrastructures",
+            "Sécurisation d'emprunteurs avec une expertise Publics-Privé"
+          ]
+        }
+      ]
+    },
+    "realizations": {
+      "title": "Nos Réalisations",
+      "projects": [
+        {
+          "id": 1,
+          "title": "Projet 1",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "image": "realization-1.jpg",
+          "cta": "En savoir plus"
+        },
+        {
+          "id": 2,
+          "title": "Projet 2",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "image": "realization-2.jpg",
+          "cta": "En savoir plus"
+        },
+        {
+          "id": 3,
+          "title": "Projet 3",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "image": "realization-3.jpg",
+          "cta": "En savoir plus"
+        },
+        {
+          "id": 4,
+          "title": "Projet 4",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "image": "realization-4.jpg",
+          "cta": "En savoir plus"
+        }
+      ],
+      "sliderButtons": {
+        "prev": "Précédent",
+        "next": "Suivant"
+      }
+    },
+    "news": {
+      "title": "Nos Réalisations",
+      "articles": [
+        {
+          "id": 1,
+          "title": "Titre de l'article 1",
+          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "date": "25/11/2024",
+          "image": "news-1.jpg",
+          "readMore": "Lire la suite →"
+        },
+        {
+          "id": 2,
+          "title": "Titre de l'article 2",
+          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "date": "24/11/2024",
+          "image": "news-2.jpg",
+          "readMore": "Lire la suite →"
+        },
+        {
+          "id": 3,
+          "title": "Titre de l'article 3",
+          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "date": "27/11/2024",
+          "image": "news-3.jpg",
+          "readMore": "Lire la suite →"
+        },
+        {
+          "id": 4,
+          "title": "Titre de l'article 4",
+          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "date": "28/11/2024",
+          "image": "news-4.jpg",
+          "readMore": "Lire la suite →"
+        }
+      ],
+      "viewAll": "Voir toutes les actualités"
+    },
+    "contact": {
+      "title": "Restez en contact",
+      "description": "Nous serions heureux de vous aider dans vos projets d'infrastructure.",
+      "form": {
+        "nameLabel": "Nom",
+        "namePlaceholder": "Votre nom",
+        "emailLabel": "Email",
+        "emailPlaceholder": "votre.email@exemple.com",
+        "subjectLabel": "Sujet",
+        "subjectPlaceholder": "Sujet de votre message",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Votre message...",
+        "submit": "Envoyer le message"
+      },
+      "info": {
+        "address": {
+          "title": "Adresse",
+          "value": "123 Rue de l'Infrastructure\n75000 Paris, France"
+        },
+        "phone": {
+          "title": "Téléphone",
+          "value": "+33 1 23 45 67 89"
+        },
+        "email": {
+          "title": "Email",
+          "value": "contact@aridge.com"
+        }
+      }
+    },
+    "footer": {
+      "sections": {
+        "aridge": {
+          "title": "Aridge",
+          "description": "Construction et financement d'infrastructure."
+        },
+        "navigation": {
+          "title": "Navigation",
+          "links": [
+            { "label": "Accueil", "href": "/" },
+            { "label": "Services", "href": "#services" },
+            { "label": "Expertise", "href": "#expertise" },
+            { "label": "Réalisations", "href": "#realizations" },
+            { "label": "Actualités", "href": "#news" }
+          ]
+        },
+        "hattGroup": {
+          "title": "Hatt International Group",
+          "description": "Conception d'infrastructures routières et autoroutières."
+        },
+        "social": {
+          "title": "Réseaux Sociaux",
+          "links": [
+            { "label": "LinkedIn", "href": "#" },
+            { "label": "Instagram", "href": "#" },
+            { "label": "Facebook", "href": "#" }
+          ]
+        }
+      },
+      "bottom": {
+        "copyright": "© Aridge 2025. All rights reserved.",
+        "links": [
+          { "label": "Termes et conditions", "href": "#" },
+          { "label": "Politique de confidentialité", "href": "#" }
+        ]
+      }
+    }
+  },
+  "en": {
+    "header": {
+      "logo": "ARIDGE",
+      "nav": {
+        "home": "Home",
+        "services": "Services",
+        "expertise": "Expertise",
+        "realizations": "Realizations",
+        "news": "News",
+        "contact": "Contact"
+      }
+    },
+    "hero": {
+      "title": "Infrastructure construction and financing",
+      "subtitle": "Learn more",
+      "cta": "Learn more"
+    },
+    "services": {
+      "title": "Who are we?",
+      "description": "Aridge Roads & Infrastructure Development Group specialist in the design, financing and implementation of infrastructure, particularly in the fields of logistics and industrial services.",
+      "partners": [
+        {
+          "name": "Hatt International Group",
+          "description": "Design of road and highway infrastructure with BTP expertise. Leader in the international market for major projects."
+        },
+        {
+          "name": "Imaar Financial Group (IFG)",
+          "description": "Specialized in structured infrastructure financing, including public infrastructure, BTP, roads, highways and ports."
+        }
+      ],
+      "technicalServices": {
+        "title": "Our assistance services",
+        "items": [
+          "Technical studies and BIM design",
+          "Modular and prefabricated construction",
+          "Environmental and ESG management",
+          "Infrastructure asset maintenance and management"
+        ]
+      },
+      "financialServices": {
+        "title": "Our Financial Services",
+        "description1": "Structuring of sovereign and institutional financing",
+        "description2": "Specialization in Sub-Saharan Africa sectors",
+        "items": [
+          "Syndicated fundraising",
+          "Public-Private Partnerships",
+          "Infrastructure asset management"
+        ]
+      },
+      "solutions": [
+        {
+          "title": "Integrated construction solutions",
+          "image": "construction.jpg"
+        },
+        {
+          "title": "Proven technical expertise",
+          "image": "workers.jpg"
+        },
+        {
+          "title": "Modern and efficient equipment",
+          "image": "equipment.jpg"
+        }
+      ]
+    },
+    "expertise": {
+      "title": "Our areas of expertise",
+      "items": [
+        {
+          "title": "Road infrastructure & civil engineering",
+          "description": "Roads, highways, ports and complete infrastructure including innovative and sustainable solutions."
+        },
+        {
+          "title": "Technical Expertise",
+          "description": "Our collaborators with the best international difficulties to deliver the best industry standards.",
+          "list": [
+            "Technical studies and BIM design",
+            "Modular and prefabricated construction",
+            "Environmental and ESG management",
+            "Infrastructure asset maintenance & management"
+          ]
+        },
+        {
+          "title": "Financial Expertise",
+          "description1": "Structuring of sovereign and institutional financing",
+          "description2": "Specialization in Sub-Saharan Africa sectors",
+          "list": [
+            "Syndicated fundraising",
+            "Public-Private Partnerships",
+            "Infrastructure asset management",
+            "Borrower securitization with Public-Private expertise"
+          ]
+        }
+      ]
+    },
+    "realizations": {
+      "title": "Our Realizations",
+      "projects": [
+        {
+          "id": 1,
+          "title": "Project 1",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "image": "realization-1.jpg",
+          "cta": "Learn more"
+        },
+        {
+          "id": 2,
+          "title": "Project 2",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "image": "realization-2.jpg",
+          "cta": "Learn more"
+        },
+        {
+          "id": 3,
+          "title": "Project 3",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "image": "realization-3.jpg",
+          "cta": "Learn more"
+        },
+        {
+          "id": 4,
+          "title": "Project 4",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "image": "realization-4.jpg",
+          "cta": "Learn more"
+        }
+      ],
+      "sliderButtons": {
+        "prev": "Previous",
+        "next": "Next"
+      }
+    },
+    "news": {
+      "title": "Our News",
+      "articles": [
+        {
+          "id": 1,
+          "title": "Article Title 1",
+          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "date": "25/11/2024",
+          "image": "news-1.jpg",
+          "readMore": "Read more →"
+        },
+        {
+          "id": 2,
+          "title": "Article Title 2",
+          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "date": "24/11/2024",
+          "image": "news-2.jpg",
+          "readMore": "Read more →"
+        },
+        {
+          "id": 3,
+          "title": "Article Title 3",
+          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "date": "27/11/2024",
+          "image": "news-3.jpg",
+          "readMore": "Read more →"
+        },
+        {
+          "id": 4,
+          "title": "Article Title 4",
+          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "date": "28/11/2024",
+          "image": "news-4.jpg",
+          "readMore": "Read more →"
+        }
+      ],
+      "viewAll": "View all news"
+    },
+    "contact": {
+      "title": "Stay in touch",
+      "description": "We would be happy to help you with your infrastructure projects.",
+      "form": {
+        "nameLabel": "Name",
+        "namePlaceholder": "Your name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "your.email@example.com",
+        "subjectLabel": "Subject",
+        "subjectPlaceholder": "Subject of your message",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Your message...",
+        "submit": "Send message"
+      },
+      "info": {
+        "address": {
+          "title": "Address",
+          "value": "123 Infrastructure Street\n75000 Paris, France"
+        },
+        "phone": {
+          "title": "Phone",
+          "value": "+33 1 23 45 67 89"
+        },
+        "email": {
+          "title": "Email",
+          "value": "contact@aridge.com"
+        }
+      }
+    },
+    "footer": {
+      "sections": {
+        "aridge": {
+          "title": "Aridge",
+          "description": "Infrastructure construction and financing."
+        },
+        "navigation": {
+          "title": "Navigation",
+          "links": [
+            { "label": "Home", "href": "/" },
+            { "label": "Services", "href": "#services" },
+            { "label": "Expertise", "href": "#expertise" },
+            { "label": "Realizations", "href": "#realizations" },
+            { "label": "News", "href": "#news" }
+          ]
+        },
+        "hattGroup": {
+          "title": "Hatt International Group",
+          "description": "Design of road and highway infrastructure."
+        },
+        "social": {
+          "title": "Social Media",
+          "links": [
+            { "label": "LinkedIn", "href": "#" },
+            { "label": "Instagram", "href": "#" },
+            { "label": "Facebook", "href": "#" }
+          ]
+        }
+      },
+      "bottom": {
+        "copyright": "© Aridge 2025. All rights reserved.",
+        "links": [
+          { "label": "Terms and conditions", "href": "#" },
+          { "label": "Privacy policy", "href": "#" }
+        ]
+      }
+    }
+  }
+}

@@ -1,13 +1,11 @@
 <template>
-  <section class="hero">
-    <div class="hero-content">
+  <section class="hero" :style="{ backgroundImage: `url('/hero-beach.jpg')` }">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
       <div class="hero-text">
         <h1 class="hero-title">Construction et financement d'infrastructure</h1>
         <p class="hero-subtitle">En savoir plus</p>
         <button class="btn btn-primary">En savoir plus</button>
-      </div>
-      <div class="hero-image">
-        <img src="/hero-beach.jpg" alt="Aridge Infrastructure" />
       </div>
     </div>
   </section>
@@ -19,31 +17,43 @@
 
 <style scoped>
 .hero {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-  color: white;
-  padding: var(--spacing-3xl) 0;
   position: relative;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
-.hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-2xl);
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(27, 122, 126, 0.85) 0%, rgba(47, 163, 167, 0.75) 100%);
+  z-index: 1;
 }
 
-.hero-text {
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: var(--spacing-3xl) var(--spacing-md);
+  max-width: 600px;
   animation: slideInUp 0.8s ease-out;
 }
 
+.hero-text {
+  width: 100%;
+}
+
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.2;
   margin-bottom: var(--spacing-lg);
   color: white;
 }
@@ -54,29 +64,38 @@
   opacity: 0.95;
 }
 
-.hero-image {
-  position: relative;
-  animation: fadeIn 1s ease-out;
+.btn {
+  margin-top: var(--spacing-lg);
 }
 
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+@media (max-width: 1024px) {
+  .hero {
+    height: 450px;
+    background-attachment: scroll;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .hero {
+    height: 400px;
+    background-attachment: scroll;
+  }
+
   .hero-content {
-    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding: var(--spacing-2xl) var(--spacing-md);
   }
 
   .hero-title {
     font-size: 1.8rem;
   }
 
-  .hero {
-    padding: var(--spacing-2xl) 0;
+  .hero-subtitle {
+    font-size: 1rem;
   }
 }
 </style>

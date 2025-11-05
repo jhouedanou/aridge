@@ -12,6 +12,7 @@ Ce document décrit l'architecture et la structure du site web Aridge, construit
 - **Server**: Nitro (v2.12.9)
 - **Language**: TypeScript
 - **Styling**: CSS3 avec Variables CSS
+- **Font**: Source Sans Pro (Google Fonts) - Weights: 400, 600, 700
 - **Node.js**: v18.17.0+
 
 ## Structure du Projet
@@ -165,6 +166,7 @@ Route principale affichant tous les composants de section:
 Définis dans `assets/styles/main.css`:
 
 ```css
+/* Couleurs */
 --color-primary: #1b7a7e           /* Couleur primaire */
 --color-primary-dark: #0f5156      /* Variante sombre */
 --color-primary-light: #2fa3a7     /* Variante claire */
@@ -174,7 +176,28 @@ Définis dans `assets/styles/main.css`:
 --color-bg-light: #f5f7f8          /* Arrière-plan clair */
 --color-bg-white: #ffffff          /* Arrière-plan blanc */
 --color-accent: #4db8c4            /* Couleur d'accent */
+
+/* Typographie */
+--font-primary: 'Source Sans Pro', sans-serif
+--font-weight-regular: 400         /* Texte courant */
+--font-weight-semibold: 600        /* Boutons et éléments UI */
+--font-weight-bold: 700            /* Titres et éléments gras */
+
+/* Espacement */
+--spacing-xs: 0.25rem
+--spacing-sm: 0.5rem
+--spacing-md: 1rem
+--spacing-lg: 1.5rem
+--spacing-xl: 2rem
+--spacing-2xl: 3rem
+--spacing-3xl: 4rem
 ```
+
+### Typographie
+- **Font**: Source Sans Pro (Google Fonts)
+- **Regular (400)**: Utilisée pour le texte courant et les paragraphes
+- **Semibold (600)**: Utilisée pour les boutons et éléments UI importants
+- **Bold (700)**: Utilisée pour tous les titres (h1-h6) et texte gras
 
 ### Points de Rupture Responsive
 - **Desktop**: > 768px

@@ -174,6 +174,7 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
   font-weight: 700;
   font-size: 1.2rem;
   color: var(--color-primary);
+  padding-top: 3em;
 
   a {
     display: flex;
@@ -188,9 +189,13 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
     transition: all 0.3s ease;
   }
 
-  &.scrolled img {
-    width: auto;
-    height: 110.67px;
+  &.scrolled {
+    padding-top: 0 !important;
+    
+    img {
+      width: auto;
+      height: 110.67px;
+    }
   }
 }
 

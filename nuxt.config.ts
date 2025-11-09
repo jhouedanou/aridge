@@ -12,6 +12,12 @@ export default defineNuxtConfig({
   },
   modules: [],
   ssr: true,
+  nitro: {
+    preset: 'netlify'
+  },
+  app: {
+    baseURL: '/',
+  },
   components: {
     dirs: [
       {

@@ -31,7 +31,8 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
   background-position: center;
   background-attachment: fixed;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-start;
   overflow: hidden;
 }
 
@@ -40,9 +41,11 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
   z-index: 2;
   color: white;
   padding: 0;
-  max-width: 1280px;
+  padding-bottom: 6em;
+  width: 442px;
   animation: slideInUp 0.8s ease-out;
-  margin: 0 auto;
+  margin: 0;
+  margin-bottom: 0em;
 }
 
 .hero-text {

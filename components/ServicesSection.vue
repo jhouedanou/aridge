@@ -9,7 +9,7 @@
           </div>
           <div class="col-md-7 col-12">
             <ul>
-              <li class="mb-3">
+              <li class="mb-lg">
                 <div class="halt col-12 row">
                   <div class="col-md-8 col-12">
                     <p><strong>Halt International Group,</strong> conglomérat djiboutien actif dans les secteurs du BTP, du génie civil, de la logistique et des services industriels.</p>

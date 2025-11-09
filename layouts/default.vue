@@ -1,6 +1,7 @@
 <template>
   <div class="layout-default">
     <Header />
+    <SocialSidebar />
     <main>
       <slot />
     </main>
@@ -11,6 +12,7 @@
 <script setup lang="ts">
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
+import SocialSidebar from '~/components/SocialSidebar.vue'
 </script>
 
 <style scoped>

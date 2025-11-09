@@ -1,22 +1,35 @@
 <template>
   <section id="services" class="services">
     <div class="container">
-      <div class="who-section">
         <div class="who-content">
           <h2>Qui sommes-nous ?</h2>
           <div class="row">
-          <div class="col-md-8 col-12">
-            <p>Africa Roads & Infrastructure Development Group (ARIDGE) est une <strong>entreprise panafricaine d'ingénierie</strong>, de construction et de financement d'infrastructures, fondée en République de Djibouti. Elle est le fruit d'un joint-venture stratégique entre :</p>
+          <div class="col-md-5 col-12">
+            <p>Africa Roads &amp; Infrastructure Development Group (ARIDGE) est une <strong>entreprise panafricaine d'ingénierie</strong>, de construction et de financement d'infrastructures, fondée en République de Djibouti. Elle est le fruit d'un joint-venture stratégique entre :</p>
           </div>
-          <div class="col-md-4 col-12">
-two
-          </div>
-          </div>
-
-          <div class="logo-item">
-            <img src="/imaar.svg" alt="IMAAR Financial Group" />
-            <h4>Imaad Financial Group (IFG)</h4>
-            <p>Spécialisé dans le financement structuré des infrastructures.</p>
+          <div class="col-md-7 col-12">
+            <ul>
+              <li class="mb-3">
+                <div class="halt col-12 row">
+                  <div class="col-md-8 col-12">
+                    <p><strong>Halt International Group,</strong> conglomérat djiboutien actif dans les secteurs du BTP, du génie civil, de la logistique et des services industriels.</p>
+                  </div>
+                  <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
+                    <img src="/halt.svg" alt="Halt" />
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="halt col-12 row">
+                  <div class="col-md-8 col-12">
+                    <p><strong>Imaad Financial Group (IFG),</strong> banque d’affaires panafricaine de référence, basée à Abidjan, Côte d’Ivoire, spécialisée dans le financement d’infrastructures, les PPP, le conseil stratégique et la structuration financière.</p>
+                  </div>
+                  <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
+                    <img src="/imaad.svg" alt="IMAAD Financial Group" />
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -82,20 +95,19 @@ two
   margin-bottom: var(--spacing-3xl);
 }
 
-.who-content h2 {
-  @include primary-button;
-  margin-bottom: var(--spacing-lg);
-  font-size: 22px !important;
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  border: none;
+.who-content {
+  padding-bottom: 5em;
+  
+  h2 {
+    @include primary-button;
+    margin-bottom: var(--spacing-lg);
+    font-size: 22px !important;
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: none;
+  }
 }
 
-.who-content p {
-  font-size: 1rem;
-  color: var(--color-text-light);
-  line-height: 1.8;
-}
 
 .who-logos {
   display: grid;

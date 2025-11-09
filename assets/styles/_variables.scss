@@ -18,13 +18,18 @@ $secondary: #E2EBED;
 }
 
 @mixin paragraph-text {
-  font-family: 'Source Sans Pro', var(--font-primary);
+  font-family: 'Source Sans Pro Light', 'Source Sans Pro', var(--font-primary);
   font-size: 22px;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.14;
+  line-height: 1.44;
   letter-spacing: normal;
   text-align: left;
   color: #000;
+  
+  strong {
+    font-family: 'Source Sans Pro SemiBold', 'Source Sans Pro', var(--font-primary);
+    font-weight: 600;
+  }
 }

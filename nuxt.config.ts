@@ -13,7 +13,8 @@ export default defineNuxtConfig({
   modules: [],
   ssr: true,
   nitro: {
-    preset: 'netlify'
+    preset: 'netlify',
+    compatibilityDate: '2024-05-07'
   },
   app: {
     baseURL: '/',

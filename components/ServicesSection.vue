@@ -96,6 +96,8 @@
 }
 
 .who-content {
+
+    padding-top: 2em;
   padding-bottom: 5em;
   
   h2 {

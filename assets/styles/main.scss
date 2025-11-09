@@ -622,3 +622,12 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary-dark);
 }
+  .custom-arrow{
+    position: absolute;
+  }
+  .custom-prev{
+    left: 10px;
+   }
+  .custom-next{
+    right: 10px;
+   }

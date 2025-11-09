@@ -4,62 +4,75 @@
         <div class="who-content">
           <h2>Qui sommes-nous ?</h2>
           <div class="row">
-          <div class="col-md-5 col-12">
-            <p>Africa Roads &amp; Infrastructure Development Group (ARIDGE) est une <strong>entreprise panafricaine d'ingénierie</strong>, de construction et de financement d'infrastructures, fondée en République de Djibouti. Elle est le fruit d'un joint-venture stratégique entre :</p>
+            <div class="col-md-5 col-12">
+              <p>Africa Roads &amp; Infrastructure Development Group (ARIDGE) est une <strong>entreprise panafricaine d'ingénierie</strong>, de construction et de financement d'infrastructures, fondée en République de Djibouti. Elle est le fruit d'un joint-venture stratégique entre :</p>
+            </div>
+            <div class="col-md-7 col-12">
+              <ul>
+                <li class="mb-lg">
+                  <div class="halt col-12 row">
+                    <div class="col-md-8 col-12">
+                      <p><strong>Halt International Group,</strong> conglomérat djiboutien actif dans les secteurs du BTP, du génie civil, de la logistique et des services industriels.</p>
+                    </div>
+                    <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
+                      <img src="/halt.svg" alt="Halt" />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="halt col-12 row">
+                    <div class="col-md-8 col-12">
+                      <p><strong>Imaad Financial Group (IFG),</strong> banque d'affaires panafricaine de référence, basée à Abidjan, Côte d'Ivoire, spécialisée dans le financement d'infrastructures, les PPP, le conseil stratégique et la structuration financière.</p>
+                    </div>
+                    <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
+                      <img src="/imaad.svg" alt="IMAAD Financial Group" />
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="col-md-7 col-12">
-            <ul>
-              <li class="mb-lg">
-                <div class="halt col-12 row">
-                  <div class="col-md-8 col-12">
-                    <p><strong>Halt International Group,</strong> conglomérat djiboutien actif dans les secteurs du BTP, du génie civil, de la logistique et des services industriels.</p>
-                  </div>
-                  <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
-                    <img src="/halt.svg" alt="Halt" />
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="halt col-12 row">
-                  <div class="col-md-8 col-12">
-                    <p><strong>Imaad Financial Group (IFG),</strong> banque d’affaires panafricaine de référence, basée à Abidjan, Côte d’Ivoire, spécialisée dans le financement d’infrastructures, les PPP, le conseil stratégique et la structuration financière.</p>
-                  </div>
-                  <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
-                    <img src="/imaad.svg" alt="IMAAD Financial Group" />
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-       
-      </div>
-
-      <div class="expertise-sections">
-        <div class="expertise-box">
-          <h3>Nos services d'assistance</h3>
-          <ul>
-            <li>Études techniques et conception BIM</li>
-            <li>Construction modulaire et préfabriquée</li>
-            <li>Gestion environnementale et ESG</li>
-            <li>Maintenance et gestion d'actifs d'infrastructures</li>
-          </ul>
-        </div>
-
-        <div class="expertise-box">
-          <h3>Nos services Financiers</h3>
-          <p>Structuration de financements souverains et institutionnels</p>
-          <p>Spécialisation dans les domaines de l'Afrique Subsaharienne</p>
-          <ul class="inline-list">
-            <li>Levée de fonds syndicalisés</li>
-            <li>Partenariats Public-Privés</li>
-            <li>Gestion d'actifs de infrastructures</li>
-          </ul>
         </div>
       </div>
+      
+      <!-- Carousel des métiers avec Owl Carousel -->
+      <div class="carousel-des-metiers">
+        <!-- Flèches externes -->
+        <button class="custom-arrow custom-prev" @click="prevSlide">
+          <img :src="'/slide1/arrowPrev.svg'" alt="Précédent" />
+        </button>
+        
+        <div class="carousel-wrapper">
+          <div class="owl-carousel owl-theme" ref="owlCarousel">
+            <div class="item">
+              <div class="carousel-card">
+                 <img src="/slide1/01.jpg" alt="Construction" class="carousel-image" />
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="carousel-card">
+                <img src="/slide1/02.jpg" alt="Construction" class="carousel-image" />
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="carousel-card">
+                 <img src="/slide1/03.jpg" alt="Construction" class="carousel-image" />
+              </div>
+            </div>
+            
+           
+          </div>
+        </div>
+        
+        <button class="custom-arrow custom-next" @click="nextSlide">
+          <img :src="'/slide1/arrowNext.svg'" alt="Suivant" />
+        </button>
+      </div>
 
-      <div class="solutions-grid">
+      <div class="container">
+        <div class="solutions-grid">
         <div class="solution-item">
           <img src="/construction.jpg" alt="Construction" />
           <p>Solutions de construction intégrées</p>
@@ -72,13 +85,90 @@
           <img src="/equipment.jpg" alt="Équipements" />
           <p>Équipements modernes et performants</p>
         </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
 // Services section component
+const owlCarousel = ref<HTMLElement>()
+let $owlCarousel: any = null
+
+onMounted(() => {
+  // Dynamically load jQuery and Owl Carousel
+  const loadScript = (src: string) => {
+    return new Promise((resolve) => {
+      const script = document.createElement('script')
+      script.src = src
+      script.onload = resolve
+      document.head.appendChild(script)
+    })
+  }
+
+  const loadCSS = (href: string) => {
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = href
+    document.head.appendChild(link)
+  }
+
+  // Load CSS files
+  loadCSS('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css')
+  loadCSS('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css')
+
+  // Load jQuery and then Owl Carousel
+  loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+    .then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'))
+    .then(() => {
+      // Initialize Owl Carousel
+      if (owlCarousel.value) {
+        $owlCarousel = (window as any).$(owlCarousel.value).owlCarousel({
+          items: 3,
+          loop: true,
+          margin: 20,
+          autoplay: true,
+          autoplayTimeout: 4000,
+          autoplayHoverPause: true,
+          nav: false, // Désactiver les flèches intégrées
+          dots: false, // Désactiver les points de progression
+          responsive: {
+            0: {
+              items: 1
+            },
+            768: {
+              items: 2
+            },
+            1024: {
+              items: 3
+            }
+          }
+        })
+      }
+    })
+})
+
+// Custom navigation functions
+const nextSlide = () => {
+  if ($owlCarousel) {
+    $owlCarousel.trigger('next.owl.carousel')
+  }
+}
+
+const prevSlide = () => {
+  if ($owlCarousel) {
+    $owlCarousel.trigger('prev.owl.carousel')
+  }
+}
+
+onUnmounted(() => {
+  // Destroy Owl Carousel instance
+  if ($owlCarousel) {
+    $owlCarousel.trigger('destroy.owl.carousel')
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -110,6 +200,102 @@
   }
 }
 
+/* Carousel des métiers avec Owl Carousel */
+.carousel-des-metiers {
+  padding: var(--spacing-2xl) 0;
+  background: white; /* Fond blanc */
+  margin-bottom: var(--spacing-3xl);
+  position: relative; /* Pour le positionnement des flèches */
+      max-width: 1400px;
+    margin: 0 auto;
+    min-width: 1200px;
+}
+
+.carousel-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Owl Carousel Items */
+.owl-carousel .item {
+  padding: 0 var(--spacing-sm);
+}
+
+.carousel-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 250px;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Flèches personnalisées */
+.custom-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  
+  img {
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+    
+    img {
+      opacity: 0.8;
+    }
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+.custom-prev {
+  left: 10px;
+}
+
+.custom-next {
+  right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-des-metiers {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .carousel-card {
+    height: 200px;
+  }
+
+  .custom-prev {
+    left: 5px;
+  }
+
+  .custom-next {
+    right: 5px;
+  }
+}
 
 .who-logos {
   display: grid;
@@ -245,5 +431,6 @@
   .expertise-sections {
     grid-template-columns: 1fr;
   }
+
 }
 </style>

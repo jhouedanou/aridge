@@ -1,6 +1,6 @@
 <template>
   <section class="hero" :style="{ backgroundImage: `url('/bg.jpg')` }">
-    <div class="container p-0 woubi">
+    <div class="container p-0 woubi w-100">
       <div class="hero-content">
 
       <div class="hero-text">
@@ -27,6 +27,7 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 .hero {
   position: relative;
   height: 100vh;
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -76,17 +77,7 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
   margin-top: var(--spacing-lg);
   
   &.btn-primary {
-    background-color: #0a6678;
-    font-family: 'Source Sans Pro', var(--font-primary);
-    font-size: 22px;
-    font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 0.64;
-    letter-spacing: normal;
-    text-align: left;
-    color: #fff;
-    border-radius: 10px;
+    @include primary-button;
   }
 }
 

@@ -4,22 +4,18 @@
       <div class="who-section">
         <div class="who-content">
           <h2>Qui sommes-nous ?</h2>
-          <p>Aridge Roads & Infrastructure Development Group spécialiste de la conception, du financement et de la réalisation d'infrastructures, notamment dans les domaines de la logistique et des services industriels.</p>
-        </div>
-
-        <div class="who-logos">
-          <div class="logo-item">
-            <img src="/hh-group.svg" alt="HH Group" />
-            <h4>Hatt International Group</h4>
-            <p>Conception d'infrastructures routières et autoroutières avec expertise en BTP.</p>
+          <div class="row">
+          <div class="col-md-8 col-12">
+            <p>Africa Roads & Infrastructure Development Group (ARIDGE) est une <strong>entreprise panafricaine d'ingénierie</strong>, de construction et de financement d'infrastructures, fondée en République de Djibouti. Elle est le fruit d'un joint-venture stratégique entre :</p>
+          </div>
+          <div class="col-md-4 col-12">
+two
+          </div>
           </div>
 
-          <div class="logo-item">
-            <img src="/imaar.svg" alt="IMAAR Financial Group" />
-            <h4>Imaar Financial Group (IFG)</h4>
-            <p>Spécialisé dans le financement structuré des infrastructures.</p>
-          </div>
         </div>
+
+       
       </div>
 
       <div class="expertise-sections">
@@ -67,7 +63,7 @@
 // Services section component
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .services {
   padding: var(--spacing-3xl) 0;
   background-color: var(--color-bg-white);
@@ -82,9 +78,12 @@
 }
 
 .who-content h2 {
-  color: var(--color-primary);
+  @include primary-button;
   margin-bottom: var(--spacing-lg);
-  font-size: 2rem;
+  font-size: 22px !important;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: none;
 }
 
 .who-content p {

@@ -16,7 +16,7 @@
 
           <div class="logo-item">
             <img src="/imaar.svg" alt="IMAAR Financial Group" />
-            <h4>Imaar Financial Group (IFG)</h4>
+            <h4>Imaad Financial Group (IFG)</h4>
             <p>Spécialisé dans le financement structuré des infrastructures.</p>
           </div>
         </div>

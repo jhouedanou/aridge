@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.7.4",
-    "nuxi": "^3.13.2"
+    "nuxi": "^3.13.2",
+    "sass": "^1.93.3"
   }
 }

@@ -1,11 +1,12 @@
 <template>
-  <section class="hero" :style="{ backgroundImage: `url('/hero-beach.jpg')` }">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
+  <section class="hero" :style="{ backgroundImage: `url('/bg.jpg')` }">
+    <div class="container p-0 woubi">
+      <div class="hero-content">
+
       <div class="hero-text">
         <h1 class="hero-title">{{ heroTitle }}</h1>
-        <p class="hero-subtitle">{{ heroSubtitle }}</p>
         <button class="btn btn-primary">{{ heroCTA }}</button>
+      </div>
       </div>
     </div>
   </section>
@@ -22,10 +23,10 @@ const heroSubtitle = computed(() => getText('hero.subtitle', 'En savoir plus'))
 const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .hero {
   position: relative;
-  height: 500px;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -34,23 +35,14 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
   overflow: hidden;
 }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(27, 122, 126, 0.85) 0%, rgba(47, 163, 167, 0.75) 100%);
-  z-index: 1;
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
   color: white;
-  padding: var(--spacing-3xl) var(--spacing-md);
-  max-width: 600px;
+  padding: 0;
+  max-width: 1280px;
   animation: slideInUp 0.8s ease-out;
+  margin: 0 auto;
 }
 
 .hero-text {
@@ -58,11 +50,17 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  line-height: 1.2;
+  text-shadow: 0 6px 9px rgba(0, 0, 0, 0.16);
+  font-family: 'Source Sans Pro', var(--font-primary);
+  font-size: 61px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.95;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
   margin-bottom: var(--spacing-lg);
-  color: white;
 }
 
 .hero-subtitle {
@@ -73,6 +71,20 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 
 .btn {
   margin-top: var(--spacing-lg);
+  
+  &.btn-primary {
+    background-color: #0a6678;
+    font-family: 'Source Sans Pro', var(--font-primary);
+    font-size: 22px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.64;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fff;
+    border-radius: 10px;
+  }
 }
 
 @media (max-width: 1024px) {

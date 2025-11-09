@@ -1,19 +1,47 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ scrolled: isScrolled }">
     <div class="container">
       <div class="header-content">
-        <div class="logo">
+        <div class="logo" :class="{ scrolled: isScrolled }">
           <NuxtLink to="/">
             <img src="/logo.svg" alt="Aridge Logo" />
-            <span class="logo-text">ARIDGE</span>
           </NuxtLink>
         </div>
-        <nav class="nav" :class="{ active: mobileMenuOpen }">
+        <div class="rightcontainer">
+          <div class="search-container">
+            <div class="search-box">
+              <input type="text" class="search-input" placeholder="Rechercher..." />
+              <button class="search-btn">
+                <img src="/searchbtn.svg" alt="Rechercher" />
+              </button>
+            </div>
+          </div>
+           <nav class="nav" :class="{ active: mobileMenuOpen }">
           <NuxtLink to="/" class="nav-link">{{ navHome }}</NuxtLink>
-          <NuxtLink to="#services" class="nav-link">{{ navServices }}</NuxtLink>
-          <NuxtLink to="#expertise" class="nav-link">{{ navExpertise }}</NuxtLink>
+          <div class="nav-item dropdown">
+            <NuxtLink to="#services" class="nav-link">{{ navServices }}</NuxtLink>
+            <div class="dropdown-menu">
+              <NuxtLink to="#infrastructure" class="dropdown-link">Infrastructure & génie civil</NuxtLink>
+              <NuxtLink to="#habitat" class="dropdown-link">Habitat et logement</NuxtLink>
+              <NuxtLink to="#hydraulique" class="dropdown-link">Hydraulique et assainissement</NuxtLink>
+              <NuxtLink to="#logistique" class="dropdown-link">Logistique et zone éco</NuxtLink>
+            </div>
+          </div>
+          <div class="nav-item dropdown">
+            <NuxtLink to="#expertise" class="nav-link">{{ navExpertise }}</NuxtLink>
+            <div class="dropdown-menu">
+              <NuxtLink to="#technique" class="dropdown-link">Technique</NuxtLink>
+              <NuxtLink to="#financiere" class="dropdown-link">Financière</NuxtLink>
+            </div>
+          </div>
           <NuxtLink to="#realizations" class="nav-link">{{ navRealizations }}</NuxtLink>
-          <NuxtLink to="#news" class="nav-link">{{ navNews }}</NuxtLink>
+          <div class="nav-item dropdown">
+            <NuxtLink to="#news" class="nav-link">{{ navNews }}</NuxtLink>
+            <div class="dropdown-menu">
+              <NuxtLink to="#carriere" class="dropdown-link">Carrière</NuxtLink>
+              <NuxtLink to="#media" class="dropdown-link">Média</NuxtLink>
+            </div>
+          </div>
           <NuxtLink to="#contact" class="nav-link">{{ navContact }}</NuxtLink>
         </nav>
         <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen">
@@ -21,17 +49,31 @@
           <span></span>
           <span></span>
         </button>
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useContent } from '~/composables/useContent'
 
 const mobileMenuOpen = ref(false)
+const isScrolled = ref(false)
 const { getText } = useContent()
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 
 const navHome = computed(() => getText('header.nav.home', 'Accueil'))
 const navServices = computed(() => getText('header.nav.services', 'Services'))
@@ -41,20 +83,89 @@ const navNews = computed(() => getText('header.nav.news', 'Actualités'))
 const navContact = computed(() => getText('header.nav.contact', 'Contact'))
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header {
-  background-color: var(--color-bg-white);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  position: sticky;
+  background-color: transparent;
+  box-shadow: none;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
+  transition: all 0.3s ease;
+
+  &.scrolled {
+    background-color: rgba(10, 102, 120, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1em;
+  padding-bottom: 16.6px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 175px;
+  height: 26px;
+  padding: 5px 40px 4.9px 16px;
+  border-radius: 13px;
+  border: solid 1px #fff;
+  background-color: #fff;
+  font-family: 'Source Sans Pro', var(--font-primary);
+  font-size: 12px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: -0.24px;
+  text-align: left;
+  color: #8e8e8e;
+  outline: none;
+  transition: color 0.3s ease;
+
+  &::placeholder {
+    font-family: 'Source Sans Pro', var(--font-primary);
+    font-size: 12px;
+    font-weight: 300;
+    color: #8e8e8e;
+  }
+
+  &:focus {
+    color: #0a6678;
+  }
+}
+
+.search-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: var(--spacing-md) 0;
+  align-items: flex-start;
 }
 
 .logo {
@@ -63,54 +174,58 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
   font-weight: 700;
   font-size: 1.2rem;
   color: var(--color-primary);
-}
 
-.logo a {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  color: inherit;
-}
+  a {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    color: inherit;
+  }
 
-.logo img {
-  height: 40px;
-  width: auto;
-}
+  img {
+    width: 188.9px;
+    height: 215px;
+    transition: all 0.3s ease;
+  }
 
-.logo-text {
-  color: var(--color-primary);
+  &.scrolled img {
+    width: auto;
+    height: 110.67px;
+  }
 }
 
 .nav {
   display: flex;
   gap: var(--spacing-lg);
-  align-items: center;
+  align-items: flex-start;
+  margin-left: auto;
+  justify-content: flex-end;
+  padding-bottom: 1em;
 }
 
 .nav-link {
-  color: var(--color-text-dark);
-  font-weight: 500;
+  font-family: 'Source Sans Pro', var(--font-primary);
+  font-size: 18px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.78;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
   position: relative;
-  transition: color var(--transition-speed);
-}
+  transition: all var(--transition-speed);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border-radius: 4px;
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-primary);
-  transition: width var(--transition-speed);
-}
-
-.nav-link:hover {
-  color: var(--color-primary);
-}
-
-.nav-link:hover::after {
-  width: 100%;
+  &:hover {
+    background-color: #8acde5;
+    color: #fff;
+  }
 }
 
 .mobile-menu-btn {
@@ -120,14 +235,69 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
   border: none;
   cursor: pointer;
   gap: 6px;
+
+  span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    transition: all var(--transition-speed);
+  }
 }
 
-.mobile-menu-btn span {
-  width: 25px;
-  height: 3px;
-  background-color: var(--color-primary);
-  border-radius: 2px;
-  transition: all var(--transition-speed);
+.nav-item {
+  position: relative;
+  
+  &.dropdown {
+    &:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(10, 102, 120, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 0;
+  min-width: 250px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  height: 63px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Source Sans Pro', var(--font-primary);
+  font-size: 15px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border-top: 1px solid #fff;
+  
+  &:first-child {
+    border-top: none;
+  }
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
 @media (max-width: 768px) {
@@ -141,31 +311,31 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
     left: 0;
     right: 0;
     flex-direction: column;
-    background-color: var(--color-bg-white);
+    background-color: transparent;
     padding: var(--spacing-lg);
     gap: var(--spacing-md);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
     max-height: 0;
     overflow: hidden;
     transition: max-height var(--transition-speed);
-  }
 
-  .nav.active {
-    max-height: 500px;
+    &.active {
+      max-height: 500px;
+    }
   }
 
   .nav-link {
     width: 100%;
     padding: var(--spacing-md);
-  }
 
-  .nav-link::after {
-    display: none;
-  }
+    &::after {
+      display: none;
+    }
 
-  .nav-link:hover {
-    background-color: var(--color-bg-light);
-    border-radius: 4px;
+    &:hover {
+      background-color: var(--color-bg-light);
+      border-radius: 4px;
+    }
   }
 }
 </style>

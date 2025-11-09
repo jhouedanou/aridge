@@ -21,6 +21,7 @@ dist
 .nuxt
 .output
 build
+.netlify
 
 # Misc
 .DS_Store

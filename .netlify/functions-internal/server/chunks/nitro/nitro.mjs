@@ -3999,7 +3999,7 @@ function _expandFromEnv(value) {
 const _inlineRuntimeConfig = {
   "app": {
     "baseURL": "/",
-    "buildId": "51744726-6f08-4e7d-a6f4-5d67825c2874",
+    "buildId": "a560bd38-bd84-4d65-a187-af2660e6b996",
     "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
@@ -4431,12 +4431,12 @@ const plugins = [
 
 const _SxA8c9 = defineEventHandler(() => {});
 
-const _lazy_vIz4FT = () => import('../routes/renderer.mjs').then(function (n) { return n.r; });
+const _lazy_RMn6wQ = () => import('../routes/renderer.mjs').then(function (n) { return n.r; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_vIz4FT, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_RMn6wQ, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_vIz4FT, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_RMn6wQ, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {

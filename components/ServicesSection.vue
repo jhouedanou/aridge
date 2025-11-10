@@ -401,8 +401,8 @@ onUnmounted(() => {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  width: 21px;
-  height: 21px;
+  width: 42px;
+  height: 42px;
 
   img {
     display: block;

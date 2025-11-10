@@ -1,39 +1,83 @@
 <template>
   <section id="realizations" class="realizations background-secondary mb-4">
-     <div class="container p-0 woubi w-100">
+    <div class="container p-0 woubi w-100">
       <div class="who-content animate-section">
-        <h2 class="animate-title">Notre expertise technique</h2>
+        <h2 class="animate-title">Notre expertise financière</h2>
         <div class="container">
           <div class="row">
 
             <div class="col-md-6 col-12 letexte animate-content expertise-text">
-              <p>Imaad Financial Group joue un rôle clé dans la réussite d’ARIDGE, en apportant : 
+              <p>Imaad Financial Group joue un rôle clé dans la réussite d’ARIDGE, en apportant :
 
-Structuration de financements souverains et institutionnels (banques, fonds, assureurs)
-
- • Montage et sécurisation de Partenariats Public-Privé (PPP) avec garanties d’État
-
- • Levier de syndication panafricaine et internationale
-
- • Gestion d’actifs liés aux infrastructures (routes à péage, résidences étudiantes, zones économiques spéciales)
-
- • Structuration ESG pour attirer les financeurs à impact et green funds</p>
-              <p class="animate-item" style="--animate-delay: 0.1s"><strong>Études techniques et conception BIM</strong>
-              </p>
               <ul>
-                <li class="animate-item" style="--animate-delay: 0.2s">Maîtrise d'œuvre tous corps d'état (TCE)</li>
-                <li class="animate-item" style="--animate-delay: 0.3s">Construction modulaire et préfabriquée</li>
-                <li class="animate-item" style="--animate-delay: 0.4s">Gestion environnementale & conformité ESG</li>
-                <li class="animate-item" style="--animate-delay: 0.5s">Maintenance & gestion d'actifs infrastructurels
-                </li>
+                <li class="animate-item" style="--animate-delay: 0.1s">Structuration de financements souverains et
+                  institutionnels (banques, fonds, assureurs)</li>
+                <li class="animate-item" style="--animate-delay: 0.2s"><strong>Montage et sécurisation de Partenariats
+                    Public-Privé (PPP)</strong> avec garanties d'État</li>
+                <li class="animate-item" style="--animate-delay: 0.3s"><strong>Levier de syndication</strong>
+                  panafricaine et internationale</li>
+                <li class="animate-item" style="--animate-delay: 0.4s"><strong>Gestion d'actifs</strong> liés aux
+                  infrastructures (routes à péage, résidences étudiantes, zones économiques spéciales)</li>
+                <li class="animate-item" style="--animate-delay: 0.5s"><strong>Structuration ESG</strong> pour attirer
+                  les financeurs à impact et green funds</li>
               </ul>
+              </p>
+
             </div>
             <div class="col-md-6 col-12 lesimages">
               <div class="row">
-                <div class="col-md-6 col-2 expertise-image mb-2"><div class="inner" style="background-image: url('/expertise/01.webp')"></div></div>
-                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/02.webp')"></div></div>
-                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/03.webp')"></div></div>
-                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/04.webp')"></div></div>
+                <div class="col-md-12 col-12 expertise-image m-4">
+                  <div class="inner" style="background-image: url('/financiere/01.webp')"></div>
+                </div>
+                <div class="col-md-6 col-12 expertise-image m-4">
+                  <div class="inner" style="background-image: url('/financiere/02.webp')"></div>
+                </div>
+                <div class="col-md-6 col-2 expertise-image m-4">
+                  <div class="inner" style="background-image: url('/financiere/03.webp')"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section id="realizations" class="realizations background-secondary mb-4">
+    <div class="container p-0 woubi w-100">
+      <div class="who-content animate-section">
+        <h2 class="animate-title">Nos réalisations</h2>
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-4 col-12 letexte animate-content expertise-text">
+              <p>Imaad Financial Group joue un rôle clé dans la réussite d’ARIDGE, en apportant :
+
+              <ul>
+                <li class="animate-item" style="--animate-delay: 0.1s">Structuration de financements souverains et
+                  institutionnels (banques, fonds, assureurs)</li>
+                <li class="animate-item" style="--animate-delay: 0.2s"><strong>Montage et sécurisation de Partenariats
+                    Public-Privé (PPP)</strong> avec garanties d'État</li>
+                <li class="animate-item" style="--animate-delay: 0.3s"><strong>Levier de syndication</strong>
+                  panafricaine et internationale</li>
+                <li class="animate-item" style="--animate-delay: 0.4s"><strong>Gestion d'actifs</strong> liés aux
+                  infrastructures (routes à péage, résidences étudiantes, zones économiques spéciales)</li>
+                <li class="animate-item" style="--animate-delay: 0.5s"><strong>Structuration ESG</strong> pour attirer
+                  les financeurs à impact et green funds</li>
+              </ul>
+              </p>
+
+            </div>
+            <div class="col-md-8 col-12 lesimages">
+              <div class="row">
+                <div class="col-md-12 col-12 expertise-image m-4">
+                  <div class="inner" style="background-image: url('/financiere/01.webp')"></div>
+                </div>
+                <div class="col-md-6 col-12 expertise-image m-4">
+                  <div class="inner" style="background-image: url('/financiere/02.webp')"></div>
+                </div>
+                <div class="col-md-6 col-2 expertise-image m-4">
+                  <div class="inner" style="background-image: url('/financiere/03.webp')"></div>
+                </div>
               </div>
             </div>
           </div>

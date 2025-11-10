@@ -8,6 +8,7 @@
       playsinline
       preload="metadata"
       poster="/bg.jpg"
+      @ended="handleVideoEnd"
     >
       <source src="/videoGood.webm" type="video/webm">
       <source src="/videoGood.mp4" type="video/mp4">
@@ -21,6 +22,11 @@
       </div>
       </div>
     </div>
+    <button v-if="videoEnded" class="scroll-button" @click="scrollToNextSection" aria-label="Scroll to next section">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
   </section>
 </template>
 
@@ -30,6 +36,8 @@ import { useContent } from '~/composables/useContent'
 
 const { getText } = useContent()
 const videoElement = ref<HTMLVideoElement | null>(null)
+const heroSection = ref<HTMLElement | null>(null)
+const videoEnded = ref(false)
 
 const heroTitle = computed(() => getText('hero.title', 'Construction et financement d\'infrastructures'))
 const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
@@ -40,6 +48,19 @@ const playVideo = () => {
     videoElement.value.play().catch(error => {
       console.log('Video autoplay prevented:', error)
     })
+  }
+}
+
+const handleVideoEnd = () => {
+  videoEnded.value = true
+}
+
+const scrollToNextSection = () => {
+  if (heroSection.value) {
+    const nextSection = heroSection.value.nextElementSibling as HTMLElement
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 }
 
@@ -142,6 +163,58 @@ onMounted(() => {
 
   &.animate-button {
     animation: subtleSlideInUp 1s ease-out 0.2s both;
+  }
+}
+
+.scroll-button {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  background: var(--color-primary);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.75em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s infinite, pulse 2s infinite, blink 0.6s infinite, fadeIn 0.6s ease-out;
+  box-shadow: 0 4px 12px rgba(27, 122, 126, 0.3);
+  transition: all 0.3s ease;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    stroke: white;
+    stroke-width: 3;
+  }
+
+  &:hover {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 8px 24px rgba(27, 122, 126, 0.5);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(27, 122, 126, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 24px rgba(27, 122, 126, 0.6);
+  }
+}
+
+@keyframes blink {
+  0%, 25%, 100% {
+    opacity: 1;
+  }
+  37.5%, 62.5% {
+    opacity: 0.4;
   }
 }
 

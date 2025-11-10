@@ -22,10 +22,10 @@
             </div>
             <div class="col-md-6 col-12 lesimages">
               <div class="row">
-                <div class="col-md-6 col-2 expertise-image mb-2"><div class="inner" style="background-image: url('/expertise/01.webp')"></div></div>
-                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/02.webp')"></div></div>
-                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/03.webp')"></div></div>
-                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/04.webp')"></div></div>
+                <div class="col-md-6 col-12 expertise-image mb-2"><div class="inner" style="background-image: url('/expertise/01.webp')"></div></div>
+                <div class="col-md-6 col-12 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/02.webp')"></div></div>
+                <div class="col-md-6 col-12 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/03.webp')"></div></div>
+                <div class="col-md-6 col-12 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/04.webp')"></div></div>
               </div>
             </div>
           </div>

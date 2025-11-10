@@ -16,7 +16,7 @@
                       <p><strong>Halt International Group,</strong> conglomérat djiboutien actif dans les secteurs du BTP, du génie civil, de la logistique et des services industriels.</p>
                     </div>
                     <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
-                      <NuxtImg src="/halt.svg" alt="Halt" loading="eager" />
+                      <NuxtImg src="/halt.svg" alt="Halt" loading="eager" class="w-100"/>
                     </div>
                   </div>
                 </li>
@@ -26,7 +26,7 @@
                       <p><strong>Imaad Financial Group (IFG),</strong> banque d'affaires panafricaine de référence, basée à Abidjan, Côte d'Ivoire, spécialisée dans le financement d'infrastructures, les PPP, le conseil stratégique et la structuration financière.</p>
                     </div>
                     <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
-                      <NuxtImg src="/imaad.svg" alt="IMAAD Financial Group" loading="eager" />
+                      <NuxtImg src="/imaad.svg" alt="IMAAD Financial Group" loading="eager" class="w-100"/>
                     </div>
                   </div>
                 </li>
@@ -357,9 +357,9 @@ onUnmounted(() => {
   background:#f8f8f8; /* Fond blanc */
   margin-bottom: var(--spacing-3xl);
   position: relative; /* Pour le positionnement des flèches */
-      max-width: 1400px;
-    margin: 0 auto;
-    min-width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .carousel-wrapper {
@@ -429,39 +429,71 @@ onUnmounted(() => {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .carousel-des-metiers {
     padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .carousel-wrapper {
+    max-width: 100%;
+    padding: 0 var(--spacing-md);
+  }
+
+  .custom-prev {
+    left: 0;
+  }
+
+  .custom-next {
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-des-metiers {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .carousel-wrapper {
+    max-width: 100%;
+    padding: 0 var(--spacing-md);
   }
 
   .carousel-card {
     height: 200px;
   }
 
+  .custom-arrow {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .custom-prev {
-    left: 5px;
+    left: 0;
   }
 
   .custom-next {
-    right: 5px;
+    right: 0;
   }
-  
+
   .secteurs-owl-carousel {
     margin: 0 40px;
   }
-  
+
   .secteur-card {
     height: 350px;
   }
-  
+
   .secteur-image {
     height: 200px;
   }
-  
+
   .secteur-prev {
     left: 5px;
   }
-  
+
   .secteur-next {
     right: 5px;
   }

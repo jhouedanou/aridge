@@ -18,26 +18,26 @@
           </div>
            <nav class="nav" :class="{ active: mobileMenuOpen }">
           <NuxtLink to="/" class="nav-link">{{ navHome }}</NuxtLink>
-          <div class="nav-item dropdown">
+          <div class="nav-item dropdown" @click="toggleDropdown(0)" :class="{ 'dropdown-open': isDropdownExpanded(0) }">
             <NuxtLink to="/construction" class="nav-link">{{ navServices }}</NuxtLink>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu" :class="{ active: isDropdownExpanded(0) }">
               <NuxtLink to="/construction" class="dropdown-link">Infrastructure & génie civil</NuxtLink>
               <NuxtLink to="/construction" class="dropdown-link">Habitat et logement</NuxtLink>
               <NuxtLink to="/construction" class="dropdown-link">Hydraulique et assainissement</NuxtLink>
               <NuxtLink to="/construction" class="dropdown-link">Logistique et zone éco</NuxtLink>
             </div>
           </div>
-          <div class="nav-item dropdown">
+          <div class="nav-item dropdown" @click="toggleDropdown(1)" :class="{ 'dropdown-open': isDropdownExpanded(1) }">
             <NuxtLink to="/construction" class="nav-link">{{ navExpertise }}</NuxtLink>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu" :class="{ active: isDropdownExpanded(1) }">
               <NuxtLink to="/construction" class="dropdown-link">Technique</NuxtLink>
               <NuxtLink to="/construction" class="dropdown-link">Financière</NuxtLink>
             </div>
           </div>
           <NuxtLink to="/construction" class="nav-link">{{ navRealizations }}</NuxtLink>
-          <div class="nav-item dropdown">
+          <div class="nav-item dropdown" @click="toggleDropdown(2)" :class="{ 'dropdown-open': isDropdownExpanded(2) }">
             <NuxtLink to="/construction" class="nav-link">{{ navNews }}</NuxtLink>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu" :class="{ active: isDropdownExpanded(2) }">
               <NuxtLink to="/construction" class="dropdown-link">Carrière</NuxtLink>
               <NuxtLink to="/construction" class="dropdown-link">Média</NuxtLink>
             </div>
@@ -61,10 +61,23 @@ import { useContent } from '~/composables/useContent'
 
 const mobileMenuOpen = ref(false)
 const isScrolled = ref(false)
+const expandedDropdowns = ref<Set<number>>(new Set())
 const { getText } = useContent()
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
+}
+
+const toggleDropdown = (index: number) => {
+  if (expandedDropdowns.value.has(index)) {
+    expandedDropdowns.value.delete(index)
+  } else {
+    expandedDropdowns.value.add(index)
+  }
+}
+
+const isDropdownExpanded = (index: number) => {
+  return expandedDropdowns.value.has(index)
 }
 
 onMounted(() => {
@@ -108,6 +121,10 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
   justify-content: flex-end;
   padding-top: 1em;
   padding-bottom: 16.6px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .search-box {
@@ -193,10 +210,30 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
 
   &.scrolled {
     padding-top: 0 !important;
-    
+
     img {
       width: auto;
       height: 110.67px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    padding-top: 1.5rem;
+
+    img {
+      width: 40px;
+      height: 45px;
+    }
+
+    &.scrolled {
+      padding-top: 0.75rem;
+
+      img {
+        width: 40px;
+        height: 45px;
+      }
     }
   }
 }
@@ -242,13 +279,19 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
   border: none;
   cursor: pointer;
   gap: 6px;
+  padding: 0.5rem;
+  margin-right: 1rem;
 
   span {
     width: 25px;
     height: 3px;
-    background-color: var(--color-primary);
+    background-color: #fff;
     border-radius: 2px;
     transition: all var(--transition-speed);
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
   }
 }
 
@@ -308,8 +351,15 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
 }
 
 @media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: flex;
+  .header {
+    background-color: rgba(10, 102, 120, 0.8);
+    backdrop-filter: blur(10px);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .header-content {
+    align-items: center;
   }
 
   .nav {
@@ -318,30 +368,83 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
     left: 0;
     right: 0;
     flex-direction: column;
-    background-color: transparent;
-    padding: var(--spacing-lg);
-    gap: var(--spacing-md);
-    box-shadow: none;
+    background-color: rgba(10, 102, 120, 0.95);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-md);
+    gap: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--transition-speed);
+    transition: max-height 0.5s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 
     &.active {
-      max-height: 500px;
+      max-height: 100vh;
     }
   }
 
   .nav-link {
     width: 100%;
     padding: var(--spacing-md);
+    font-size: 16px;
+    height: auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
 
-    &::after {
-      display: none;
+    &:last-child {
+      border-bottom: none;
     }
 
     &:hover {
-      background-color: var(--color-bg-light);
+      background-color: rgba(255, 255, 255, 0.1);
       border-radius: 4px;
+    }
+  }
+
+  .dropdown-menu {
+    position: static;
+    background-color: rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    backdrop-filter: none;
+    padding: 0;
+    min-width: 100%;
+    z-index: 1;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      max-height: 500px;
+    }
+  }
+
+  .dropdown-link {
+    padding: 0.75rem 1.5rem 0.75rem 2rem;
+    font-size: 14px;
+    height: auto;
+    border-top: none;
+    border-left: 3px solid transparent;
+
+    &:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-left-color: #8acde5;
+    }
+  }
+
+  .nav-item.dropdown {
+    &:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
     }
   }
 }

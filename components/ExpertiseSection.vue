@@ -209,5 +209,55 @@
   .expertise-gallery {
     grid-template-columns: 1fr;
   }
+
+  .expertise-text {
+    ul {
+      padding-left: 1.5rem;
+
+      li {
+        line-height: 1.8em;
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .expertise-image .inner {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .expertise-text {
+    padding: 0 var(--spacing-md);
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    ul {
+      padding-left: 1rem;
+
+      li {
+        line-height: 1.6em;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .expertise-image {
+    margin-bottom: var(--spacing-sm);
+
+    .inner {
+      min-height: 120px;
+    }
+  }
 }
 </style>

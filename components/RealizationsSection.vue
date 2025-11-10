@@ -32,7 +32,7 @@
                 <div class="col-md-6 col-12 expertise-image m-4">
                   <div class="inner" style="background-image: url('/financiere/02.webp')"></div>
                 </div>
-                <div class="col-md-6 col-2 expertise-image m-4">
+                <div class="col-md-6 col-12 expertise-image m-4">
                   <div class="inner" style="background-image: url('/financiere/03.webp')"></div>
                 </div>
               </div>
@@ -76,7 +76,7 @@
                 <div class="col-md-6 col-12 real-image m-4">
                   <div class="inner" style="background-image: url('/realisation/03.webp')"></div>
                 </div>
-                <div class="col-md-6 col-2 real-image m-4">
+                <div class="col-md-6 col-12 real-image m-4">
                   <div class="inner" style="background-image: url('/realisation/04.webp')"></div>
                 </div>
               </div>
@@ -219,6 +219,87 @@
 
   .slider-controls .btn {
     width: 100%;
+  }
+
+  .expertise-text {
+    padding: 0 var(--spacing-md);
+
+    p {
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+
+      li {
+        line-height: 1.8em;
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .real-image .inner {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .realizations {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .realization-card img {
+    height: 160px;
+  }
+
+  .card-content {
+    padding: var(--spacing-md);
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .expertise-text {
+    padding: 0 var(--spacing-md);
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    ul {
+      padding-left: 1rem;
+
+      li {
+        line-height: 1.6em;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .real-image {
+    margin-bottom: var(--spacing-sm);
+
+    .inner {
+      min-height: 150px;
+    }
+  }
+
+  .slider-controls {
+    gap: var(--spacing-md);
+
+    .btn {
+      font-size: 0.9rem;
+      padding: var(--spacing-sm) var(--spacing-lg);
+    }
   }
 }
 </style>

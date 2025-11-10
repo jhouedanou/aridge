@@ -126,6 +126,14 @@ onMounted(() => {
   margin-bottom: 0em;
 }
 
+@media (max-width: 768px) {
+  .hero-content {
+    width: 100%;
+    padding: var(--spacing-xl) var(--spacing-md);
+    padding-bottom: 3em;
+  }
+}
+
 .hero-text {
   width: 100%;
 }
@@ -231,21 +239,52 @@ onMounted(() => {
 
 @media (max-width: 768px) {
   .hero {
-    height: 400px;
+    height: 380px;
     background-attachment: scroll;
+    margin-top: 80px;
   }
 
   .hero-content {
     max-width: 100%;
-    padding: var(--spacing-2xl) var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md);
+    padding-bottom: 2rem;
   }
 
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .scroll-button {
+    bottom: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 300px;
+    margin-top: 70px;
+  }
+
+  .hero-title {
+    font-size: 1.3rem;
+  }
+
+  .scroll-button {
+    bottom: 1rem;
+    width: 2rem;
+    height: 2rem;
+
+    svg {
+      stroke-width: 2;
+    }
   }
 }
 </style>

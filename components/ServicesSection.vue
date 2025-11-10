@@ -25,7 +25,7 @@
                     <div class="col-md-8 col-12">
                       <p><strong>Imaad Financial Group (IFG),</strong> banque d'affaires panafricaine de référence, basée à Abidjan, Côte d'Ivoire, spécialisée dans le financement d'infrastructures, les PPP, le conseil stratégique et la structuration financière.</p>
                     </div>
-                    <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
+                    <div class="col-md-4 col-12 d-flex justify-content-center align-items-start">
                       <NuxtImg src="/imaad.svg" alt="IMAAD Financial Group" loading="eager" class="w-100" style="max-width:150px"/>
                     </div>
                   </div>
@@ -747,20 +747,186 @@ onUnmounted(() => {
     gap: var(--spacing-2xl);
   }
 
-  .who-content h2 {
-    font-size: 1.5rem;
+  .who-content {
+    padding: 0 var(--spacing-md);
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  }
+
+  .carousel-des-metiers {
+    padding: var(--spacing-lg) 0;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .carousel-card {
+    height: 180px;
+  }
+
+  .custom-arrow {
+    width: 36px;
+    height: 36px;
   }
 
   .expertise-sections {
     grid-template-columns: 1fr;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
   }
 
+  .expertise-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .secteur-card {
+    height: 320px;
+  }
+
+  .secteur-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .secteur-content {
+    padding: var(--spacing-md);
+  }
+
+  .btn-savoir-plus {
+    font-size: 0.9rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .secteurs-owl-carousel {
+    margin: 0 35px;
+
+    .imgwrapper {
+      margin: 1.5em 1em 0.5em 1em;
+    }
+
+    .owl-item {
+      height: 320px !important;
+      min-height: 320px !important;
+    }
+
+    .owl-item .item {
+      height: 320px !important;
+    }
+  }
 }
-.secteurs-carousel-container{
+
+@media (max-width: 480px) {
+  .services {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .who-content {
+    padding: 0 var(--spacing-sm);
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .carousel-des-metiers {
+    padding: var(--spacing-md) 0;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .carousel-card {
+    height: 150px;
+  }
+
+  .custom-arrow {
+    width: 32px;
+    height: 32px;
+    top: 50%;
+  }
+
+  .carousel-wrapper {
+    padding: 0;
+  }
+
+  .secteur-card {
+    height: 280px;
+  }
+
+  .secteur-image {
+    height: 150px;
+  }
+
+  .secteur-content {
+    padding: var(--spacing-sm);
+
+    h3 {
+      font-size: 1rem;
+    }
+  }
+
+  .btn-savoir-plus {
+    font-size: 0.85rem;
+    padding: var(--spacing-xs) var(--spacing-xs);
+  }
+
+  .secteurs-owl-carousel {
+    margin: 0 25px;
+
+    .imgwrapper {
+      margin: 1em 0.5em 0.25em 0.5em;
+    }
+
+    .owl-item {
+      height: 280px !important;
+      min-height: 280px !important;
+    }
+
+    .owl-item .item {
+      height: 280px !important;
+    }
+
+    .secteur-content {
+      h3 {
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .secteurs-carousel-container {
+    max-width: 100%;
+  }
+
+  .expertise-sections {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .expertise-box h3 {
+    font-size: 1rem;
+  }
+
+  .inline-list li {
+    font-size: 0.8rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+.secteurs-carousel-container {
   max-width: 1044px;
   margin: 0 auto;
-  .owl-carousel{
-    margin:0;
+
+  .owl-carousel {
+    margin: 0;
   }
 }
 </style>

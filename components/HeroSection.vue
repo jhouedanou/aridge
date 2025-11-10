@@ -18,7 +18,7 @@ import { useContent } from '~/composables/useContent'
 
 const { getText } = useContent()
 
-const heroTitle = computed(() => getText('hero.title', 'Construction et financement d\'infrastructure'))
+const heroTitle = computed(() => getText('hero.title', 'Construction et financement d\'infrastructures'))
 const heroSubtitle = computed(() => getText('hero.subtitle', 'En savoir plus'))
 const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 </script>

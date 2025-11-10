@@ -1,6 +1,7 @@
 <template>
   <section id="services" class="services">
     <div class="container">
+      <!-- qui sommes nous ? -->
         <div class="who-content">
           <h2>Qui sommes-nous ?</h2>
           <div class="row">
@@ -70,21 +71,58 @@
           <img :src="'/slide1/arrowNext.svg'" alt="Suivant" />
         </button>
       </div>
-
-      <div class="container">
-        <div class="solutions-grid">
-        <div class="solution-item">
-          <img src="/construction.jpg" alt="Construction" />
-          <p>Solutions de construction intégrées</p>
-        </div>
-        <div class="solution-item">
-          <img src="/workers.jpg" alt="Experts" />
-          <p>Expertise technique éprouvée</p>
-        </div>
-        <div class="solution-item">
-          <img src="/equipment.jpg" alt="Équipements" />
-          <p>Équipements modernes et performants</p>
-        </div>
+      <!-- Nos secteurs d'activité -->
+      <div class="secteursactivite">
+        <div class="container">
+          <div class="who-content">
+            <h2>Nos secteurs d'activité</h2>
+            
+            <!-- Carousel secteurs d'activité -->
+            <div class="secteurs-carousel-wrapper">
+              <div class="secteurs-carousel" ref="secteursCarousel">
+                <div class="secteur-item" @click="openPopup('/slide2/secteur1.webp')">
+                  <div class="secteur-card">
+                    <img src="/slide2/secteur1.webp" alt="BTP et Génie Civil" class="secteur-image" />
+                    <div class="secteur-content">
+                      <h3>BTP et Génie Civil</h3>
+                      <button class="btn-savoir-plus">
+                        <span>En savoir plus</span>
+                        <img src="/slide2/plus.svg" alt="Plus" class="plus-icon" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="secteur-item" @click="openPopup('/slide2/secteur2.webp')">
+                  <div class="secteur-card">
+                    <img src="/slide2/secteur2.webp" alt="Infrastructures" class="secteur-image" />
+                    <div class="secteur-content">
+                      <h3>Infrastructures</h3>
+                      <button class="btn-savoir-plus">
+                        <span>En savoir plus</span>
+                        <img src="/slide2/plus.svg" alt="Plus" class="plus-icon" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="secteur-item" @click="openPopup('/slide2/secteur3.webp')">
+                  <div class="secteur-card">
+                    <img src="/slide2/secteur3.webp" alt="Services Financiers" class="secteur-image" />
+                    <div class="secteur-content">
+                      <h3>Services Financiers</h3>
+                      <button class="btn-savoir-plus">
+                        <span>En savoir plus</span>
+                        <img src="/slide2/plus.svg" alt="Plus" class="plus-icon" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+           
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -95,7 +133,9 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 // Services section component
 const owlCarousel = ref<HTMLElement>()
+const secteursCarousel = ref<HTMLElement>()
 let $owlCarousel: any = null
+let $secteursCarousel: any = null
 
 onMounted(() => {
   // Dynamically load jQuery and Owl Carousel
@@ -118,10 +158,12 @@ onMounted(() => {
   // Load CSS files
   loadCSS('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css')
   loadCSS('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css')
+  loadCSS('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css')
 
-  // Load jQuery and then Owl Carousel
+  // Load jQuery and then Owl Carousel and Magnific Popup
   loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js')
     .then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'))
+    .then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'))
     .then(() => {
       // Initialize Owl Carousel
       if (owlCarousel.value) {
@@ -147,8 +189,53 @@ onMounted(() => {
           }
         })
       }
+
+      // Initialize Secteurs Carousel
+      if (secteursCarousel.value) {
+        $secteursCarousel = (window as any).$(secteursCarousel.value).owlCarousel({
+          items: 4,
+          loop: true,
+          margin: 20,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          nav: false,
+          dots: false,
+          responsive: {
+            0: {
+              items: 1
+            },
+            768: {
+              items: 2
+            },
+            1024: {
+              items: 3
+            },
+            1200: {
+              items: 4
+            }
+          }
+        })
+      }
     })
 })
+
+// Fonction pour ouvrir le popup Magnific
+const openPopup = (imageSrc: string) => {
+  if ((window as any).$) {
+    (window as any).$.magnificPopup.open({
+      items: {
+        src: imageSrc
+      },
+      type: 'image',
+      closeOnContentClick: true,
+      mainClass: 'mfp-img-mobile',
+      image: {
+        verticalFit: true
+      }
+    })
+  }
+}
 
 // Custom navigation functions
 const nextSlide = () => {
@@ -164,9 +251,12 @@ const prevSlide = () => {
 }
 
 onUnmounted(() => {
-  // Destroy Owl Carousel instance
+  // Destroy Owl Carousel instances
   if ($owlCarousel) {
     $owlCarousel.trigger('destroy.owl.carousel')
+  }
+  if ($secteursCarousel) {
+    $secteursCarousel.trigger('destroy.owl.carousel')
   }
 })
 </script>

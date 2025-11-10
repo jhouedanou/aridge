@@ -135,8 +135,8 @@
       "articles": [
         {
           "id": 1,
-          "title": "Titre de l'article 1",
-          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "title": "ARIDGE lance un projet majeur de routes à péage en Afrique de l'Ouest",
+          "excerpt": "ARIDGE annonce le lancement d'un partenariat public-privé révolutionnaire pour la construction de 500 km d'autoroutes modernes. Ce projet transformera la connectivité régionale et stimulera le développement économique dans toute l'Afrique de l'Ouest.",
           "date": "25",
           "month": "Nov",
           "image": "/news/01.webp",
@@ -144,8 +144,8 @@
         },
         {
           "id": 2,
-          "title": "Titre de l'article 2",
-          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "title": "Infrastructure résiliente: ARIDGE intègre les normes ESG dans tous ses projets",
+          "excerpt": "En tant que leader en infrastructure durable, ARIDGE s'engage à intégrer les critères environnementaux, sociaux et de gouvernance (ESG) dans chaque projet. Découvrez comment nos pratiques innovantes créent des infrastructures durables pour les générations futures.",
           "date": "24",
           "month": "Nov",
           "image": "/news/02.webp",
@@ -153,8 +153,8 @@
         },
         {
           "id": 3,
-          "title": "Titre de l'article 3",
-          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "title": "ARIDGE et Imaad Financial Group signent un accord de financement stratégique de 500M USD",
+          "excerpt": "Imaad Financial Group et ARIDGE renforcent leur partenariat avec un nouvel accord de financement de 500 millions USD. Cette injection de capital accélèrera la mise en œuvre de 15 nouveaux projets d'infrastructure en Afrique subsaharienne.",
           "date": "27",
           "month": "Nov",
           "image": "/news/03.webp",
@@ -162,8 +162,8 @@
         },
         {
           "id": 4,
-          "title": "Titre de l'article 4",
-          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "title": "Technologie BIM et construction modulaire: ARIDGE révolutionne la livraison de projets",
+          "excerpt": "ARIDGE adopte la conception de bâtiments numériques (BIM) et les techniques de construction modulaire pour réduire les délais de 40% et les coûts de 25%. Ces innovations positionnent ARIDGE comme leader technologique du secteur.",
           "date": "20",
           "month": "Nov",
           "image": "/news/04.webp",
@@ -377,8 +377,8 @@
       "articles": [
         {
           "id": 1,
-          "title": "Article Title 1",
-          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "title": "ARIDGE Launches Major Toll Road Project Across West Africa",
+          "excerpt": "ARIDGE announces the launch of a groundbreaking public-private partnership to construct 500 km of modern highways. This transformative project will enhance regional connectivity and drive economic development throughout West Africa.",
           "date": "25",
           "month": "Nov",
           "image": "/news/01.webp",
@@ -386,8 +386,8 @@
         },
         {
           "id": 2,
-          "title": "Article Title 2",
-          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "title": "Resilient Infrastructure: ARIDGE Integrates ESG Standards Across All Projects",
+          "excerpt": "As a leader in sustainable infrastructure, ARIDGE commits to integrating environmental, social, and governance (ESG) criteria in every project. Learn how our innovative practices create lasting infrastructure for future generations.",
           "date": "24",
           "month": "Nov",
           "image": "/news/02.webp",
@@ -395,8 +395,8 @@
         },
         {
           "id": 3,
-          "title": "Article Title 3",
-          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "title": "ARIDGE and Imaad Financial Group Sign $500M Strategic Financing Agreement",
+          "excerpt": "Imaad Financial Group and ARIDGE strengthen their partnership with a new $500 million financing agreement. This capital injection will accelerate the implementation of 15 new infrastructure projects across Sub-Saharan Africa.",
           "date": "27",
           "month": "Nov",
           "image": "/news/03.webp",
@@ -404,8 +404,8 @@
         },
         {
           "id": 4,
-          "title": "Article Title 4",
-          "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "title": "BIM Technology and Modular Construction: ARIDGE Revolutionizes Project Delivery",
+          "excerpt": "ARIDGE adopts Building Information Modeling (BIM) and modular construction techniques to reduce timelines by 40% and costs by 25%. These innovations position ARIDGE as a technology leader in the infrastructure sector.",
           "date": "20",
           "month": "Nov",
           "image": "/news/04.webp",

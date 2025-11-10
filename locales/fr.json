@@ -54,35 +54,35 @@
     "articles": [
       {
         "id": 1,
-        "title": "Titre de l'article 1",
-        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "title": "ARIDGE lance un projet majeur de routes à péage en Afrique de l'Ouest",
+        "excerpt": "ARIDGE annonce le lancement d'un partenariat public-privé révolutionnaire pour la construction de 500 km d'autoroutes modernes. Ce projet transformera la connectivité régionale et stimulera le développement économique dans toute l'Afrique de l'Ouest.",
         "image": "/news/01.webp",
-        "date": "30",
-        "month": "Oct"
+        "date": "25",
+        "month": "Nov"
       },
       {
         "id": 2,
-        "title": "Titre de l'article 2",
-        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "title": "Infrastructure résiliente: ARIDGE intègre les normes ESG dans tous ses projets",
+        "excerpt": "En tant que leader en infrastructure durable, ARIDGE s'engage à intégrer les critères environnementaux, sociaux et de gouvernance (ESG) dans chaque projet. Découvrez comment nos pratiques innovantes créent des infrastructures durables pour les générations futures.",
         "image": "/news/02.webp",
-        "date": "28",
-        "month": "Oct"
+        "date": "24",
+        "month": "Nov"
       },
       {
         "id": 3,
-        "title": "Titre de l'article 3",
-        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "title": "ARIDGE et Imaad Financial Group signent un accord de financement stratégique de 500M USD",
+        "excerpt": "Imaad Financial Group et ARIDGE renforcent leur partenariat avec un nouvel accord de financement de 500 millions USD. Cette injection de capital accélèrera la mise en œuvre de 15 nouveaux projets d'infrastructure en Afrique subsaharienne.",
         "image": "/news/03.webp",
         "date": "27",
-        "month": "Oct"
+        "month": "Nov"
       },
       {
         "id": 4,
-        "title": "Titre de l'article 4",
-        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "title": "Technologie BIM et construction modulaire: ARIDGE révolutionne la livraison de projets",
+        "excerpt": "ARIDGE adopte la conception de bâtiments numériques (BIM) et les techniques de construction modulaire pour réduire les délais de 40% et les coûts de 25%. Ces innovations positionnent ARIDGE comme leader technologique du secteur.",
         "image": "/news/04.webp",
         "date": "20",
-        "month": "Oct"
+        "month": "Nov"
       }
     ]
   },

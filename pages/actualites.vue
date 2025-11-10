@@ -44,6 +44,54 @@ definePageMeta({
 })
 
 const { t } = useTranslation()
+
+useHead({
+  title: 'Actualités et Réalisations - ARIDGE',
+  meta: [
+    {
+      name: 'description',
+      content: 'Découvrez les dernières actualités, projets et réalisations d\'ARIDGE dans le domaine de la construction et du financement d\'infrastructures en Afrique.'
+    },
+    {
+      name: 'keywords',
+      content: 'actualités, réalisations, projets infrastructure, news ARIDGE, développement Afrique'
+    },
+    {
+      property: 'og:title',
+      content: 'Actualités et Réalisations - ARIDGE'
+    },
+    {
+      property: 'og:description',
+      content: 'Les derniers projets d\'infrastructure menés par ARIDGE en Afrique de l\'Ouest et subsaharienne.'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    },
+    {
+      property: 'og:url',
+      content: 'https://aridge.com/actualites'
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image'
+    },
+    {
+      name: 'twitter:title',
+      content: 'Actualités - ARIDGE'
+    },
+    {
+      name: 'twitter:description',
+      content: 'Suivez les derniers projets et actualités d\'ARIDGE'
+    }
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://aridge.com/actualites'
+    }
+  ]
+})
 </script>
 
 <style scoped>

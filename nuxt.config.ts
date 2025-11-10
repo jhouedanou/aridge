@@ -47,21 +47,32 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     preset: 'netlify',
-    compatibilityDate: '2024-05-07'
+    compatibilityDate: '2024-05-07',
+    prerender: {
+      crawlLinks: true,
+      routes: ['/sitemap.xml', '/robots.txt'],
+      ignore: ['/construction']
+    }
   },
   app: {
     baseURL: '/',
-  },
-  components: {
-    dirs: [
-      {
-        path: '~/components',
-        pathPrefix: false,
-      },
-    ],
-  },
-  app: {
     head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      meta: [
+        {
+          name: 'theme-color',
+          content: '#1b7a7e'
+        },
+        {
+          name: 'msapplication-TileColor',
+          content: '#1b7a7e'
+        },
+        {
+          httpEquiv: 'X-UA-Compatible',
+          content: 'ie=edge'
+        }
+      ],
       link: [
         {
           rel: 'preconnect',
@@ -75,8 +86,21 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap'
+        },
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico'
         }
       ]
     }
+  },
+  components: {
+    dirs: [
+      {
+        path: '~/components',
+        pathPrefix: false,
+      },
+    ],
   }
 })

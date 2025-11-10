@@ -44,6 +44,50 @@ definePageMeta({
 })
 
 const { t } = useTranslation()
+
+useHead({
+  title: 'Page en Construction - ARIDGE',
+  meta: [
+    {
+      name: 'description',
+      content: 'Cette section de notre site est actuellement en construction. Nous travaillons dur pour vous offrir le meilleur contenu et expérience utilisateur possible.'
+    },
+    {
+      name: 'robots',
+      content: 'noindex, follow'
+    },
+    {
+      property: 'og:title',
+      content: 'Page en Construction - ARIDGE'
+    },
+    {
+      property: 'og:description',
+      content: 'Page actuellement en développement. Revenez bientôt pour découvrir le nouveau contenu.'
+    },
+    {
+      property: 'og:type',
+      content: 'website'
+    },
+    {
+      property: 'og:url',
+      content: 'https://aridge.com/construction'
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary'
+    },
+    {
+      name: 'twitter:title',
+      content: 'Page en Construction - ARIDGE'
+    }
+  ],
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://aridge.com/construction'
+    }
+  ]
+})
 </script>
 
 <style scoped>

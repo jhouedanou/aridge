@@ -1,0 +1,19 @@
+# robots.txt for ARIDGE website
+User-agent: *
+Allow: /
+Disallow: /construction
+Disallow: /.nuxt
+Disallow: /node_modules
+Disallow: /.git
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://aridge.com/sitemap.xml

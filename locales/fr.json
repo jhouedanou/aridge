@@ -97,10 +97,41 @@
       "submit": "Envoyer"
     }
   },
+  "header": {
+    "nav": {
+      "home": "Accueil",
+      "services": "Services",
+      "expertise": "Expertise",
+      "realizations": "Réalisations",
+      "news": "Actualités",
+      "contact": "Contact"
+    }
+  },
   "footer": {
-    "about": "À propos",
-    "services": "Services",
-    "contact": "Contact",
+    "sections": {
+      "aridge": {
+        "title": "ARIDGE",
+        "description": "Construction et financement d'infrastructures"
+      },
+      "haltGroup": {
+        "title": "HALT GROUP",
+        "address": "Halt International\nBuilding\nJ542+HC2, Avenue\nFranchet d'Esperey,\nPlateau Serpent,\nDjibouti"
+      },
+      "imaadFg": {
+        "title": "IMAAD FG",
+        "address": "Abidjan Cocody\nRiviera IV, Rue Sol Béni,\nImmeuble KAYOA"
+      },
+      "socialMedia": {
+        "title": "Social media",
+        "links": [
+          "Linkedin",
+          "Instagram",
+          "Youtube",
+          "X",
+          "Facebook"
+        ]
+      }
+    },
     "copyright": "© 2024 ARIDGE. Tous droits réservés."
   },
   "underConstruction": {

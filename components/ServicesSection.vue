@@ -26,7 +26,7 @@
                       <p><strong>Imaad Financial Group (IFG),</strong> banque d'affaires panafricaine de référence, basée à Abidjan, Côte d'Ivoire, spécialisée dans le financement d'infrastructures, les PPP, le conseil stratégique et la structuration financière.</p>
                     </div>
                     <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
-                      <NuxtImg src="/imaad.svg" alt="IMAAD Financial Group" loading="eager" class="w-100"/>
+                      <NuxtImg src="/imaad.svg" alt="IMAAD Financial Group" loading="eager" class="w-100" style="max-width:150px"/>
                     </div>
                   </div>
                 </li>

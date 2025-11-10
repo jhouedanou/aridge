@@ -749,7 +749,7 @@ img {
 
     padding-top: 2em;
   padding-bottom: 5em;
-  
+
   h2 {
     @include primary-button;
     margin-bottom: var(--spacing-lg);
@@ -758,4 +758,13 @@ img {
     padding: 0.75rem 2rem;
     border: none;
   }
+}
+
+/* Custom cursor */
+html {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><polygon points="8,2 14,14 8,10" fill="%231b7a7e" transform="rotate(45 8 8)"/></svg>') 8 8, auto;
+}
+
+a, button, [role="button"], input[type="button"], input[type="submit"] {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><polygon points="8,2 14,14 8,10" fill="%231b7a7e" transform="rotate(45 8 8)"/></svg>') 8 8, pointer;
 }

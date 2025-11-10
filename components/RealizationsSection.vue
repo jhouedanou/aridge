@@ -49,7 +49,7 @@
         <div class="container">
           <div class="row">
 
-            <div class="col-md-4 col-12 letexte animate-content expertise-text">
+            <div class="col-md-5 col-12 letexte animate-content expertise-text">
               <p>Imaad Financial Group joue un rôle clé dans la réussite d’ARIDGE, en apportant :
 
               <ul>
@@ -67,16 +67,19 @@
               </p>
 
             </div>
-            <div class="col-md-8 col-12 lesimages">
+            <div class="col-md-7 col-12 lesimages">
               <div class="row">
-                <div class="col-md-12 col-12 expertise-image m-4">
-                  <div class="inner" style="background-image: url('/financiere/01.webp')"></div>
+                <div class="col-md-6 col-12 real-image m-4">
+                  <div class="inner" style="background-image: url('/realisation/01.webp')"></div>
                 </div>
-                <div class="col-md-6 col-12 expertise-image m-4">
-                  <div class="inner" style="background-image: url('/financiere/02.webp')"></div>
+                <div class="col-md-6 col-12 real-image m-4">
+                  <div class="inner" style="background-image: url('/realisation/02.webp')"></div>
                 </div>
-                <div class="col-md-6 col-2 expertise-image m-4">
-                  <div class="inner" style="background-image: url('/financiere/03.webp')"></div>
+                <div class="col-md-6 col-12 real-image m-4">
+                  <div class="inner" style="background-image: url('/realisation/03.webp')"></div>
+                </div>
+                <div class="col-md-6 col-2 real-image m-4">
+                  <div class="inner" style="background-image: url('/realisation/04.webp')"></div>
                 </div>
               </div>
             </div>
@@ -185,6 +188,18 @@
 
 .slider-controls .btn {
   padding: var(--spacing-md) var(--spacing-xl);
+}
+
+.real-image {
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.real-image .inner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 265px;
 }
 
 @media (max-width: 768px) {

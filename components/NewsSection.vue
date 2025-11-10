@@ -31,48 +31,54 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 interface NewsItem {
   id: number
   title: string
   excerpt: string
   image: string
   date: string
+  month: string
 }
 
-const newsList: NewsItem[] = [
+// Articles depuis le JSON
+const articlesData = [
   {
     id: 1,
     title: 'Titre de l\'article 1',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: '/news-1.jpg',
+    image: '/news/01.webp',
     date: '30',
-    month:'Oct'
+    month: 'Oct'
   },
   {
     id: 2,
     title: 'Titre de l\'article 2',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: '/news-2.jpg',
+    image: '/news/02.webp',
     date: '30',
-    month:'Oct'
+    month: 'Oct'
   },
   {
     id: 3,
     title: 'Titre de l\'article 3',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: '/news-3.jpg',
+    image: '/news/03.webp',
     date: '30',
-    month:'Oct'
+    month: 'Oct'
   },
   {
     id: 4,
     title: 'Titre de l\'article 4',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: '/news-4.jpg',
+    image: '/news/04.webp',
     date: '20',
-    month:'Oct'
+    month: 'Oct'
   }
 ]
+
+const newsList = computed<NewsItem[]>(() => articlesData)
 </script>
 
 <style scoped>
@@ -117,7 +123,6 @@ const newsList: NewsItem[] = [
   background: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all var(--transition-speed);
   display: flex;
   flex-direction: column;
@@ -125,7 +130,6 @@ const newsList: NewsItem[] = [
 
 .news-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(27, 122, 126, 0.15);
 }
 
 .news-image {

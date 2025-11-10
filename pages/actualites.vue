@@ -14,30 +14,22 @@
           </svg>
         </div>
 
-        <h1 class="construction-title">Page en construction</h1>
+        <h1 class="construction-title">{{ t('underConstruction.title') }}</h1>
 
         <p class="construction-subtitle">
-          Nous travaillons dur pour préparer cette section. Elle sera bientôt disponible !
+          {{ t('underConstruction.subtitle') }}
         </p>
 
         <div class="construction-features">
-          <div class="feature-item">
+          <div v-for="(feature, index) in t('underConstruction.features')" :key="index" class="feature-item">
             <div class="feature-icon">✓</div>
-            <p>Contenu riche et informatif</p>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">✓</div>
-            <p>Design moderne et responsive</p>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">✓</div>
-            <p>Expérience utilisateur optimisée</p>
+            <p>{{ feature }}</p>
           </div>
         </div>
 
         <div class="construction-actions">
-          <NuxtLink to="/" class="btn btn-primary">Retour à l'accueil</NuxtLink>
-          <a href="mailto:contact@aridge.com" class="btn btn-outline">Nous contacter</a>
+          <NuxtLink to="/" class="btn btn-primary">{{ t('underConstruction.backHome') }}</NuxtLink>
+          <a href="mailto:contact@aridge.com" class="btn btn-outline">{{ t('underConstruction.contactUs') }}</a>
         </div>
       </div>
     </div>
@@ -45,9 +37,13 @@
 </template>
 
 <script setup lang="ts">
+import { useTranslation } from '~/composables/useTranslation'
+
 definePageMeta({
   layout: 'default'
 })
+
+const { t } = useTranslation()
 </script>
 
 <style scoped>

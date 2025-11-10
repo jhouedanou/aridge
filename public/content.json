@@ -137,36 +137,42 @@
           "id": 1,
           "title": "Titre de l'article 1",
           "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "date": "25/11/2024",
-          "image": "news-1.jpg",
+          "date": "25",
+          "month": "Nov",
+          "image": "/news/01.webp",
           "readMore": "Lire la suite →"
         },
         {
           "id": 2,
           "title": "Titre de l'article 2",
           "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "date": "24/11/2024",
-          "image": "news-2.jpg",
+          "date": "24",
+          "month": "Nov",
+          "image": "/news/02.webp",
           "readMore": "Lire la suite →"
         },
         {
           "id": 3,
           "title": "Titre de l'article 3",
           "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "date": "27/11/2024",
-          "image": "news-3.jpg",
+          "date": "27",
+          "month": "Nov",
+          "image": "/news/03.webp",
           "readMore": "Lire la suite →"
         },
         {
           "id": 4,
           "title": "Titre de l'article 4",
           "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "date": "28/11/2024",
-          "image": "news-4.jpg",
+          "date": "20",
+          "month": "Nov",
+          "image": "/news/04.webp",
           "readMore": "Lire la suite →"
         }
       ],
-      "viewAll": "Voir toutes les actualités"
+      "viewAll": "Voir toutes les actualités",
+      "joinUs": "Rejoignez nous",
+      "recruitmentEmail": "recrutement@aridge.com"
     },
     "contact": {
       "title": "Restez en contact",
@@ -373,36 +379,42 @@
           "id": 1,
           "title": "Article Title 1",
           "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "date": "25/11/2024",
-          "image": "news-1.jpg",
+          "date": "25",
+          "month": "Nov",
+          "image": "/news/01.webp",
           "readMore": "Read more →"
         },
         {
           "id": 2,
           "title": "Article Title 2",
           "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "date": "24/11/2024",
-          "image": "news-2.jpg",
+          "date": "24",
+          "month": "Nov",
+          "image": "/news/02.webp",
           "readMore": "Read more →"
         },
         {
           "id": 3,
           "title": "Article Title 3",
           "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "date": "27/11/2024",
-          "image": "news-3.jpg",
+          "date": "27",
+          "month": "Nov",
+          "image": "/news/03.webp",
           "readMore": "Read more →"
         },
         {
           "id": 4,
           "title": "Article Title 4",
           "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "date": "28/11/2024",
-          "image": "news-4.jpg",
+          "date": "20",
+          "month": "Nov",
+          "image": "/news/04.webp",
           "readMore": "Read more →"
         }
       ],
-      "viewAll": "View all news"
+      "viewAll": "View all news",
+      "joinUs": "Join us",
+      "recruitmentEmail": "recruitment@aridge.com"
     },
     "contact": {
       "title": "Stay in touch",

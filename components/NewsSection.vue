@@ -3,7 +3,7 @@
     <div class="container">
       <div class="section-header animate-section">
         <div class="pixel who-section who-content animate-section mt-0 pb-0 d-flex justify-content-start">
-          <h2 class="animate-title white-text certu">Nos Réalisations</h2>
+          <h2 class="animate-title white-text certu">{{ newsTitle }}</h2>
         </div>
       </div>
       <div class="news-grid animate-content">
@@ -32,14 +32,14 @@
         <div class="pixel who-section who-content animate-section mt-0 pb-0 d-flex flex-column">
           <div class="d-flex justify-content-center align-items-center w-100 flex-row">
 
-            <h2 class="animate-title white-text certu mb-lg">Rejoignez nous</h2>
+            <h2 class="animate-title white-text certu mb-lg">{{ joinUsTitle }}</h2>
           </div>
             <div class="liberia w-80 animate-content pt-0 mt-lg pb-4 bg-white">
               <div class="row mouf">
                 <div class="col-md-6 col-12 caro-image" style="background-image: url('/caro.webp')">
                 </div>
                 <div id="peace" class="col-md-6 col-12">
-                  <nuxtlink class="button">recrutement@aridge.com</nuxtlink>
+                  <nuxtlink class="button">{{ recruitmentEmail }}</nuxtlink>
                 </div>
               </div>
             </div>
@@ -51,6 +51,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useContent } from '~/composables/useContent'
 
 interface NewsItem {
   id: number
@@ -61,43 +62,16 @@ interface NewsItem {
   month: string
 }
 
-// Articles depuis le JSON
-const articlesData = [
-  {
-    id: 1,
-    title: 'Titre de l\'article 1',
-    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: '/news/01.webp',
-    date: '30',
-    month: 'Oct'
-  },
-  {
-    id: 2,
-    title: 'Titre de l\'article 2',
-    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: '/news/02.webp',
-    date: '30',
-    month: 'Oct'
-  },
-  {
-    id: 3,
-    title: 'Titre de l\'article 3',
-    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: '/news/03.webp',
-    date: '30',
-    month: 'Oct'
-  },
-  {
-    id: 4,
-    title: 'Titre de l\'article 4',
-    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: '/news/04.webp',
-    date: '20',
-    month: 'Oct'
-  }
-]
+const { getText, getContent } = useContent()
 
-const newsList = computed<NewsItem[]>(() => articlesData)
+const newsTitle = computed(() => getText('news.title', 'Nos Réalisations'))
+const joinUsTitle = computed(() => getText('news.joinUs', 'Rejoignez nous'))
+const recruitmentEmail = computed(() => getText('news.recruitmentEmail', 'recrutement@aridge.com'))
+
+const newsList = computed<NewsItem[]>(() => {
+  const articles = getContent('news.articles', [])
+  return articles && Array.isArray(articles) ? articles : []
+})
 </script>
 
 <style scoped lang="scss">

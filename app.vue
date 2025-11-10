@@ -15,9 +15,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useContent } from '~/composables/useContent'
 
 const isPageReady = ref(false)
+const { loadContent } = useContent()
+
+onMounted(() => {
+  loadContent()
+})
 </script>
 
 <style scoped>

@@ -401,10 +401,14 @@ onUnmounted(() => {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  
+  width: 21px;
+  height: 21px;
+
   img {
     display: block;
     transition: opacity 0.3s ease;
+    width: 100%;
+    height: 100%;
   }
 
   &:hover {

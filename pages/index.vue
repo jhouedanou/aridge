@@ -5,7 +5,6 @@
     <ExpertiseSection />
     <RealizationsSection />
     <NewsSection />
-    <ContactSection />
   </div>
 </template>
 

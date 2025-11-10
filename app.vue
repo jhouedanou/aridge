@@ -1,11 +1,16 @@
 <template>
   <div id="app">
+    <!-- Loading Bar -->
     <LoadingBar @loading-complete="isPageReady = true" />
-    <div v-show="isPageReady" class="page-content">
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-    </div>
+
+    <!-- Page Content - Masqué pendant le loading -->
+    <Transition name="fade" mode="out-in">
+      <div v-if="isPageReady" key="content" class="page-content">
+        <NuxtLayout>
+          <NuxtPage />
+        </NuxtLayout>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -22,6 +27,17 @@ const isPageReady = ref(false)
 
 .page-content {
   animation: fadeIn 0.6s ease-in;
+}
+
+/* Transition pour l'apparition du contenu */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.6s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 @keyframes fadeIn {

@@ -1,5 +1,5 @@
 <template>
-  <section id="news" class="news bg-white mb-0">
+  <section id="news" class="news bg-white pb-5">
     <div class="container">
       <div class="section-header animate-section">
         <div class="pixel who-section who-content animate-section mt-0 pb-0 d-flex justify-content-start">

@@ -1,5 +1,5 @@
 <template>
-  <section id="news" class="news bg-white">
+  <section id="news" class="news bg-white mb-0">
     <div class="container">
       <div class="section-header animate-section">
         <div class="pixel who-section who-content animate-section mt-0 pb-0 d-flex justify-content-start">
@@ -23,8 +23,28 @@
         </article>
       </div>
 
-      <div class="news-footer animate-item" style="--animate-delay: 0.4s">
-        <NuxtLink to="/actualites" class="btn btn-primary">Voir toutes les actualités</NuxtLink>
+      <!-- <div class="news-footer animate-item" style="--animate-delay: 0.4s">
+        <NuxtLink to="/actualites" class="btn btn-primary kush">Voir toutes les actualités</NuxtLink>
+      </div> -->
+    </div>
+    <div class="container">
+      <div class="section-header animate-section">
+        <div class="pixel who-section who-content animate-section mt-0 pb-0 d-flex flex-column">
+          <div class="d-flex justify-content-center align-items-center w-100 flex-row">
+
+            <h2 class="animate-title white-text certu">Rejoignez nous</h2>
+          </div>
+            <div class="liberia w-80 animate-content pt-0 mt-0 pb-4 bg-white">
+              <div class="row">
+                <div class="col-md-6 col-12">
+                  
+                </div>
+                <div class="col-md-6 col-12">
+                  <button>recrutement@aridge.com</button>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
   </section>
@@ -110,6 +130,7 @@ const newsList = computed<NewsItem[]>(() => articlesData)
   text-align: center;
   margin-bottom: var(--spacing-3xl);
 }
+
 .certu {
   color: white !important;
 }
@@ -147,6 +168,7 @@ const newsList = computed<NewsItem[]>(() => articlesData)
 .news-card:hover .news-image {
   transform: scale(1.05);
 }
+
 .fiona {
   width: 51px;
   height: 48px;
@@ -154,9 +176,9 @@ const newsList = computed<NewsItem[]>(() => articlesData)
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  top:0;
+  top: 0;
   position: absolute;
-  flex-direction:column;
+  flex-direction: column;
 }
 
 .news-date {
@@ -207,14 +229,34 @@ const newsList = computed<NewsItem[]>(() => articlesData)
 }
 
 .read-more {
-  color: var(--color-primary);
-  font-weight: 600;
-  transition: all var(--transition-speed);
   display: inline-block;
+  margin: 0;
+  box-sizing: border-box;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  text-decoration: none;
+  margin-top: var(--spacing-lg);
+  background-color: #0a6678;
+  font-family: "Source Sans Pro", var(--font-primary);
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.64;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  border-radius: 31px;
+  animation: subtleSlideInUp 1s ease-out 0.2s both;
+  opacity: 1;
+  transform: translateY(0px);
+  width: fit-content;
 }
 
 .read-more:hover {
-  color: var(--color-primary-dark);
+  background-color: var(--color-primary-dark);
   transform: translateX(4px);
 }
 
@@ -240,9 +282,11 @@ const newsList = computed<NewsItem[]>(() => articlesData)
   margin-top: 0em !important;
   padding-top: 4em !important;
 }
+
 .bg-white {
   background-color: white !important;
 }
+
 .pixel {
   background-color: white !important;
 }

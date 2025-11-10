@@ -390,6 +390,8 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
     height: auto;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin: 0;
+    display: flex;
+    justify-content: flex-start;
 
     &:last-child {
       border-bottom: none;
@@ -424,11 +426,13 @@ const navContact = computed(() => getText('header.nav.contact', 'Contact'))
   }
 
   .dropdown-link {
-    padding: 0.75rem 1.5rem 0.75rem 2rem;
+    padding: 0.75rem 1.5rem;
     font-size: 14px;
     height: auto;
     border-top: none;
     border-left: 3px solid transparent;
+    display: flex;
+    justify-content: flex-start;
 
     &:first-child {
       border-top: 1px solid rgba(255, 255, 255, 0.1);

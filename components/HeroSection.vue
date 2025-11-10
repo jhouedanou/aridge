@@ -239,7 +239,7 @@ onMounted(() => {
 
 @media (max-width: 768px) {
   .hero {
-    height: 380px;
+    height: 90vh;
     background-attachment: scroll;
     margin-top: 80px;
   }
@@ -269,7 +269,7 @@ onMounted(() => {
 
 @media (max-width: 480px) {
   .hero {
-    height: 300px;
+    height: 90vh;
     margin-top: 70px;
   }
 

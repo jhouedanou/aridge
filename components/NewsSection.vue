@@ -32,15 +32,14 @@
         <div class="pixel who-section who-content animate-section mt-0 pb-0 d-flex flex-column">
           <div class="d-flex justify-content-center align-items-center w-100 flex-row">
 
-            <h2 class="animate-title white-text certu">Rejoignez nous</h2>
+            <h2 class="animate-title white-text certu mb-lg">Rejoignez nous</h2>
           </div>
-            <div class="liberia w-80 animate-content pt-0 mt-0 pb-4 bg-white">
-              <div class="row">
-                <div class="col-md-6 col-12">
-                  
+            <div class="liberia w-80 animate-content pt-0 mt-lg pb-4 bg-white">
+              <div class="row mouf">
+                <div class="col-md-6 col-12 caro-image" style="background-image: url('/caro.webp')">
                 </div>
-                <div class="col-md-6 col-12">
-                  <button>recrutement@aridge.com</button>
+                <div id="peace" class="col-md-6 col-12">
+                  <nuxtlink class="button">recrutement@aridge.com</nuxtlink>
                 </div>
               </div>
             </div>
@@ -260,6 +259,39 @@ const newsList = computed<NewsItem[]>(() => articlesData)
   transform: translateX(4px);
 }
 
+#peace {
+  border-top:20px solid white;
+  background-color: #d8e1e3;
+  border-bottom:20px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .button{
+      width: 298px;
+  height: 35px;
+  border-radius: 17.5px;
+  background-color: #0a6678;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.63;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  }
+}
+
+.caro-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 300px;
+}
+
 .news-footer {
   text-align: center;
 }
@@ -290,4 +322,6 @@ const newsList = computed<NewsItem[]>(() => articlesData)
 .pixel {
   background-color: white !important;
 }
+.mouf {
+ max-width:850px;margin:0 auto;}
 </style>

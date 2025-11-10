@@ -1,53 +1,43 @@
 <template>
-  <section id="realizations" class="realizations">
-    <div class="container">
-      <div class="section-header animate-section">
-        <h2 class="animate-title">Nos Réalisations</h2>
-      </div>
+  <section id="realizations" class="realizations background-secondary mb-4">
+     <div class="container p-0 woubi w-100">
+      <div class="who-content animate-section">
+        <h2 class="animate-title">Notre expertise technique</h2>
+        <div class="container">
+          <div class="row">
 
-      <div class="realizations-slider animate-content">
-        <div class="realizations-container">
-          <div class="realization-card animate-item" style="--animate-delay: 0.1s">
-            <NuxtImg src="/realization-1.jpg" alt="Réalisation 1" loading="lazy" />
-            <div class="card-content">
-              <h3>Projet 1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <NuxtLink to="#" class="btn btn-primary">En savoir plus</NuxtLink>
+            <div class="col-md-6 col-12 letexte animate-content expertise-text">
+              <p>Imaad Financial Group joue un rôle clé dans la réussite d’ARIDGE, en apportant : 
+
+Structuration de financements souverains et institutionnels (banques, fonds, assureurs)
+
+ • Montage et sécurisation de Partenariats Public-Privé (PPP) avec garanties d’État
+
+ • Levier de syndication panafricaine et internationale
+
+ • Gestion d’actifs liés aux infrastructures (routes à péage, résidences étudiantes, zones économiques spéciales)
+
+ • Structuration ESG pour attirer les financeurs à impact et green funds</p>
+              <p class="animate-item" style="--animate-delay: 0.1s"><strong>Études techniques et conception BIM</strong>
+              </p>
+              <ul>
+                <li class="animate-item" style="--animate-delay: 0.2s">Maîtrise d'œuvre tous corps d'état (TCE)</li>
+                <li class="animate-item" style="--animate-delay: 0.3s">Construction modulaire et préfabriquée</li>
+                <li class="animate-item" style="--animate-delay: 0.4s">Gestion environnementale & conformité ESG</li>
+                <li class="animate-item" style="--animate-delay: 0.5s">Maintenance & gestion d'actifs infrastructurels
+                </li>
+              </ul>
             </div>
-          </div>
-
-          <div class="realization-card animate-item" style="--animate-delay: 0.2s">
-            <NuxtImg src="/realization-2.jpg" alt="Réalisation 2" loading="lazy" />
-            <div class="card-content">
-              <h3>Projet 2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <NuxtLink to="#" class="btn btn-primary">En savoir plus</NuxtLink>
-            </div>
-          </div>
-
-          <div class="realization-card animate-item" style="--animate-delay: 0.3s">
-            <NuxtImg src="/realization-3.jpg" alt="Réalisation 3" loading="lazy" />
-            <div class="card-content">
-              <h3>Projet 3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <NuxtLink to="#" class="btn btn-primary">En savoir plus</NuxtLink>
-            </div>
-          </div>
-
-          <div class="realization-card animate-item" style="--animate-delay: 0.4s">
-            <NuxtImg src="/realization-4.jpg" alt="Réalisation 4" loading="lazy" />
-            <div class="card-content">
-              <h3>Projet 4</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <NuxtLink to="#" class="btn btn-primary">En savoir plus</NuxtLink>
+            <div class="col-md-6 col-12 lesimages">
+              <div class="row">
+                <div class="col-md-6 col-2 expertise-image mb-2"><div class="inner" style="background-image: url('/expertise/01.webp')"></div></div>
+                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/02.webp')"></div></div>
+                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/03.webp')"></div></div>
+                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/04.webp')"></div></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="slider-controls">
-        <button class="btn btn-outline">Précédent</button>
-        <button class="btn btn-outline">Suivant</button>
       </div>
     </div>
   </section>

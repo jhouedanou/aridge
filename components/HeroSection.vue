@@ -34,11 +34,37 @@ const videoElement = ref<HTMLVideoElement | null>(null)
 const heroTitle = computed(() => getText('hero.title', 'Construction et financement d\'infrastructures'))
 const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 
-onMounted(() => {
-  // Relancer la vidéo chaque fois que le hero est affiché
+const playVideo = () => {
   if (videoElement.value) {
     videoElement.value.currentTime = 0
-    videoElement.value.play()
+    videoElement.value.play().catch(error => {
+      console.log('Video autoplay prevented:', error)
+    })
+  }
+}
+
+onMounted(() => {
+  // Relancer la vidéo chaque fois que le hero est affiché
+  playVideo()
+
+  // Observer pour relancer la vidéo quand l'utilisateur scroll vers le hero
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          playVideo()
+        }
+      })
+    },
+    { threshold: 0.5 }
+  )
+
+  if (videoElement.value) {
+    observer.observe(videoElement.value)
+  }
+
+  return () => {
+    observer.disconnect()
   }
 })
 </script>

@@ -1,27 +1,36 @@
 <template>
-  <section id="expertise" class="expertise background-secondary ">
+  <section id="expertise" class="expertise background-secondary mb-4">
     <div class="container p-0 woubi w-100">
-    <div class="who-content animate-section">
-      <h2 class="animate-title">Notre expertise technique</h2>
-      <div class="container">
-        <div class="row">
+      <div class="who-content animate-section">
+        <h2 class="animate-title">Notre expertise technique</h2>
+        <div class="container">
+          <div class="row">
 
-      <div class="col-md-6 col-12 letexte animate-content expertise-text">
-<p>Nous collaborons avec des bureaux d'études internationaux, des <strong>fournisseurs certifiés ISO</strong>, et des experts locaux pour garantir la qualité, la résilience et la durabilité de chaque projet.</p>
-<p class="animate-item" style="--animate-delay: 0.1s"><strong>Études techniques et conception BIM</strong></p>
-<ul>
-  <li class="animate-item" style="--animate-delay: 0.2s">Maîtrise d'œuvre tous corps d'état (TCE)</li>
-  <li class="animate-item" style="--animate-delay: 0.3s">Construction modulaire et préfabriquée</li>
-  <li class="animate-item" style="--animate-delay: 0.4s">Gestion environnementale & conformité ESG</li>
-  <li class="animate-item" style="--animate-delay: 0.5s">Maintenance & gestion d'actifs infrastructurels</li>
-</ul>
-      </div>
-      <div class="col-md-6 col-12 lesimages">
-s
-      </div>
+            <div class="col-md-6 col-12 letexte animate-content expertise-text">
+              <p>Nous collaborons avec des bureaux d'études internationaux, des <strong>fournisseurs certifiés
+                  ISO</strong>, et des experts locaux pour garantir la qualité, la résilience et la durabilité de chaque
+                projet.</p>
+              <p class="animate-item" style="--animate-delay: 0.1s"><strong>Études techniques et conception BIM</strong>
+              </p>
+              <ul>
+                <li class="animate-item" style="--animate-delay: 0.2s">Maîtrise d'œuvre tous corps d'état (TCE)</li>
+                <li class="animate-item" style="--animate-delay: 0.3s">Construction modulaire et préfabriquée</li>
+                <li class="animate-item" style="--animate-delay: 0.4s">Gestion environnementale & conformité ESG</li>
+                <li class="animate-item" style="--animate-delay: 0.5s">Maintenance & gestion d'actifs infrastructurels
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6 col-12 lesimages">
+              <div class="row">
+                <div class="col-md-6 col-2 expertise-image mb-2"><div class="inner" style="background-image: url('/expertise/01.webp')"></div></div>
+                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/02.webp')"></div></div>
+                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/03.webp')"></div></div>
+                <div class="col-md-6 col-2 expertise-image m-4"><div class="inner" style="background-image: url('/expertise/04.webp')"></div></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
 </template>
@@ -57,6 +66,19 @@ s
       line-height: 2em;
     }
   }
+}
+
+.expertise-image {
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.expertise-image .inner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  margin: .05rem;
 }
 
 .expertise {

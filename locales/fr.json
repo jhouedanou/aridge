@@ -1,0 +1,117 @@
+{
+  "hero": {
+    "title": "Construction et financement d'infrastructures",
+    "cta": "En savoir plus"
+  },
+  "services": {
+    "title": "Qui sommes-nous ?",
+    "description": "Africa Roads & Infrastructure Development Group (ARIDGE) est une entreprise panafricaine d'ingénierie, de construction et de financement d'infrastructures, fondée en République de Djibouti. Elle est le fruit d'un joint-venture stratégique entre :",
+    "partners": {
+      "halt": {
+        "name": "Halt International Group",
+        "description": "conglomérat djiboutien actif dans les secteurs du BTP, du génie civil, de la logistique et des services industriels."
+      },
+      "imaad": {
+        "name": "Imaad Financial Group (IFG)",
+        "description": "banque d'affaires panafricaine de référence, basée à Abidjan, Côte d'Ivoire, spécialisée dans le financement d'infrastructures, les PPP, le conseil stratégique et la structuration financière."
+      }
+    },
+    "carouselTitle": "Nos secteurs d'activité",
+    "sectors": {
+      "sector1": "Infrastructure routières & génie civil",
+      "sector2": "Habitat & logement",
+      "sector3": "Hydraulique et assainissement"
+    },
+    "knowMore": "En savoir plus"
+  },
+  "expertise": {
+    "title": "Notre expertise technique",
+    "description": "Nous collaborons avec des bureaux d'études internationaux, des fournisseurs certifiés ISO, et des experts locaux pour garantir la qualité, la résilience et la durabilité de chaque projet.",
+    "technicalStudies": "Études techniques et conception BIM",
+    "skills": [
+      "Maîtrise d'œuvre tous corps d'état (TCE)",
+      "Construction modulaire et préfabriquée",
+      "Gestion environnementale & conformité ESG",
+      "Maintenance & gestion d'actifs infrastructurels"
+    ]
+  },
+  "realizations": {
+    "title": "Nos réalisations",
+    "description": "Imaad Financial Group joue un rôle clé dans la réussite d'ARIDGE, en apportant :",
+    "financialExpertise": "Notre expertise financière",
+    "skills": [
+      "Structuration de financements souverains et institutionnels (banques, fonds, assureurs)",
+      "Montage et sécurisation de Partenariats Public-Privé (PPP) avec garanties d'État",
+      "Levier de syndication panafricaine et internationale",
+      "Gestion d'actifs liés aux infrastructures (routes à péage, résidences étudiantes, zones économiques spéciales)",
+      "Structuration ESG pour attirer les financeurs à impact et green funds"
+    ]
+  },
+  "news": {
+    "title": "Nos Réalisations",
+    "viewAll": "Voir toutes les actualités",
+    "readMore": "Lire la suite →",
+    "articles": [
+      {
+        "id": 1,
+        "title": "Titre de l'article 1",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "/news-1.jpg",
+        "date": "30",
+        "month": "Oct"
+      },
+      {
+        "id": 2,
+        "title": "Titre de l'article 2",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "/news-2.jpg",
+        "date": "30",
+        "month": "Oct"
+      },
+      {
+        "id": 3,
+        "title": "Titre de l'article 3",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "/news-3.jpg",
+        "date": "30",
+        "month": "Oct"
+      },
+      {
+        "id": 4,
+        "title": "Titre de l'article 4",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "/news-4.jpg",
+        "date": "20",
+        "month": "Oct"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Nous Contacter",
+    "description": "Avez-vous des questions ? Contactez-nous dès maintenant.",
+    "formLabels": {
+      "name": "Nom complet",
+      "email": "Email",
+      "phone": "Téléphone",
+      "message": "Message",
+      "submit": "Envoyer"
+    }
+  },
+  "footer": {
+    "about": "À propos",
+    "services": "Services",
+    "contact": "Contact",
+    "copyright": "© 2024 ARIDGE. Tous droits réservés."
+  },
+  "underConstruction": {
+    "title": "Page en construction",
+    "subtitle": "Nous travaillons dur pour préparer cette section. Elle sera bientôt disponible !",
+    "features": [
+      "Contenu riche et informatif",
+      "Design moderne et responsive",
+      "Expérience utilisateur optimisée"
+    ],
+    "backHome": "Retour à l'accueil",
+    "contactUs": "Nous contacter"
+  }
+}

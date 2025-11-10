@@ -10,9 +10,13 @@
 </template>
 
 <script setup lang="ts">
+import { useIntersectionAnimation } from '~/composables/useIntersectionAnimation'
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
 import SocialSidebar from '~/components/SocialSidebar.vue'
+
+// Initialiser les animations d'intersection
+useIntersectionAnimation()
 </script>
 
 <style scoped>

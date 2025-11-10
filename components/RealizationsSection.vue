@@ -42,7 +42,7 @@
       </div>
     </div>
   </section>
-    <section id="realizations" class="realizations background-secondary mb-4">
+    <section id="realizations" class="realizations background-secondary mb-0">
     <div class="container p-0 woubi w-100">
       <div class="who-content animate-section">
         <h2 class="animate-title">Nos réalisations</h2>
@@ -50,21 +50,19 @@
           <div class="row">
 
             <div class="col-md-5 col-12 letexte animate-content expertise-text">
-              <p>Imaad Financial Group joue un rôle clé dans la réussite d’ARIDGE, en apportant :
-
-              <ul>
-                <li class="animate-item" style="--animate-delay: 0.1s">Structuration de financements souverains et
-                  institutionnels (banques, fonds, assureurs)</li>
-                <li class="animate-item" style="--animate-delay: 0.2s"><strong>Montage et sécurisation de Partenariats
-                    Public-Privé (PPP)</strong> avec garanties d'État</li>
-                <li class="animate-item" style="--animate-delay: 0.3s"><strong>Levier de syndication</strong>
-                  panafricaine et internationale</li>
-                <li class="animate-item" style="--animate-delay: 0.4s"><strong>Gestion d'actifs</strong> liés aux
-                  infrastructures (routes à péage, résidences étudiantes, zones économiques spéciales)</li>
-                <li class="animate-item" style="--animate-delay: 0.5s"><strong>Structuration ESG</strong> pour attirer
-                  les financeurs à impact et green funds</li>
-              </ul>
+              <div class="inner mr-2">
+                <p><strong>Disponible sur demande :</strong> 
+<ul>
+  <li>Fiches projets types, références techniques ou modélisations</li>
+  <li>Projet de route régionale reliant Djibouti à l'Éthiopie</li>
+  <li>Programme de <strong></strong></li>
+  <li>Plateforme logistique intégrée près du Port de Kribi</li>
+  <li>Station d'épuration et réseau hydraulique en zone sahélienne</li>
+  <li><strong>Déploiement de 100 forages solaires </strong> dans les zones rurales</li>
+</ul>
               </p>
+              </div>
+              
 
             </div>
             <div class="col-md-7 col-12 lesimages">

@@ -1,20 +1,24 @@
 <template>
-  <section id="news" class="news">
+  <section id="news" class="news bg-white">
     <div class="container">
       <div class="section-header animate-section">
-        <h2 class="animate-title">Nos Réalisations</h2>
+        <div class="pixel who-section who-content animate-section mt-0 pb-0 d-flex justify-content-start">
+          <h2 class="animate-title white-text certu">Nos Réalisations</h2>
+        </div>
       </div>
-
       <div class="news-grid animate-content">
-        <article class="news-card animate-item" v-for="(item, index) in newsList" :key="item.id" :style="{ '--animate-delay': `${index * 0.1}s` }">
-          <div class="news-image">
-            <NuxtImg :src="item.image" :alt="item.title" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-            <div class="news-date">{{ item.date }}</div>
+        <article class="news-card animate-item" v-for="(item, index) in newsList" :key="item.id"
+          :style="{ '--animate-delay': `${index * 0.1}s` }">
+          <div class="news-image" :style="{ backgroundImage: `url('${item.image}')` }">
+            <div class="fiona">
+              <div class="news-date">{{ item.date }}</div>
+              <div class="news-month">{{ item.month }}</div>
+            </div>
           </div>
           <div class="news-content">
             <h3>{{ item.title }}</h3>
             <p>{{ item.excerpt }}</p>
-            <NuxtLink to="#" class="read-more">Lire la suite →</NuxtLink>
+            <NuxtLink to="/actualites" class="read-more">Lire la suite →</NuxtLink>
           </div>
         </article>
       </div>
@@ -41,28 +45,32 @@ const newsList: NewsItem[] = [
     title: 'Titre de l\'article 1',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image: '/news-1.jpg',
-    date: '25/11/2024'
+    date: '30',
+    month:'Oct'
   },
   {
     id: 2,
     title: 'Titre de l\'article 2',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image: '/news-2.jpg',
-    date: '24/11/2024'
+    date: '30',
+    month:'Oct'
   },
   {
     id: 3,
     title: 'Titre de l\'article 3',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image: '/news-3.jpg',
-    date: '27/11/2024'
+    date: '30',
+    month:'Oct'
   },
   {
     id: 4,
     title: 'Titre de l\'article 4',
     excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image: '/news-4.jpg',
-    date: '28/11/2024'
+    date: '20',
+    month:'Oct'
   }
 ]
 </script>
@@ -86,7 +94,7 @@ const newsList: NewsItem[] = [
 }
 
 .news {
-  padding: var(--spacing-3xl) 0;
+  padding: 0;
   background-color: var(--color-bg-light);
 }
 
@@ -94,10 +102,8 @@ const newsList: NewsItem[] = [
   text-align: center;
   margin-bottom: var(--spacing-3xl);
 }
-
-.section-header h2 {
-  color: var(--color-primary);
-  font-size: 2rem;
+.certu {
+  color: white !important;
 }
 
 .news-grid {
@@ -124,31 +130,54 @@ const newsList: NewsItem[] = [
 
 .news-image {
   position: relative;
-  height: 200px;
+  height: 192px;
   overflow: hidden;
-}
-
-.news-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: transform var(--transition-speed);
 }
 
-.news-card:hover .news-image img {
+.news-card:hover .news-image {
   transform: scale(1.05);
+}
+.fiona {
+  width: 51px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  top:0;
+  position: absolute;
+  flex-direction:column;
 }
 
 .news-date {
-  position: absolute;
-  top: var(--spacing-lg);
-  right: var(--spacing-lg);
-  background: var(--color-primary);
-  color: white;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: 4px;
-  font-size: 0.85rem;
+  font-family: 'Source Sans Pro';
+  font-size: 25px;
   font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.64;
+  letter-spacing: normal;
+  text-align: center;
+  color: #0a6678;
+  text-transform: uppercase;
+}
+
+.news-month {
+  margin-top: 1em;
+  font-family: 'Source Sans Pro';
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.64;
+  letter-spacing: normal;
+  text-align: center;
+  color: #0a6678;
 }
 
 .news-content {
@@ -200,5 +229,16 @@ const newsList: NewsItem[] = [
   .news-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.who-content {
+  margin-top: 0em !important;
+  padding-top: 4em !important;
+}
+.bg-white {
+  background-color: white !important;
+}
+.pixel {
+  background-color: white !important;
 }
 </style>

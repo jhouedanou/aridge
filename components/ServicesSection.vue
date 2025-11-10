@@ -78,13 +78,20 @@
             <h2>Nos secteurs d'activité</h2>
             
             <!-- Carousel secteurs d'activité -->
-            <div class="secteurs-carousel-wrapper">
-              <div class="secteurs-carousel" ref="secteursCarousel">
-                <div class="secteur-item" @click="openPopup('/slide2/secteur1.webp')">
-                  <div class="secteur-card">
-                    <img src="/slide2/secteur1.webp" alt="BTP et Génie Civil" class="secteur-image" />
+            <div class="secteurs-carousel-container">
+              <button class="secteur-arrow secteur-prev" @click="prevSecteurSlide">
+                <img src="/slide2/prev.svg" alt="Précédent" />
+              </button>
+              
+              <div class="owl-carousel owl-theme secteurs-owl-carousel" ref="secteursCarousel">
+                <div class="item">
+                  <div class="secteur-card" @click="openPopup('/slide2/secteur1.webp')">
+                    <div class="imgwrapper">
+                      <img src="/slide2/secteur1.webp" alt="BTP et Génie Civil" class="secteur-image" />
+                    </div>
                     <div class="secteur-content">
-                      <h3>BTP et Génie Civil</h3>
+                      <h3>Infrastructure routières 
+& génie civil</h3>
                       <button class="btn-savoir-plus">
                         <span>En savoir plus</span>
                         <img src="/slide2/plus.svg" alt="Plus" class="plus-icon" />
@@ -93,11 +100,13 @@
                   </div>
                 </div>
                 
-                <div class="secteur-item" @click="openPopup('/slide2/secteur2.webp')">
-                  <div class="secteur-card">
-                    <img src="/slide2/secteur2.webp" alt="Infrastructures" class="secteur-image" />
+                <div class="item">
+                  <div class="secteur-card" @click="openPopup('/slide2/secteur2.webp')">
+                    <div class="imgwrapper">
+                      <img src="/slide2/secteur2.webp" alt="Infrastructures" class="secteur-image" />
+                    </div>
                     <div class="secteur-content">
-                      <h3>Infrastructures</h3>
+                      <h3>Habitat & logement</h3>
                       <button class="btn-savoir-plus">
                         <span>En savoir plus</span>
                         <img src="/slide2/plus.svg" alt="Plus" class="plus-icon" />
@@ -106,11 +115,14 @@
                   </div>
                 </div>
                 
-                <div class="secteur-item" @click="openPopup('/slide2/secteur3.webp')">
-                  <div class="secteur-card">
-                    <img src="/slide2/secteur3.webp" alt="Services Financiers" class="secteur-image" />
+                <div class="item">
+                  <div class="secteur-card" @click="openPopup('/slide2/secteur3.webp')">
+                    <div class="imgwrapper">
+                      <img src="/slide2/secteur3.webp" alt="Services Financiers" class="secteur-image" />
+                    </div>
                     <div class="secteur-content">
-                      <h3>Services Financiers</h3>
+                      <h3>Hydraulique et 
+assainissement</h3>
                       <button class="btn-savoir-plus">
                         <span>En savoir plus</span>
                         <img src="/slide2/plus.svg" alt="Plus" class="plus-icon" />
@@ -119,8 +131,12 @@
                   </div>
                 </div>
                 
-           
+          
               </div>
+              
+              <button class="secteur-arrow secteur-next" @click="nextSecteurSlide">
+                <img src="/slide2/next.svg" alt="Suivant" />
+              </button>
             </div>
           </div>
         </div>
@@ -193,26 +209,27 @@ onMounted(() => {
       // Initialize Secteurs Carousel
       if (secteursCarousel.value) {
         $secteursCarousel = (window as any).$(secteursCarousel.value).owlCarousel({
-          items: 4,
+          items: 3,
           loop: true,
-          margin: 20,
+          margin: 0,
           autoplay: true,
-          autoplayTimeout: 5000,
+          autoplayTimeout: 6000,
           autoplayHoverPause: true,
           nav: false,
           dots: false,
+          center: false,
           responsive: {
             0: {
-              items: 1
+              items: 1,
+              margin: 0
             },
             768: {
-              items: 2
+              items: 2,
+              margin: 0
             },
             1024: {
-              items: 3
-            },
-            1200: {
-              items: 4
+              items: 3,
+              margin: 0
             }
           }
         })
@@ -250,6 +267,19 @@ const prevSlide = () => {
   }
 }
 
+// Navigation functions for secteurs carousel
+const nextSecteurSlide = () => {
+  if ($secteursCarousel) {
+    $secteursCarousel.trigger('next.owl.carousel')
+  }
+}
+
+const prevSecteurSlide = () => {
+  if ($secteursCarousel) {
+    $secteursCarousel.trigger('prev.owl.carousel')
+  }
+}
+
 onUnmounted(() => {
   // Destroy Owl Carousel instances
   if ($owlCarousel) {
@@ -262,6 +292,35 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
+@import '~/assets/styles/_variables.scss';
+.secteurs-owl-carousel{
+  .imgwrapper{
+    border-radius:12px;
+    margin:2em 2em 0.5em 2em;
+    img{
+      border-radius:12px;
+    }
+  }
+
+  .secteur-content{
+    margin: 0em;
+    h3{
+  font-size: 21px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.12;
+  letter-spacing: normal;
+  text-align: center;
+  color: $primary;
+    }
+  }
+  .owl-item{
+    margin:0 !important;
+    margin-right: 0 !important;
+    min-height:380px !important;
+  }
+}
 .services {
   padding: var(--spacing-3xl) 0;
   background-color: var(--color-bg-white);
@@ -384,6 +443,26 @@ onUnmounted(() => {
   .custom-next {
     right: 5px;
   }
+  
+  .secteurs-owl-carousel {
+    margin: 0 40px;
+  }
+  
+  .secteur-card {
+    height: 350px;
+  }
+  
+  .secteur-image {
+    height: 200px;
+  }
+  
+  .secteur-prev {
+    left: 5px;
+  }
+  
+  .secteur-next {
+    right: 5px;
+  }
 }
 
 .who-logos {
@@ -503,6 +582,120 @@ onUnmounted(() => {
   font-weight: 600;
 }
 
+/* Secteurs d'activité carousel styles */
+.secteursactivite {
+  background-color: var(--color-bg-light);
+  padding: var(--spacing-3xl) 0;
+}
+
+.secteurs-carousel-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.secteurs-owl-carousel {
+  margin: 0 60px;
+}
+
+.secteurs-owl-carousel .item {
+  padding: 0 15px;
+}
+
+.secteur-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.secteur-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.secteur-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.secteur-content {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.secteur-content h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.2rem;
+}
+
+.btn-savoir-plus {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: var(--color-primary);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: var(--font-weight-semibold);
+  margin-top: auto;
+}
+
+.btn-savoir-plus:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.plus-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Secteurs carousel arrows */
+.secteur-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.secteur-arrow img {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.secteur-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.secteur-arrow:hover img {
+  opacity: 0.8;
+}
+
+.secteur-prev {
+  left: -30px;
+}
+
+.secteur-next {
+  right: -30px;
+}
+
 @media (max-width: 768px) {
   .services {
     padding: var(--spacing-2xl) 0;
@@ -521,5 +714,12 @@ onUnmounted(() => {
     grid-template-columns: 1fr;
   }
 
+}
+.secteurs-carousel-container{
+  max-width: 1044px;
+  margin: 0 auto;
+  .owl-carousel{
+    margin:0;
+  }
 }
 </style>

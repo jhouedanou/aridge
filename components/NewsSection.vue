@@ -81,7 +81,9 @@ const articlesData = [
 const newsList = computed<NewsItem[]>(() => articlesData)
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '~/assets/styles/_variables.scss';
+
 .animate-section {
   animation: subtleFadeIn 0.9s ease-out;
 }
@@ -194,15 +196,14 @@ const newsList = computed<NewsItem[]>(() => articlesData)
 .news-content h3 {
   color: var(--color-primary);
   margin-bottom: var(--spacing-md);
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   flex: 1;
 }
 
 .news-content p {
+  @include paragraph-text;
   color: var(--color-text-light);
   margin-bottom: var(--spacing-md);
-  font-size: 0.95rem;
-  line-height: 1.6;
 }
 
 .read-more {

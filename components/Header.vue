@@ -19,30 +19,30 @@
            <nav class="nav" :class="{ active: mobileMenuOpen }">
           <NuxtLink to="/" class="nav-link">{{ navHome }}</NuxtLink>
           <div class="nav-item dropdown">
-            <NuxtLink to="#services" class="nav-link">{{ navServices }}</NuxtLink>
+            <NuxtLink to="/construction" class="nav-link">{{ navServices }}</NuxtLink>
             <div class="dropdown-menu">
-              <NuxtLink to="#infrastructure" class="dropdown-link">Infrastructure & génie civil</NuxtLink>
-              <NuxtLink to="#habitat" class="dropdown-link">Habitat et logement</NuxtLink>
-              <NuxtLink to="#hydraulique" class="dropdown-link">Hydraulique et assainissement</NuxtLink>
-              <NuxtLink to="#logistique" class="dropdown-link">Logistique et zone éco</NuxtLink>
+              <NuxtLink to="/construction" class="dropdown-link">Infrastructure & génie civil</NuxtLink>
+              <NuxtLink to="/construction" class="dropdown-link">Habitat et logement</NuxtLink>
+              <NuxtLink to="/construction" class="dropdown-link">Hydraulique et assainissement</NuxtLink>
+              <NuxtLink to="/construction" class="dropdown-link">Logistique et zone éco</NuxtLink>
             </div>
           </div>
           <div class="nav-item dropdown">
-            <NuxtLink to="#expertise" class="nav-link">{{ navExpertise }}</NuxtLink>
+            <NuxtLink to="/construction" class="nav-link">{{ navExpertise }}</NuxtLink>
             <div class="dropdown-menu">
-              <NuxtLink to="#technique" class="dropdown-link">Technique</NuxtLink>
-              <NuxtLink to="#financiere" class="dropdown-link">Financière</NuxtLink>
+              <NuxtLink to="/construction" class="dropdown-link">Technique</NuxtLink>
+              <NuxtLink to="/construction" class="dropdown-link">Financière</NuxtLink>
             </div>
           </div>
-          <NuxtLink to="#realizations" class="nav-link">{{ navRealizations }}</NuxtLink>
+          <NuxtLink to="/construction" class="nav-link">{{ navRealizations }}</NuxtLink>
           <div class="nav-item dropdown">
-            <NuxtLink to="#news" class="nav-link">{{ navNews }}</NuxtLink>
+            <NuxtLink to="/construction" class="nav-link">{{ navNews }}</NuxtLink>
             <div class="dropdown-menu">
-              <NuxtLink to="#carriere" class="dropdown-link">Carrière</NuxtLink>
-              <NuxtLink to="#media" class="dropdown-link">Média</NuxtLink>
+              <NuxtLink to="/construction" class="dropdown-link">Carrière</NuxtLink>
+              <NuxtLink to="/construction" class="dropdown-link">Média</NuxtLink>
             </div>
           </div>
-          <NuxtLink to="#contact" class="nav-link">{{ navContact }}</NuxtLink>
+          <NuxtLink to="/construction" class="nav-link">{{ navContact }}</NuxtLink>
         </nav>
         <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen">
           <span></span>

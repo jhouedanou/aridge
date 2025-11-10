@@ -4,7 +4,6 @@
       class="hero-video"
       autoplay
       muted
-      loop
       playsinline
       preload="auto"
     >
@@ -34,12 +33,55 @@ const heroSubtitle = computed(() => getText('hero.subtitle', 'En savoir plus'))
 const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 
 onMounted(() => {
-  // Ralentir la vidéo à 0.001x une fois qu'elle est chargée
   const video = document.querySelector('.hero-video') as HTMLVideoElement
   if (video) {
-    video.addEventListener('loadedmetadata', () => {
-      video.playbackRate = 0.001
+    let isPlayingForward = true
+    let intervalId: number | null = null
+    
+    const setupVideoControl = () => {
+      try {
+        if (isPlayingForward) {
+          // Lecture normale très lente
+          video.playbackRate = 0.000025
+          video.play()
+          console.log('Playing forward at rate:', video.playbackRate)
+        } else {
+          // Lecture arrière manuelle
+          video.pause()
+          
+          intervalId = setInterval(() => {
+            if (video.currentTime > 0) {
+              video.currentTime = Math.max(0, video.currentTime - 0.001) // Reculer de 1ms
+            } else {
+              // Retour au début, reprendre lecture normale
+              clearInterval(intervalId!)
+              isPlayingForward = true
+              setupVideoControl()
+            }
+          }, 40) // 25fps pour fluidité
+          
+          console.log('Playing backward manually')
+        }
+      } catch (error) {
+        console.error('Error setting up video control:', error)
+      }
+    }
+    
+    // Gérer la fin de la vidéo pour passer en lecture arrière
+    video.addEventListener('ended', () => {
+      isPlayingForward = false
+      setupVideoControl()
     })
+    
+    video.addEventListener('loadedmetadata', setupVideoControl)
+    video.addEventListener('canplay', setupVideoControl)
+    
+    // Fallback
+    setTimeout(() => {
+      if (video.readyState >= 1) {
+        setupVideoControl()
+      }
+    }, 1000)
   }
 })
 </script>

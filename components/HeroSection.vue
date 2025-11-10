@@ -1,5 +1,15 @@
 <template>
   <section class="hero" :style="{ backgroundImage: `url('/bg.jpg')` }">
+    <video 
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source src="/Whisk_umy1cjy0ijz5ewzi1sohvmytedmmrtlwydzz0yn.mp4" type="video/mp4">
+    </video>
     <div class="container p-0 woubi w-100">
       <div class="hero-content">
 
@@ -13,14 +23,25 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useContent } from '~/composables/useContent'
 
 const { getText } = useContent()
+const videoRef = ref<HTMLVideoElement>()
 
 const heroTitle = computed(() => getText('hero.title', 'Construction et financement d\'infrastructures'))
 const heroSubtitle = computed(() => getText('hero.subtitle', 'En savoir plus'))
 const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
+
+onMounted(() => {
+  // Ralentir la vidéo à 0.001x une fois qu'elle est chargée
+  const video = document.querySelector('.hero-video') as HTMLVideoElement
+  if (video) {
+    video.addEventListener('loadedmetadata', () => {
+      video.playbackRate = 0.001
+    })
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -35,6 +56,16 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
   align-items: flex-end;
   justify-content: flex-start;
   overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .hero-content {

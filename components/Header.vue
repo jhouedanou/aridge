@@ -68,6 +68,8 @@ const handleScroll = () => {
 }
 
 onMounted(() => {
+  // Vérifier la position de scroll immédiatement au montage
+  handleScroll()
   window.addEventListener('scroll', handleScroll)
 })
 

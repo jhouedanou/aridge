@@ -93,8 +93,7 @@
                       <h3>Infrastructure routières 
 & génie civil</h3>
                       <button class="btn-savoir-plus">
-                        <span>En savoir plus</span>
-                        <img src="/slide2/plus.svg" alt="Plus" class="plus-icon" />
+                        En savoir plus
                       </button>
                     </div>
                   </div>
@@ -108,8 +107,7 @@
                     <div class="secteur-content">
                       <h3>Habitat & logement</h3>
                       <button class="btn-savoir-plus">
-                        <span>En savoir plus</span>
-                        <img src="/slide2/plus.svg" alt="Plus" class="plus-icon" />
+                        En savoir plus
                       </button>
                     </div>
                   </div>
@@ -124,8 +122,7 @@
                       <h3>Hydraulique et 
 assainissement</h3>
                       <button class="btn-savoir-plus">
-                        <span>En savoir plus</span>
-                        <img src="/slide2/plus.svg" alt="Plus" class="plus-icon" />
+                        En savoir plus
                       </button>
                     </div>
                   </div>
@@ -218,6 +215,7 @@ onMounted(() => {
           nav: false,
           dots: false,
           center: false,
+          autoHeight: false,
           responsive: {
             0: {
               items: 1,
@@ -318,12 +316,16 @@ onUnmounted(() => {
   .owl-item{
     margin:0 !important;
     margin-right: 0 !important;
-    min-height:380px !important;
+    height:470px !important;
+    min-height:470px !important;
+  }
+  .owl-item .item {
+    height: 470px !important;
   }
 }
 .services {
   padding: var(--spacing-3xl) 0;
-  background-color: var(--color-bg-white);
+  background-color: #f8f8f8;
 }
 
 .who-section {
@@ -352,7 +354,7 @@ onUnmounted(() => {
 /* Carousel des métiers avec Owl Carousel */
 .carousel-des-metiers {
   padding: var(--spacing-2xl) 0;
-  background: white; /* Fond blanc */
+  background:#f8f8f8; /* Fond blanc */
   margin-bottom: var(--spacing-3xl);
   position: relative; /* Pour le positionnement des flèches */
       max-width: 1400px;
@@ -584,7 +586,7 @@ onUnmounted(() => {
 
 /* Secteurs d'activité carousel styles */
 .secteursactivite {
-  background-color: var(--color-bg-light);
+  background-color: #F8F8F8;
   padding: var(--spacing-3xl) 0;
 }
 
@@ -608,7 +610,7 @@ onUnmounted(() => {
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 400px;
+  height: 450px;
   display: flex;
   flex-direction: column;
   cursor: pointer;

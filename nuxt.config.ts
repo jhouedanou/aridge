@@ -1,8 +1,24 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['~/assets/styles/main.css'],
+  css: ['~/assets/styles/main.scss'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "~/assets/styles/_variables.scss" as *;'
+        }
+      }
+    }
+  },
   modules: [],
   ssr: true,
+  nitro: {
+    preset: 'netlify',
+    compatibilityDate: '2024-05-07'
+  },
+  app: {
+    baseURL: '/',
+  },
   components: {
     dirs: [
       {
@@ -25,7 +41,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap'
         }
       ]
     }

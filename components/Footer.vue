@@ -71,7 +71,7 @@
 }
 
 .footer-content {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
   display: grid;
@@ -130,7 +130,7 @@
 }
 
 .footer-bottom {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: var(--spacing-lg) var(--spacing-md);
   border-top: 1px solid rgba(255, 255, 255, 0.1);

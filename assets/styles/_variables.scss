@@ -1,0 +1,35 @@
+// Color variables
+$primary: #0a6678;
+$secondary: #E2EBED;
+
+// Mixins
+@mixin primary-button {
+  background-color: #0a6678;
+  font-family: 'Source Sans Pro', var(--font-primary);
+  font-size: 22px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.64;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  border-radius: 31px;
+}
+
+@mixin paragraph-text {
+  font-family: 'Source Sans Pro Light', 'Source Sans Pro', var(--font-primary);
+  font-size: 22px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  text-align: left;
+  color: #000;
+  
+  strong {
+    font-family: 'Source Sans Pro SemiBold', 'Source Sans Pro', var(--font-primary);
+    font-weight: 600;
+  }
+}

@@ -1,76 +1,331 @@
 <template>
   <section id="services" class="services">
     <div class="container">
-      <div class="who-section">
+      <!-- qui sommes nous ? -->
         <div class="who-content">
           <h2>Qui sommes-nous ?</h2>
-          <p>Aridge Roads & Infrastructure Development Group spécialiste de la conception, du financement et de la réalisation d'infrastructures, notamment dans les domaines de la logistique et des services industriels.</p>
-        </div>
-
-        <div class="who-logos">
-          <div class="logo-item">
-            <img src="/hh-group.svg" alt="HH Group" />
-            <h4>Hatt International Group</h4>
-            <p>Conception d'infrastructures routières et autoroutières avec expertise en BTP.</p>
+          <div class="row">
+            <div class="col-md-5 col-12">
+              <p>Africa Roads &amp; Infrastructure Development Group (ARIDGE) est une <strong>entreprise panafricaine d'ingénierie</strong>, de construction et de financement d'infrastructures, fondée en République de Djibouti. Elle est le fruit d'un joint-venture stratégique entre :</p>
+            </div>
+            <div class="col-md-7 col-12">
+              <ul>
+                <li class="mb-lg">
+                  <div class="halt col-12 row">
+                    <div class="col-md-8 col-12">
+                      <p><strong>Halt International Group,</strong> conglomérat djiboutien actif dans les secteurs du BTP, du génie civil, de la logistique et des services industriels.</p>
+                    </div>
+                    <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
+                      <img src="/halt.svg" alt="Halt" />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="halt col-12 row">
+                    <div class="col-md-8 col-12">
+                      <p><strong>Imaad Financial Group (IFG),</strong> banque d'affaires panafricaine de référence, basée à Abidjan, Côte d'Ivoire, spécialisée dans le financement d'infrastructures, les PPP, le conseil stratégique et la structuration financière.</p>
+                    </div>
+                    <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
+                      <img src="/imaad.svg" alt="IMAAD Financial Group" />
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-
-          <div class="logo-item">
-            <img src="/imaar.svg" alt="IMAAR Financial Group" />
-            <h4>Imaar Financial Group (IFG)</h4>
-            <p>Spécialisé dans le financement structuré des infrastructures.</p>
+        </div>
+      </div>
+      
+      <!-- Carousel des métiers avec Owl Carousel -->
+      <div class="carousel-des-metiers">
+        <!-- Flèches externes -->
+        <button class="custom-arrow custom-prev" @click="prevSlide">
+          <img :src="'/slide1/arrowPrev.svg'" alt="Précédent" />
+        </button>
+        
+        <div class="carousel-wrapper">
+          <div class="owl-carousel owl-theme" ref="owlCarousel">
+            <div class="item">
+              <div class="carousel-card">
+                 <img src="/slide1/01.jpg" alt="Construction" class="carousel-image" />
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="carousel-card">
+                <img src="/slide1/02.jpg" alt="Construction" class="carousel-image" />
+              </div>
+            </div>
+            
+            <div class="item">
+              <div class="carousel-card">
+                 <img src="/slide1/03.jpg" alt="Construction" class="carousel-image" />
+              </div>
+            </div>
+            
+           
+          </div>
+        </div>
+        
+        <button class="custom-arrow custom-next" @click="nextSlide">
+          <img :src="'/slide1/arrowNext.svg'" alt="Suivant" />
+        </button>
+      </div>
+      <!-- Nos secteurs d'activité -->
+      <div class="secteursactivite">
+        <div class="container">
+          <div class="who-content">
+            <h2>Nos secteurs d'activité</h2>
+            
+            <!-- Carousel secteurs d'activité -->
+            <div class="secteurs-carousel-container">
+              <button class="secteur-arrow secteur-prev" @click="prevSecteurSlide">
+                <img src="/slide2/prev.svg" alt="Précédent" />
+              </button>
+              
+              <div class="owl-carousel owl-theme secteurs-owl-carousel" ref="secteursCarousel">
+                <div class="item">
+                  <div class="secteur-card" @click="openPopup('/slide2/secteur1.webp')">
+                    <div class="imgwrapper">
+                      <img src="/slide2/secteur1.webp" alt="BTP et Génie Civil" class="secteur-image" />
+                    </div>
+                    <div class="secteur-content">
+                      <h3>Infrastructure routières 
+& génie civil</h3>
+                      <button class="btn-savoir-plus">
+                        En savoir plus
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="item">
+                  <div class="secteur-card" @click="openPopup('/slide2/secteur2.webp')">
+                    <div class="imgwrapper">
+                      <img src="/slide2/secteur2.webp" alt="Infrastructures" class="secteur-image" />
+                    </div>
+                    <div class="secteur-content">
+                      <h3>Habitat & logement</h3>
+                      <button class="btn-savoir-plus">
+                        En savoir plus
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="item">
+                  <div class="secteur-card" @click="openPopup('/slide2/secteur3.webp')">
+                    <div class="imgwrapper">
+                      <img src="/slide2/secteur3.webp" alt="Services Financiers" class="secteur-image" />
+                    </div>
+                    <div class="secteur-content">
+                      <h3>Hydraulique et 
+assainissement</h3>
+                      <button class="btn-savoir-plus">
+                        En savoir plus
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                
+          
+              </div>
+              
+              <button class="secteur-arrow secteur-next" @click="nextSecteurSlide">
+                <img src="/slide2/next.svg" alt="Suivant" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="expertise-sections">
-        <div class="expertise-box">
-          <h3>Nos services d'assistance</h3>
-          <ul>
-            <li>Études techniques et conception BIM</li>
-            <li>Construction modulaire et préfabriquée</li>
-            <li>Gestion environnementale et ESG</li>
-            <li>Maintenance et gestion d'actifs d'infrastructures</li>
-          </ul>
-        </div>
-
-        <div class="expertise-box">
-          <h3>Nos services Financiers</h3>
-          <p>Structuration de financements souverains et institutionnels</p>
-          <p>Spécialisation dans les domaines de l'Afrique Subsaharienne</p>
-          <ul class="inline-list">
-            <li>Levée de fonds syndicalisés</li>
-            <li>Partenariats Public-Privés</li>
-            <li>Gestion d'actifs de infrastructures</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="solutions-grid">
-        <div class="solution-item">
-          <img src="/construction.jpg" alt="Construction" />
-          <p>Solutions de construction intégrées</p>
-        </div>
-        <div class="solution-item">
-          <img src="/workers.jpg" alt="Experts" />
-          <p>Expertise technique éprouvée</p>
-        </div>
-        <div class="solution-item">
-          <img src="/equipment.jpg" alt="Équipements" />
-          <p>Équipements modernes et performants</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+
 // Services section component
+const owlCarousel = ref<HTMLElement>()
+const secteursCarousel = ref<HTMLElement>()
+let $owlCarousel: any = null
+let $secteursCarousel: any = null
+
+onMounted(() => {
+  // Dynamically load jQuery and Owl Carousel
+  const loadScript = (src: string) => {
+    return new Promise((resolve) => {
+      const script = document.createElement('script')
+      script.src = src
+      script.onload = resolve
+      document.head.appendChild(script)
+    })
+  }
+
+  const loadCSS = (href: string) => {
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = href
+    document.head.appendChild(link)
+  }
+
+  // Load CSS files
+  loadCSS('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css')
+  loadCSS('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css')
+  loadCSS('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css')
+
+  // Load jQuery and then Owl Carousel and Magnific Popup
+  loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+    .then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'))
+    .then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js'))
+    .then(() => {
+      // Initialize Owl Carousel
+      if (owlCarousel.value) {
+        $owlCarousel = (window as any).$(owlCarousel.value).owlCarousel({
+          items: 3,
+          loop: true,
+          margin: 20,
+          autoplay: true,
+          autoplayTimeout: 4000,
+          autoplayHoverPause: true,
+          nav: false, // Désactiver les flèches intégrées
+          dots: false, // Désactiver les points de progression
+          responsive: {
+            0: {
+              items: 1
+            },
+            768: {
+              items: 2
+            },
+            1024: {
+              items: 3
+            }
+          }
+        })
+      }
+
+      // Initialize Secteurs Carousel
+      if (secteursCarousel.value) {
+        $secteursCarousel = (window as any).$(secteursCarousel.value).owlCarousel({
+          items: 3,
+          loop: true,
+          margin: 0,
+          autoplay: true,
+          autoplayTimeout: 6000,
+          autoplayHoverPause: true,
+          nav: false,
+          dots: false,
+          center: false,
+          autoHeight: false,
+          responsive: {
+            0: {
+              items: 1,
+              margin: 0
+            },
+            768: {
+              items: 2,
+              margin: 0
+            },
+            1024: {
+              items: 3,
+              margin: 0
+            }
+          }
+        })
+      }
+    })
+})
+
+// Fonction pour ouvrir le popup Magnific
+const openPopup = (imageSrc: string) => {
+  if ((window as any).$) {
+    (window as any).$.magnificPopup.open({
+      items: {
+        src: imageSrc
+      },
+      type: 'image',
+      closeOnContentClick: true,
+      mainClass: 'mfp-img-mobile',
+      image: {
+        verticalFit: true
+      }
+    })
+  }
+}
+
+// Custom navigation functions
+const nextSlide = () => {
+  if ($owlCarousel) {
+    $owlCarousel.trigger('next.owl.carousel')
+  }
+}
+
+const prevSlide = () => {
+  if ($owlCarousel) {
+    $owlCarousel.trigger('prev.owl.carousel')
+  }
+}
+
+// Navigation functions for secteurs carousel
+const nextSecteurSlide = () => {
+  if ($secteursCarousel) {
+    $secteursCarousel.trigger('next.owl.carousel')
+  }
+}
+
+const prevSecteurSlide = () => {
+  if ($secteursCarousel) {
+    $secteursCarousel.trigger('prev.owl.carousel')
+  }
+}
+
+onUnmounted(() => {
+  // Destroy Owl Carousel instances
+  if ($owlCarousel) {
+    $owlCarousel.trigger('destroy.owl.carousel')
+  }
+  if ($secteursCarousel) {
+    $secteursCarousel.trigger('destroy.owl.carousel')
+  }
+})
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '~/assets/styles/_variables.scss';
+.secteurs-owl-carousel{
+  .imgwrapper{
+    border-radius:12px;
+    margin:2em 2em 0.5em 2em;
+    img{
+      border-radius:12px;
+    }
+  }
+
+  .secteur-content{
+    margin: 0em;
+    h3{
+  font-size: 21px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.12;
+  letter-spacing: normal;
+  text-align: center;
+  color: $primary;
+    }
+  }
+  .owl-item{
+    margin:0 !important;
+    margin-right: 0 !important;
+    height:470px !important;
+    min-height:470px !important;
+  }
+  .owl-item .item {
+    height: 470px !important;
+  }
+}
 .services {
   padding: var(--spacing-3xl) 0;
-  background-color: var(--color-bg-white);
+  background-color: #f8f8f8;
 }
 
 .who-section {
@@ -81,16 +336,135 @@
   margin-bottom: var(--spacing-3xl);
 }
 
-.who-content h2 {
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-lg);
-  font-size: 2rem;
+.who-content {
+
+    padding-top: 2em;
+  padding-bottom: 5em;
+  
+  h2 {
+    @include primary-button;
+    margin-bottom: var(--spacing-lg);
+    font-size: 22px !important;
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: none;
+  }
 }
 
-.who-content p {
-  font-size: 1rem;
-  color: var(--color-text-light);
-  line-height: 1.8;
+/* Carousel des métiers avec Owl Carousel */
+.carousel-des-metiers {
+  padding: var(--spacing-2xl) 0;
+  background:#f8f8f8; /* Fond blanc */
+  margin-bottom: var(--spacing-3xl);
+  position: relative; /* Pour le positionnement des flèches */
+      max-width: 1400px;
+    margin: 0 auto;
+    min-width: 1200px;
+}
+
+.carousel-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Owl Carousel Items */
+.owl-carousel .item {
+  padding: 0 var(--spacing-sm);
+}
+
+.carousel-card {
+  background: white;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 250px;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Flèches personnalisées */
+.custom-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  
+  img {
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+    
+    img {
+      opacity: 0.8;
+    }
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+.custom-prev {
+  left: 10px;
+}
+
+.custom-next {
+  right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-des-metiers {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .carousel-card {
+    height: 200px;
+  }
+
+  .custom-prev {
+    left: 5px;
+  }
+
+  .custom-next {
+    right: 5px;
+  }
+  
+  .secteurs-owl-carousel {
+    margin: 0 40px;
+  }
+  
+  .secteur-card {
+    height: 350px;
+  }
+  
+  .secteur-image {
+    height: 200px;
+  }
+  
+  .secteur-prev {
+    left: 5px;
+  }
+  
+  .secteur-next {
+    right: 5px;
+  }
 }
 
 .who-logos {
@@ -210,6 +584,120 @@
   font-weight: 600;
 }
 
+/* Secteurs d'activité carousel styles */
+.secteursactivite {
+  background-color: #F8F8F8;
+  padding: var(--spacing-3xl) 0;
+}
+
+.secteurs-carousel-container {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.secteurs-owl-carousel {
+  margin: 0 60px;
+}
+
+.secteurs-owl-carousel .item {
+  padding: 0 15px;
+}
+
+.secteur-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.secteur-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.secteur-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.secteur-content {
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.secteur-content h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.2rem;
+}
+
+.btn-savoir-plus {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: var(--color-primary);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: var(--font-weight-semibold);
+  margin-top: auto;
+}
+
+.btn-savoir-plus:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.plus-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Secteurs carousel arrows */
+.secteur-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.secteur-arrow img {
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.secteur-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.secteur-arrow:hover img {
+  opacity: 0.8;
+}
+
+.secteur-prev {
+  left: -30px;
+}
+
+.secteur-next {
+  right: -30px;
+}
+
 @media (max-width: 768px) {
   .services {
     padding: var(--spacing-2xl) 0;
@@ -226,6 +714,14 @@
 
   .expertise-sections {
     grid-template-columns: 1fr;
+  }
+
+}
+.secteurs-carousel-container{
+  max-width: 1044px;
+  margin: 0 auto;
+  .owl-carousel{
+    margin:0;
   }
 }
 </style>

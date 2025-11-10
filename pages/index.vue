@@ -30,6 +30,6 @@ useHead({
 
 <style scoped>
 .home-page {
-  background-color: white;
+  background-color: #F8F8F8;
 }
 </style>

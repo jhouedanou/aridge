@@ -1,46 +1,112 @@
 <template>
-  <section class="hero" :style="{ backgroundImage: `url('/hero-beach.jpg')` }">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
+  <section class="hero" :style="{ backgroundImage: `url('/bg.jpg')` }">
+    <video 
+      class="hero-video"
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="/Whisk_umy1cjy0ijz5ewzi1sohvmytedmmrtlwydzz0yn.mp4" type="video/mp4">
+    </video>
+    <div class="container p-0 woubi w-100">
+      <div class="hero-content">
+
       <div class="hero-text">
         <h1 class="hero-title">{{ heroTitle }}</h1>
-        <p class="hero-subtitle">{{ heroSubtitle }}</p>
         <button class="btn btn-primary">{{ heroCTA }}</button>
+      </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useContent } from '~/composables/useContent'
 
 const { getText } = useContent()
+const videoRef = ref<HTMLVideoElement>()
 
-const heroTitle = computed(() => getText('hero.title', 'Construction et financement d\'infrastructure'))
+const heroTitle = computed(() => getText('hero.title', 'Construction et financement d\'infrastructures'))
 const heroSubtitle = computed(() => getText('hero.subtitle', 'En savoir plus'))
 const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
+
+onMounted(() => {
+  const video = document.querySelector('.hero-video') as HTMLVideoElement
+  if (video) {
+    let isPlayingForward = true
+    let intervalId: number | null = null
+    
+    const setupVideoControl = () => {
+      try {
+        if (isPlayingForward) {
+          // Lecture normale très lente
+          video.playbackRate = 0.000025
+          video.play()
+          console.log('Playing forward at rate:', video.playbackRate)
+        } else {
+          // Lecture arrière manuelle
+          video.pause()
+          
+          intervalId = setInterval(() => {
+            if (video.currentTime > 0) {
+              video.currentTime = Math.max(0, video.currentTime - 0.001) // Reculer de 1ms
+            } else {
+              // Retour au début, reprendre lecture normale
+              clearInterval(intervalId!)
+              isPlayingForward = true
+              setupVideoControl()
+            }
+          }, 40) // 25fps pour fluidité
+          
+          console.log('Playing backward manually')
+        }
+      } catch (error) {
+        console.error('Error setting up video control:', error)
+      }
+    }
+    
+    // Gérer la fin de la vidéo pour passer en lecture arrière
+    video.addEventListener('ended', () => {
+      isPlayingForward = false
+      setupVideoControl()
+    })
+    
+    video.addEventListener('loadedmetadata', setupVideoControl)
+    video.addEventListener('canplay', setupVideoControl)
+    
+    // Fallback
+    setTimeout(() => {
+      if (video.readyState >= 1) {
+        setupVideoControl()
+      }
+    }, 1000)
+  }
+})
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .hero {
   position: relative;
-  height: 500px;
+  height: 100vh;
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-start;
   overflow: hidden;
 }
 
-.hero-overlay {
+.hero-video {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(27, 122, 126, 0.85) 0%, rgba(47, 163, 167, 0.75) 100%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   z-index: 1;
 }
 
@@ -48,9 +114,12 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
   position: relative;
   z-index: 2;
   color: white;
-  padding: var(--spacing-3xl) var(--spacing-md);
-  max-width: 600px;
+  padding: 0;
+  padding-bottom: 6em;
+  width: 442px;
   animation: slideInUp 0.8s ease-out;
+  margin: 0;
+  margin-bottom: 0em;
 }
 
 .hero-text {
@@ -58,11 +127,17 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 }
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  line-height: 1.2;
+  text-shadow: 0 6px 9px rgba(0, 0, 0, 0.16);
+  font-family: 'Source Sans Pro', var(--font-primary);
+  font-size: 61px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.95;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
   margin-bottom: var(--spacing-lg);
-  color: white;
 }
 
 .hero-subtitle {
@@ -73,6 +148,10 @@ const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 
 .btn {
   margin-top: var(--spacing-lg);
+  
+  &.btn-primary {
+    @include primary-button;
+  }
 }
 
 @media (max-width: 1024px) {

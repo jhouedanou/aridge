@@ -2,31 +2,31 @@
   <section id="services" class="services">
     <div class="container">
       <!-- qui sommes nous ? -->
-        <div class="who-content">
-          <h2>Qui sommes-nous ?</h2>
+        <div class="who-content animate-section">
+          <h2 class="animate-title">Qui sommes-nous ?</h2>
           <div class="row">
             <div class="col-md-5 col-12">
               <p>Africa Roads &amp; Infrastructure Development Group (ARIDGE) est une <strong>entreprise panafricaine d'ingénierie</strong>, de construction et de financement d'infrastructures, fondée en République de Djibouti. Elle est le fruit d'un joint-venture stratégique entre :</p>
             </div>
             <div class="col-md-7 col-12">
               <ul>
-                <li class="mb-lg">
+                <li class="mb-lg animate-item" style="--animate-delay: 0.1s">
                   <div class="halt col-12 row">
                     <div class="col-md-8 col-12">
                       <p><strong>Halt International Group,</strong> conglomérat djiboutien actif dans les secteurs du BTP, du génie civil, de la logistique et des services industriels.</p>
                     </div>
                     <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
-                      <img src="/halt.svg" alt="Halt" />
+                      <NuxtImg src="/halt.svg" alt="Halt" loading="eager" />
                     </div>
                   </div>
                 </li>
-                <li>
+                <li class="animate-item" style="--animate-delay: 0.2s">
                   <div class="halt col-12 row">
                     <div class="col-md-8 col-12">
                       <p><strong>Imaad Financial Group (IFG),</strong> banque d'affaires panafricaine de référence, basée à Abidjan, Côte d'Ivoire, spécialisée dans le financement d'infrastructures, les PPP, le conseil stratégique et la structuration financière.</p>
                     </div>
                     <div class="col-md-4 col-12 d-flex justify-content-end align-items-start">
-                      <img src="/imaad.svg" alt="IMAAD Financial Group" />
+                      <NuxtImg src="/imaad.svg" alt="IMAAD Financial Group" loading="eager" />
                     </div>
                   </div>
                 </li>
@@ -40,26 +40,26 @@
       <div class="carousel-des-metiers">
         <!-- Flèches externes -->
         <button class="custom-arrow custom-prev" @click="prevSlide">
-          <img :src="'/slide1/arrowPrev.svg'" alt="Précédent" />
+          <NuxtImg src="/slide1/arrowPrev.svg" alt="Précédent" loading="eager" />
         </button>
         
         <div class="carousel-wrapper">
           <div class="owl-carousel owl-theme" ref="owlCarousel">
             <div class="item">
               <div class="carousel-card">
-                 <img src="/slide1/01.jpg" alt="Construction" class="carousel-image" />
+                 <NuxtImg src="/slide1/01.jpg" alt="Construction" class="carousel-image" loading="lazy" />
               </div>
             </div>
-            
+
             <div class="item">
               <div class="carousel-card">
-                <img src="/slide1/02.jpg" alt="Construction" class="carousel-image" />
+                <NuxtImg src="/slide1/02.jpg" alt="Construction" class="carousel-image" loading="lazy" />
               </div>
             </div>
-            
+
             <div class="item">
               <div class="carousel-card">
-                 <img src="/slide1/03.jpg" alt="Construction" class="carousel-image" />
+                 <NuxtImg src="/slide1/03.jpg" alt="Construction" class="carousel-image" loading="lazy" />
               </div>
             </div>
             
@@ -68,26 +68,26 @@
         </div>
         
         <button class="custom-arrow custom-next" @click="nextSlide">
-          <img :src="'/slide1/arrowNext.svg'" alt="Suivant" />
+          <NuxtImg src="/slide1/arrowNext.svg" alt="Suivant" loading="eager" />
         </button>
       </div>
       <!-- Nos secteurs d'activité -->
       <div class="secteursactivite">
         <div class="container">
-          <div class="who-content">
-            <h2>Nos secteurs d'activité</h2>
+          <div class="who-content animate-section">
+            <h2 class="animate-title">Nos secteurs d'activité</h2>
             
             <!-- Carousel secteurs d'activité -->
             <div class="secteurs-carousel-container">
               <button class="secteur-arrow secteur-prev" @click="prevSecteurSlide">
-                <img src="/slide2/prev.svg" alt="Précédent" />
+                <NuxtImg src="/slide2/prev.svg" alt="Précédent" loading="eager" />
               </button>
               
               <div class="owl-carousel owl-theme secteurs-owl-carousel" ref="secteursCarousel">
                 <div class="item">
                   <div class="secteur-card" @click="openPopup('/slide2/secteur1.webp')">
                     <div class="imgwrapper">
-                      <img src="/slide2/secteur1.webp" alt="BTP et Génie Civil" class="secteur-image" />
+                      <NuxtImg src="/slide2/secteur1.webp" alt="BTP et Génie Civil" class="secteur-image" loading="lazy" />
                     </div>
                     <div class="secteur-content">
                       <h3>Infrastructure routières 
@@ -102,7 +102,7 @@
                 <div class="item">
                   <div class="secteur-card" @click="openPopup('/slide2/secteur2.webp')">
                     <div class="imgwrapper">
-                      <img src="/slide2/secteur2.webp" alt="Infrastructures" class="secteur-image" />
+                      <NuxtImg src="/slide2/secteur2.webp" alt="Infrastructures" class="secteur-image" loading="lazy" />
                     </div>
                     <div class="secteur-content">
                       <h3>Habitat & logement</h3>
@@ -116,7 +116,7 @@
                 <div class="item">
                   <div class="secteur-card" @click="openPopup('/slide2/secteur3.webp')">
                     <div class="imgwrapper">
-                      <img src="/slide2/secteur3.webp" alt="Services Financiers" class="secteur-image" />
+                      <NuxtImg src="/slide2/secteur3.webp" alt="Services Financiers" class="secteur-image" loading="lazy" />
                     </div>
                     <div class="secteur-content">
                       <h3>Hydraulique et 
@@ -132,7 +132,7 @@ assainissement</h3>
               </div>
               
               <button class="secteur-arrow secteur-next" @click="nextSecteurSlide">
-                <img src="/slide2/next.svg" alt="Suivant" />
+                <NuxtImg src="/slide2/next.svg" alt="Suivant" loading="eager" />
               </button>
             </div>
           </div>
@@ -244,10 +244,11 @@ const openPopup = (imageSrc: string) => {
       },
       type: 'image',
       closeOnContentClick: true,
-      mainClass: 'mfp-img-mobile',
+      mainClass: 'mfp-img-mobile mfp-carousel-modal',
       image: {
         verticalFit: true
-      }
+      },
+      closeMarkup: '<button class="mfp-close-custom"><span></span><span></span></button>'
     })
   }
 }
@@ -291,6 +292,20 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 @import '~/assets/styles/_variables.scss';
+
+.animate-section {
+  animation: subtleFadeIn 0.9s ease-out;
+}
+
+.animate-title {
+  animation: subtleSlideInUp 0.9s ease-out;
+}
+
+.animate-item {
+  animation: subtleSlideInUp 0.8s ease-out both;
+  animation-delay: var(--animate-delay, 0s);
+}
+
 .secteurs-owl-carousel{
   .imgwrapper{
     border-radius:12px;
@@ -324,7 +339,7 @@ onUnmounted(() => {
   }
 }
 .services {
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-3xl) 0 0;
   background-color: #f8f8f8;
 }
 
@@ -334,21 +349,6 @@ onUnmounted(() => {
   gap: var(--spacing-3xl);
   align-items: flex-start;
   margin-bottom: var(--spacing-3xl);
-}
-
-.who-content {
-
-    padding-top: 2em;
-  padding-bottom: 5em;
-  
-  h2 {
-    @include primary-button;
-    margin-bottom: var(--spacing-lg);
-    font-size: 22px !important;
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    border: none;
-  }
 }
 
 /* Carousel des métiers avec Owl Carousel */
@@ -587,7 +587,10 @@ onUnmounted(() => {
 /* Secteurs d'activité carousel styles */
 .secteursactivite {
   background-color: #F8F8F8;
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-3xl) 0 1em 0;
+  .who-content{
+    padding-bottom:0em;
+  }
 }
 
 .secteurs-carousel-container {
@@ -722,6 +725,75 @@ onUnmounted(() => {
   margin: 0 auto;
   .owl-carousel{
     margin:0;
+  }
+}
+</style>
+
+<style lang="scss">
+// Magnific Popup custom styles - non-scoped to override defaults
+.mfp-carousel-modal {
+  .mfp-bg {
+    opacity: 0 !important;
+    display: none !important;
+  }
+
+  .mfp-container {
+    max-width: 1000px !important;
+    max-height: 600px !important;
+    margin: auto !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    position: fixed !important;
+  }
+
+  .mfp-img {
+    max-width: 100% !important;
+    max-height: 600px !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 20px !important;
+  }
+
+  .mfp-close-custom {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.3s ease !important;
+    z-index: 1000 !important;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+      transform: scale(1.1) !important;
+    }
+
+    span {
+      position: absolute !important;
+      width: 20px !important;
+      height: 2px !important;
+      background-color: transparent !important;
+
+      &:nth-child(1) {
+        transform: rotate(45deg) !important;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+      }
+
+      &:nth-child(2) {
+        transform: rotate(-45deg) !important;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+      }
+    }
   }
 }
 </style>

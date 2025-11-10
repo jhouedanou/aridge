@@ -1,20 +1,23 @@
 <template>
-  <section class="hero" :style="{ backgroundImage: `url('/bg.jpg')` }">
-    <video 
+  <section class="hero" :style="{ backgroundImage: `url('/bg.jpg')` }" ref="heroSection">
+    <video
+      ref="videoElement"
       class="hero-video"
       autoplay
       muted
       playsinline
-      preload="auto"
+      preload="metadata"
+      poster="/bg.jpg"
     >
-      <source src="/Whisk_umy1cjy0ijz5ewzi1sohvmytedmmrtlwydzz0yn.mp4" type="video/mp4">
+      <source src="/videoGood.webm" type="video/webm">
+      <source src="/videoGood.mp4" type="video/mp4">
     </video>
     <div class="container p-0 woubi w-100">
       <div class="hero-content">
 
       <div class="hero-text">
-        <h1 class="hero-title">{{ heroTitle }}</h1>
-        <button class="btn btn-primary">{{ heroCTA }}</button>
+        <h1 class="hero-title animate-title">{{ heroTitle }}</h1>
+        <button class="btn btn-primary animate-button">{{ heroCTA }}</button>
       </div>
       </div>
     </div>
@@ -22,66 +25,20 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useContent } from '~/composables/useContent'
 
 const { getText } = useContent()
-const videoRef = ref<HTMLVideoElement>()
+const videoElement = ref<HTMLVideoElement | null>(null)
 
 const heroTitle = computed(() => getText('hero.title', 'Construction et financement d\'infrastructures'))
-const heroSubtitle = computed(() => getText('hero.subtitle', 'En savoir plus'))
 const heroCTA = computed(() => getText('hero.cta', 'En savoir plus'))
 
 onMounted(() => {
-  const video = document.querySelector('.hero-video') as HTMLVideoElement
-  if (video) {
-    let isPlayingForward = true
-    let intervalId: number | null = null
-    
-    const setupVideoControl = () => {
-      try {
-        if (isPlayingForward) {
-          // Lecture normale très lente
-          video.playbackRate = 0.000025
-          video.play()
-          console.log('Playing forward at rate:', video.playbackRate)
-        } else {
-          // Lecture arrière manuelle
-          video.pause()
-          
-          intervalId = setInterval(() => {
-            if (video.currentTime > 0) {
-              video.currentTime = Math.max(0, video.currentTime - 0.001) // Reculer de 1ms
-            } else {
-              // Retour au début, reprendre lecture normale
-              clearInterval(intervalId!)
-              isPlayingForward = true
-              setupVideoControl()
-            }
-          }, 40) // 25fps pour fluidité
-          
-          console.log('Playing backward manually')
-        }
-      } catch (error) {
-        console.error('Error setting up video control:', error)
-      }
-    }
-    
-    // Gérer la fin de la vidéo pour passer en lecture arrière
-    video.addEventListener('ended', () => {
-      isPlayingForward = false
-      setupVideoControl()
-    })
-    
-    video.addEventListener('loadedmetadata', setupVideoControl)
-    video.addEventListener('canplay', setupVideoControl)
-    
-    // Fallback
-    setTimeout(() => {
-      if (video.readyState >= 1) {
-        setupVideoControl()
-      }
-    }, 1000)
+  // Relancer la vidéo chaque fois que le hero est affiché
+  if (videoElement.value) {
+    videoElement.value.currentTime = 0
+    videoElement.value.play()
   }
 })
 </script>
@@ -138,6 +95,10 @@ onMounted(() => {
   text-align: left;
   color: #fff;
   margin-bottom: var(--spacing-lg);
+
+  &.animate-title {
+    animation: subtleSlideInUp 0.9s ease-out;
+  }
 }
 
 .hero-subtitle {
@@ -148,9 +109,13 @@ onMounted(() => {
 
 .btn {
   margin-top: var(--spacing-lg);
-  
+
   &.btn-primary {
     @include primary-button;
+  }
+
+  &.animate-button {
+    animation: subtleSlideInUp 1s ease-out 0.2s both;
   }
 }
 

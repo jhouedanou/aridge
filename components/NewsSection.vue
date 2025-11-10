@@ -1,14 +1,14 @@
 <template>
   <section id="news" class="news">
     <div class="container">
-      <div class="section-header">
-        <h2>Nos Réalisations</h2>
+      <div class="section-header animate-section">
+        <h2 class="animate-title">Nos Réalisations</h2>
       </div>
 
-      <div class="news-grid">
-        <article class="news-card" v-for="item in newsList" :key="item.id">
+      <div class="news-grid animate-content">
+        <article class="news-card animate-item" v-for="(item, index) in newsList" :key="item.id" :style="{ '--animate-delay': `${index * 0.1}s` }">
           <div class="news-image">
-            <img :src="item.image" :alt="item.title" />
+            <NuxtImg :src="item.image" :alt="item.title" loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
             <div class="news-date">{{ item.date }}</div>
           </div>
           <div class="news-content">
@@ -19,7 +19,7 @@
         </article>
       </div>
 
-      <div class="news-footer">
+      <div class="news-footer animate-item" style="--animate-delay: 0.4s">
         <NuxtLink to="/actualites" class="btn btn-primary">Voir toutes les actualités</NuxtLink>
       </div>
     </div>
@@ -68,6 +68,23 @@ const newsList: NewsItem[] = [
 </script>
 
 <style scoped>
+.animate-section {
+  animation: subtleFadeIn 0.9s ease-out;
+}
+
+.animate-title {
+  animation: subtleSlideInUp 0.9s ease-out;
+}
+
+.animate-content {
+  animation: subtleFadeIn 0.9s ease-out 0.2s both;
+}
+
+.animate-item {
+  animation: subtleSlideInUp 0.8s ease-out both;
+  animation-delay: var(--animate-delay, 0s);
+}
+
 .news {
   padding: var(--spacing-3xl) 0;
   background-color: var(--color-bg-light);

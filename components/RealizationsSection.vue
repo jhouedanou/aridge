@@ -1,14 +1,14 @@
 <template>
   <section id="realizations" class="realizations">
     <div class="container">
-      <div class="section-header">
-        <h2>Nos Réalisations</h2>
+      <div class="section-header animate-section">
+        <h2 class="animate-title">Nos Réalisations</h2>
       </div>
 
-      <div class="realizations-slider">
+      <div class="realizations-slider animate-content">
         <div class="realizations-container">
-          <div class="realization-card">
-            <img src="/realization-1.jpg" alt="Réalisation 1" />
+          <div class="realization-card animate-item" style="--animate-delay: 0.1s">
+            <NuxtImg src="/realization-1.jpg" alt="Réalisation 1" loading="lazy" />
             <div class="card-content">
               <h3>Projet 1</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -16,8 +16,8 @@
             </div>
           </div>
 
-          <div class="realization-card">
-            <img src="/realization-2.jpg" alt="Réalisation 2" />
+          <div class="realization-card animate-item" style="--animate-delay: 0.2s">
+            <NuxtImg src="/realization-2.jpg" alt="Réalisation 2" loading="lazy" />
             <div class="card-content">
               <h3>Projet 2</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -25,8 +25,8 @@
             </div>
           </div>
 
-          <div class="realization-card">
-            <img src="/realization-3.jpg" alt="Réalisation 3" />
+          <div class="realization-card animate-item" style="--animate-delay: 0.3s">
+            <NuxtImg src="/realization-3.jpg" alt="Réalisation 3" loading="lazy" />
             <div class="card-content">
               <h3>Projet 3</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -34,8 +34,8 @@
             </div>
           </div>
 
-          <div class="realization-card">
-            <img src="/realization-4.jpg" alt="Réalisation 4" />
+          <div class="realization-card animate-item" style="--animate-delay: 0.4s">
+            <NuxtImg src="/realization-4.jpg" alt="Réalisation 4" loading="lazy" />
             <div class="card-content">
               <h3>Projet 4</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -58,6 +58,23 @@
 </script>
 
 <style scoped>
+.animate-section {
+  animation: subtleFadeIn 0.9s ease-out;
+}
+
+.animate-title {
+  animation: subtleSlideInUp 0.9s ease-out;
+}
+
+.animate-content {
+  animation: subtleFadeIn 0.9s ease-out 0.2s both;
+}
+
+.animate-item {
+  animation: subtleSlideInUp 0.8s ease-out both;
+  animation-delay: var(--animate-delay, 0s);
+}
+
 .realizations {
   padding: var(--spacing-3xl) 0;
   background-color: var(--color-bg-white);

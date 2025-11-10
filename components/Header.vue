@@ -4,7 +4,7 @@
       <div class="header-content">
         <div class="logo" :class="{ scrolled: isScrolled }">
           <NuxtLink to="/">
-            <img src="/logo.svg" alt="Aridge Logo" />
+            <NuxtImg src="/logo.svg" alt="Aridge Logo" loading="eager" />
           </NuxtLink>
         </div>
         <div class="rightcontainer">
@@ -12,7 +12,7 @@
             <div class="search-box">
               <input type="text" class="search-input" placeholder="Rechercher..." />
               <button class="search-btn">
-                <img src="/searchbtn.svg" alt="Rechercher" />
+                <NuxtImg src="/searchbtn.svg" alt="Rechercher" loading="eager" />
               </button>
             </div>
           </div>

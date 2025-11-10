@@ -10,7 +10,37 @@ export default defineNuxtConfig({
       }
     }
   },
-  modules: [],
+  modules: ['@nuxt/image'],
+  image: {
+    quality: 80,
+    format: ['webp', 'jpg'],
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    },
+    presets: {
+      thumbnail: {
+        modifiers: {
+          format: 'webp',
+          width: 300,
+          height: 300,
+          fit: 'cover'
+        }
+      },
+      hero: {
+        modifiers: {
+          format: 'webp',
+          width: 1920,
+          height: 1080,
+          fit: 'cover'
+        }
+      }
+    }
+  },
   ssr: true,
   nitro: {
     preset: 'netlify',
@@ -41,7 +71,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap'
         }
       ]
     }

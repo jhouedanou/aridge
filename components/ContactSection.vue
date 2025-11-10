@@ -2,27 +2,27 @@
   <section id="contact" class="contact">
     <div class="container">
       <div class="contact-wrapper">
-        <div class="contact-info">
-          <h2>Restez en contact</h2>
-          <p>Nous serions heureux de vous aider dans vos projets d'infrastructure.</p>
+        <div class="contact-info animate-content">
+          <h2 class="animate-title">Restez en contact</h2>
+          <p class="animate-item" style="--animate-delay: 0.1s">Nous serions heureux de vous aider dans vos projets d'infrastructure.</p>
 
           <div class="info-items">
-            <div class="info-item">
+            <div class="info-item animate-item" style="--animate-delay: 0.2s">
               <h4>Adresse</h4>
               <p>123 Rue de l'Infrastructure<br />75000 Paris, France</p>
             </div>
-            <div class="info-item">
+            <div class="info-item animate-item" style="--animate-delay: 0.3s">
               <h4>Téléphone</h4>
               <p><a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
             </div>
-            <div class="info-item">
+            <div class="info-item animate-item" style="--animate-delay: 0.4s">
               <h4>Email</h4>
               <p><a href="mailto:contact@aridge.com">contact@aridge.com</a></p>
             </div>
           </div>
         </div>
 
-        <form class="contact-form" @submit.prevent="submitForm">
+        <form class="contact-form animate-content" style="--animate-delay: 0.1s" @submit.prevent="submitForm">
           <div class="form-group">
             <label for="name">Nom</label>
             <input
@@ -105,6 +105,20 @@ const submitForm = async () => {
 </script>
 
 <style scoped>
+.animate-content {
+  animation: subtleSlideInUp 0.9s ease-out both;
+  animation-delay: var(--animate-delay, 0s);
+}
+
+.animate-title {
+  animation: subtleSlideInUp 0.9s ease-out;
+}
+
+.animate-item {
+  animation: subtleSlideInUp 0.8s ease-out both;
+  animation-delay: var(--animate-delay, 0s);
+}
+
 .contact {
   padding: var(--spacing-3xl) 0;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);

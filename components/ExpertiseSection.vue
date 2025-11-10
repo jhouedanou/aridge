@@ -1,60 +1,27 @@
 <template>
-  <section id="expertise" class="expertise">
-    <div class="container">
-      <div class="section-header">
-        <h2>Nos domaines d'expertise</h2>
+  <section id="expertise" class="expertise background-secondary ">
+    <div class="container p-0 woubi w-100">
+    <div class="who-content animate-section">
+      <h2 class="animate-title">Notre expertise technique</h2>
+      <div class="container">
+        <div class="row">
+
+      <div class="col-md-6 col-12 letexte animate-content expertise-text">
+<p>Nous collaborons avec des bureaux d'études internationaux, des <strong>fournisseurs certifiés ISO</strong>, et des experts locaux pour garantir la qualité, la résilience et la durabilité de chaque projet.</p>
+<p class="animate-item" style="--animate-delay: 0.1s"><strong>Études techniques et conception BIM</strong></p>
+<ul>
+  <li class="animate-item" style="--animate-delay: 0.2s">Maîtrise d'œuvre tous corps d'état (TCE)</li>
+  <li class="animate-item" style="--animate-delay: 0.3s">Construction modulaire et préfabriquée</li>
+  <li class="animate-item" style="--animate-delay: 0.4s">Gestion environnementale & conformité ESG</li>
+  <li class="animate-item" style="--animate-delay: 0.5s">Maintenance & gestion d'actifs infrastructurels</li>
+</ul>
       </div>
-
-      <div class="expertise-wrapper">
-        <div class="expertise-content">
-          <div class="expertise-item">
-            <h3>Infrastructure routière & génie civil</h3>
-            <p>Routes, autoroutes, ports et infrastructure complète incluant des solutions innovantes et durables.</p>
-          </div>
-
-          <div class="expertise-item">
-            <h3>Expertise Technique</h3>
-            <p>Nos collaborateurs avec les meilleurs difficultés internationaux pour délivrer les meilleurs standards de l'industrie.</p>
-            <ul>
-              <li>Études techniques et conception BIM</li>
-              <li>Construction modulaire et préfabriquée</li>
-              <li>Gestion environnementale et ESG</li>
-              <li>Maintenance & gestion d'actifs d'infrastructures</li>
-            </ul>
-          </div>
-
-          <div class="expertise-item">
-            <h3>Expertise Financière</h3>
-            <p>Structuration de financements souverains et institutionnels</p>
-            <p>Spécialisation dans les domaines de l'Afrique Subsaharienne</p>
-            <ul>
-              <li>Levée de fonds syndicalisés</li>
-              <li>Partenariats Public-Privés</li>
-              <li>Gestion d'actifs de infrastructures</li>
-              <li>Sécurisation d'emprunteurs avec une expertise Publics-Privé</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="expertise-image">
-          <img src="/infrastructure.jpg" alt="Infrastructure" />
+      <div class="col-md-6 col-12 lesimages">
+s
+      </div>
         </div>
       </div>
-
-      <div class="expertise-gallery">
-        <div class="gallery-item">
-          <img src="/project1.jpg" alt="Projet 1" />
-        </div>
-        <div class="gallery-item">
-          <img src="/project2.jpg" alt="Projet 2" />
-        </div>
-        <div class="gallery-item">
-          <img src="/project3.jpg" alt="Projet 3" />
-        </div>
-        <div class="gallery-item">
-          <img src="/project4.jpg" alt="Projet 4" />
-        </div>
-      </div>
+    </div>
     </div>
   </section>
 </template>
@@ -63,7 +30,35 @@
 // Expertise section component
 </script>
 
-<style scoped>
+<style lang="scss">
+.animate-section {
+  animation: subtleFadeIn 0.9s ease-out;
+}
+
+.animate-title {
+  animation: subtleSlideInUp 0.9s ease-out;
+}
+
+.animate-content {
+  animation: subtleSlideInUp 0.9s ease-out 0.2s both;
+}
+
+.animate-item {
+  animation: subtleSlideInUp 0.8s ease-out both;
+  animation-delay: var(--animate-delay, 0s);
+}
+
+.expertise-text {
+
+  ul {
+    padding-left: 1em;
+
+    li {
+      line-height: 2em;
+    }
+  }
+}
+
 .expertise {
   padding: var(--spacing-3xl) 0;
   background-color: var(--color-bg-light);

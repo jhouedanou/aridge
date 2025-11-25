@@ -137,7 +137,7 @@ useHead({
 .intro-text {
   font-size: 1.4rem;
   line-height: 1.8;
-  color: #444;
+  color: var(--color-text-dark);
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
@@ -275,7 +275,7 @@ useHead({
 }
 
 .service-description {
-  color: #555;
+  color: var(--color-text-light);
   line-height: 1.7;
   font-weight: 300;
 }
@@ -310,14 +310,14 @@ useHead({
 }
 
 .project-content p {
-  color: #555;
+  color: var(--color-text-light);
   line-height: 1.6;
   margin: 0;
 }
 
 .cta-section {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #0a6678 0%, #1b7a7e 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   text-align: center;
   color: white;
 }

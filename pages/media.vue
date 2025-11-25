@@ -77,7 +77,7 @@ const documentTitle = computed(() => getText('mediaPage.documentTitle', 'Brochur
 const documentDescription = computed(() => getText('mediaPage.documentDescription', 'Découvrez notre brochure complète présentant nos services et réalisations'))
 const documentSize = computed(() => getText('mediaPage.documentSize', '2.5 MB'))
 
-const pdfUrl = '/SEA+-+Convenance+Consult+-+2025-02-01+-+8ca71c08 (1).pdf'
+const pdfUrl = '/brochure-aridge.pdf'
 
 useHead({
   title: 'Médias - ARIDGE',

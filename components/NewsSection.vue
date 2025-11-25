@@ -18,7 +18,7 @@
           <div class="news-content">
             <h3>{{ item.title }}</h3>
             <p>{{ item.excerpt }}</p>
-            <NuxtLink to="/actualites" class="read-more">Lire la suite →</NuxtLink>
+            <NuxtLink :to="`/actualites/${item.id}`" class="read-more">Lire la suite →</NuxtLink>
           </div>
         </article>
       </div>
@@ -39,7 +39,7 @@
                 <div class="col-md-6 col-12 caro-image" style="background-image: url('/caro.webp')">
                 </div>
                 <div id="peace" class="col-md-6 col-12">
-                  <nuxtlink class="button">{{ recruitmentEmail }}</nuxtlink>
+                  <NuxtLink to="/carriere" class="button">{{ recruitmentEmail }}</NuxtLink>
                 </div>
               </div>
             </div>

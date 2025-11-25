@@ -20,7 +20,7 @@
           <div class="news-content">
             <h3>{{ item.title }}</h3>
             <p>{{ item.excerpt }}</p>
-            <a href="#" class="read-more" @click.prevent>{{ readMoreText }}</a>
+            <NuxtLink :to="`/actualites/${item.id}`" class="read-more">{{ readMoreText }}</NuxtLink>
           </div>
         </article>
       </div>
@@ -317,7 +317,7 @@ useHead({
   line-height: 0.64;
   letter-spacing: normal;
   text-align: center;
-  color: #0a6678;
+  color: var(--color-primary);
   text-transform: uppercase;
 }
 
@@ -332,7 +332,7 @@ useHead({
   line-height: 0.64;
   letter-spacing: normal;
   text-align: center;
-  color: #0a6678;
+  color: var(--color-primary);
 }
 
 .news-content {
@@ -366,7 +366,7 @@ useHead({
   transition: all var(--transition-speed);
   text-decoration: none;
   margin-top: var(--spacing-lg);
-  background-color: #0a6678;
+  background-color: var(--color-primary);
   font-family: "Source Sans Pro", var(--font-primary);
   font-size: 14px;
   font-weight: 600;

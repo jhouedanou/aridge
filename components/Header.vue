@@ -45,7 +45,8 @@
             <span class="nav-link">{{ navNews }}</span>
             <div class="dropdown-menu" :class="{ active: isDropdownExpanded(2) }">
               <NuxtLink to="/carriere" class="dropdown-link">Carrière</NuxtLink>
-              <NuxtLink to="/actualites" class="dropdown-link">Média</NuxtLink>
+              <NuxtLink to="/actualites" class="dropdown-link">Actualités</NuxtLink>
+              <NuxtLink to="/media" class="dropdown-link">Média</NuxtLink>
             </div>
           </div>
           <NuxtLink to="/contact" class="nav-link">{{ navContact }}</NuxtLink>

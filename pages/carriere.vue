@@ -665,14 +665,14 @@ Cette candidature a été soumise via le formulaire en ligne sur le site web ARI
 
 .file-text {
   flex: 1;
-  color: #666;
+  color: var(--color-text-light);
   font-size: 0.95rem;
 }
 
 .file-info {
   margin-top: 8px;
   font-size: 0.85rem;
-  color: #666;
+  color: var(--color-text-light);
 }
 
 /* Form Actions */
@@ -682,7 +682,7 @@ Cette candidature a été soumise via le formulaire en ligne sur le site web ARI
 }
 
 .submit-button {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #156266 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
   padding: 18px 56px;
   border: none;
@@ -713,7 +713,7 @@ Cette candidature a été soumise via le formulaire en ligne sur le site web ARI
 }
 
 .submit-button:hover:not(:disabled) {
-  background: linear-gradient(135deg, #156266 0%, #0f5156 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #0f5156 100%);
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(27, 122, 126, 0.4);
 }

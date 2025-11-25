@@ -170,7 +170,7 @@ useHead({
 .intro-text {
   font-size: 1.4rem;
   line-height: 1.8;
-  color: #444;
+  color: var(--color-text-dark);
   max-width: 900px;
   margin: 0 auto;
   text-align: center;

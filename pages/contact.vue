@@ -305,7 +305,7 @@ Ce message a été envoyé via le formulaire de contact du site web ARIDGE.
   display: block;
   font-weight: var(--font-weight-semibold);
   margin-bottom: 8px;
-  color: #333;
+  color: var(--color-text-dark);
   font-size: 0.95rem;
 }
 
@@ -357,7 +357,7 @@ Ce message a été envoyé via le formulaire de contact du site web ARIDGE.
 }
 
 .submit-button {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #156266 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: white;
   padding: 16px 40px;
   border: none;
@@ -412,11 +412,11 @@ Ce message a été envoyé via le formulaire de contact du site web ARIDGE.
 
 .info-address strong {
   font-weight: var(--font-weight-semibold);
-  color: #333;
+  color: var(--color-text-dark);
 }
 
 .info-bp {
-  color: #666;
+  color: var(--color-text-light);
   font-size: 0.95rem;
   margin-bottom: 15px;
 }
@@ -471,7 +471,7 @@ a.info-link:hover {
 }
 
 .email-link:hover {
-  color: #156266;
+  color: var(--color-primary-dark);
 }
 
 @media (max-width: 968px) {

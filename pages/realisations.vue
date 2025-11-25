@@ -346,7 +346,7 @@ useHead({
   border-radius: 25px;
   font-size: 0.95rem;
   font-weight: var(--font-weight-semibold);
-  color: #444;
+  color: var(--color-text-dark);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 

@@ -295,7 +295,7 @@ useHead({
 .partner-logo {
   width: 120px;
   height: 120px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #156266 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -315,12 +315,12 @@ useHead({
 
 .partner-location {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--color-text-light);
   margin-bottom: 15px;
 }
 
 .partner-description {
-  color: #444;
+  color: var(--color-text-dark);
   line-height: 1.7;
   font-weight: 300;
   margin: 0;
@@ -328,7 +328,7 @@ useHead({
 
 .cta-section {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #0a6678 0%, #1b7a7e 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   text-align: center;
   color: white;
 }

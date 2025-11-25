@@ -51,6 +51,8 @@
     "title": "Nos Réalisations",
     "viewAll": "Voir toutes les actualités",
     "readMore": "Lire la suite →",
+    "joinUs": "Rejoignez nous",
+    "recruitmentEmail": "recrutement@aridge.com",
     "articles": [
       {
         "id": 1,
@@ -83,8 +85,91 @@
         "image": "/news/04.webp",
         "date": "20",
         "month": "Nov"
+      },
+      {
+        "id": 5,
+        "title": "ARIDGE inaugure un complexe hydraulique majeur au Sénégal",
+        "excerpt": "Un nouveau système d'approvisionnement en eau potable desservant plus de 200 000 habitants a été inauguré dans la région de Kaolack. Ce projet PPP intègre des technologies de filtration avancées et des systèmes de gestion intelligente de l'eau.",
+        "image": "/news/05.webp",
+        "date": "15",
+        "month": "Nov"
+      },
+      {
+        "id": 6,
+        "title": "Partenariat stratégique: ARIDGE s'associe avec des leaders européens de la construction",
+        "excerpt": "ARIDGE annonce un accord de coopération technique avec trois majors européens de la construction pour le transfert de technologies et l'amélioration des standards de qualité dans les projets d'infrastructure africains.",
+        "image": "/news/06.webp",
+        "date": "10",
+        "month": "Nov"
+      },
+      {
+        "id": 7,
+        "title": "Programme de formation: ARIDGE lance une académie pour les métiers du BTP",
+        "excerpt": "En partenariat avec des universités locales, ARIDGE crée un centre de formation d'excellence pour former 500 jeunes ingénieurs et techniciens africains aux métiers de la construction moderne et durable.",
+        "image": "/news/07.webp",
+        "date": "05",
+        "month": "Nov"
+      },
+      {
+        "id": 8,
+        "title": "Logement social: ARIDGE livre 1200 unités résidentielles en Côte d'Ivoire",
+        "excerpt": "Le complexe résidentiel de Grand-Bassam, comprenant 1200 logements sociaux, des écoles et des centres commerciaux, a été livré avec 3 mois d'avance. Ce projet modèle démontre l'efficacité de la construction modulaire.",
+        "image": "/news/08.webp",
+        "date": "28",
+        "month": "Oct"
+      },
+      {
+        "id": 9,
+        "title": "Innovation verte: ARIDGE installe des panneaux solaires sur ses chantiers",
+        "excerpt": "Dans le cadre de son engagement ESG, ARIDGE équipe tous ses chantiers de systèmes solaires pour réduire l'empreinte carbone. Cette initiative pionnière réduit les émissions de CO2 de 60% par projet.",
+        "image": "/news/09.webp",
+        "date": "22",
+        "month": "Oct"
+      },
+      {
+        "id": 10,
+        "title": "Reconnaissance internationale: ARIDGE reçoit le Prix d'Excellence en Infrastructure Africaine",
+        "excerpt": "L'African Infrastructure Awards a décerné à ARIDGE le prix du Meilleur Acteur Panafricain 2024 pour son impact transformateur sur le développement des infrastructures en Afrique subsaharienne.",
+        "image": "/news/10.webp",
+        "date": "18",
+        "month": "Oct"
+      },
+      {
+        "id": 11,
+        "title": "Expansion régionale: ARIDGE ouvre de nouveaux bureaux en Afrique de l'Est",
+        "excerpt": "Pour accompagner sa croissance, ARIDGE établit des bureaux régionaux à Nairobi et Dar es Salaam, renforçant ainsi sa présence dans la région est-africaine et son réseau panafricain.",
+        "image": "/news/11.webp",
+        "date": "12",
+        "month": "Oct"
+      },
+      {
+        "id": 12,
+        "title": "Digitalisation: ARIDGE lance une plateforme de gestion de projets en temps réel",
+        "excerpt": "Une nouvelle plateforme digitale permet aux clients et partenaires de suivre l'avancement des projets en temps réel via des tableaux de bord interactifs, des rapports automatisés et des alertes intelligentes.",
+        "image": "/news/12.webp",
+        "date": "08",
+        "month": "Oct"
       }
     ]
+  },
+  "newsPage": {
+    "title": "Nos Actualités",
+    "description": "Découvrez les dernières nouvelles et projets d'ARIDGE"
+  },
+  "mediaPage": {
+    "title": "Nos Médias",
+    "description": "Consultez nos brochures et documents",
+    "documentTitle": "Brochure ARIDGE",
+    "documentDescription": "Découvrez notre brochure complète présentant nos services et réalisations",
+    "documentSize": "2.5 MB"
+  },
+  "searchPage": {
+    "title": "Rechercher",
+    "placeholder": "Que recherchez-vous ?",
+    "noSearchTitle": "Commencez votre recherche",
+    "noSearchDescription": "Saisissez un mot-clé pour rechercher dans nos actualités, services et réalisations",
+    "noResultsTitle": "Aucun résultat trouvé",
+    "noResultsDescription": "Essayez avec d'autres mots-clés"
   },
   "contact": {
     "title": "Nous Contacter",
@@ -104,6 +189,7 @@
       "expertise": "Expertise",
       "realizations": "Réalisations",
       "news": "Actualités",
+      "media": "Médias",
       "contact": "Contact"
     }
   },

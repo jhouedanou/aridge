@@ -10,8 +10,14 @@
         <div class="rightcontainer">
           <div class="search-container">
             <div class="search-box">
-              <input type="text" class="search-input" placeholder="Rechercher..." />
-              <button class="search-btn">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Rechercher..."
+                v-model="searchQuery"
+                @keyup.enter="handleSearch"
+              />
+              <button class="search-btn" @click="handleSearch">
                 <NuxtImg src="/searchbtn.svg" alt="Rechercher" loading="eager" />
               </button>
             </div>
@@ -19,30 +25,30 @@
            <nav class="nav" :class="{ active: mobileMenuOpen }">
           <NuxtLink to="/" class="nav-link">{{ navHome }}</NuxtLink>
           <div class="nav-item dropdown" @click="toggleDropdown(0)" :class="{ 'dropdown-open': isDropdownExpanded(0) }">
-            <NuxtLink to="/construction" class="nav-link">{{ navServices }}</NuxtLink>
+            <span class="nav-link">{{ navServices }}</span>
             <div class="dropdown-menu" :class="{ active: isDropdownExpanded(0) }">
-              <NuxtLink to="/construction" class="dropdown-link">Infrastructure & génie civil</NuxtLink>
-              <NuxtLink to="/construction" class="dropdown-link">Habitat et logement</NuxtLink>
-              <NuxtLink to="/construction" class="dropdown-link">Hydraulique et assainissement</NuxtLink>
-              <NuxtLink to="/construction" class="dropdown-link">Logistique et zone éco</NuxtLink>
+              <NuxtLink to="/services/infrastructure-genie-civil" class="dropdown-link">Infrastructure & génie civil</NuxtLink>
+              <NuxtLink to="/services/habitat-logement" class="dropdown-link">Habitat et logement</NuxtLink>
+              <NuxtLink to="/services/hydraulique-assainissement" class="dropdown-link">Hydraulique et assainissement</NuxtLink>
+              <NuxtLink to="/services/logistique-zone-economique" class="dropdown-link">Logistique et zone éco</NuxtLink>
             </div>
           </div>
           <div class="nav-item dropdown" @click="toggleDropdown(1)" :class="{ 'dropdown-open': isDropdownExpanded(1) }">
-            <NuxtLink to="/construction" class="nav-link">{{ navExpertise }}</NuxtLink>
+            <span class="nav-link">{{ navExpertise }}</span>
             <div class="dropdown-menu" :class="{ active: isDropdownExpanded(1) }">
-              <NuxtLink to="/construction" class="dropdown-link">Technique</NuxtLink>
-              <NuxtLink to="/construction" class="dropdown-link">Financière</NuxtLink>
+              <NuxtLink to="/expertise/technique" class="dropdown-link">Technique</NuxtLink>
+              <NuxtLink to="/expertise/financiere" class="dropdown-link">Financière</NuxtLink>
             </div>
           </div>
-          <NuxtLink to="/construction" class="nav-link">{{ navRealizations }}</NuxtLink>
+          <NuxtLink to="/realisations" class="nav-link">{{ navRealizations }}</NuxtLink>
           <div class="nav-item dropdown" @click="toggleDropdown(2)" :class="{ 'dropdown-open': isDropdownExpanded(2) }">
-            <NuxtLink to="/construction" class="nav-link">{{ navNews }}</NuxtLink>
+            <span class="nav-link">{{ navNews }}</span>
             <div class="dropdown-menu" :class="{ active: isDropdownExpanded(2) }">
-              <NuxtLink to="/construction" class="dropdown-link">Carrière</NuxtLink>
-              <NuxtLink to="/construction" class="dropdown-link">Média</NuxtLink>
+              <NuxtLink to="/carriere" class="dropdown-link">Carrière</NuxtLink>
+              <NuxtLink to="/actualites" class="dropdown-link">Média</NuxtLink>
             </div>
           </div>
-          <NuxtLink to="/construction" class="nav-link">{{ navContact }}</NuxtLink>
+          <NuxtLink to="/contact" class="nav-link">{{ navContact }}</NuxtLink>
         </nav>
         <button class="mobile-menu-btn" @click="mobileMenuOpen = !mobileMenuOpen">
           <span></span>
@@ -58,14 +64,27 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useContent } from '~/composables/useContent'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const mobileMenuOpen = ref(false)
 const isScrolled = ref(false)
 const expandedDropdowns = ref<Set<number>>(new Set())
+const searchQuery = ref('')
 const { getText } = useContent()
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
+}
+
+const handleSearch = () => {
+  if (searchQuery.value.trim()) {
+    router.push({
+      path: '/recherche',
+      query: { q: searchQuery.value.trim() }
+    })
+    searchQuery.value = ''
+  }
 }
 
 const toggleDropdown = (index: number) => {
